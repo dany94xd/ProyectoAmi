@@ -3,15 +3,15 @@ const cors = require('cors');
 const app = express();
 
 const { mongoose } = require('./database');
-var path = require('path')
+//var path = require('path')
 
 // Settings
 app.set('port', process.env.PORT || 3000);
 
 // Middlewares
-app.use('/',express.static('client',{redirect:false}));
-app.use(cors({origin: 'http://162.212.130.145'}));
-//app.use(cors({origin: 'http://localhost:4200'}));
+//app.use('/',express.static('client',{redirect:false}));
+//app.use(cors({origin: 'http://162.212.130.145'}));
+app.use(cors({origin: 'http://localhost:4200'}));
 
 app.use(function (req, res, next) {
 
@@ -37,9 +37,9 @@ app.use('/api/opcionesmenu', require('./routes/opcionesmenu.routes'));
 
 //starting the server
 
-  app.get('*',function(req,res,next){
-       res.sendFile(path.resolve('client/index.html'))
-     });
+  // app.get('*',function(req,res,next){
+  //      res.sendFile(path.resolve('client/index.html'))
+  //    });
   
 app.listen(app.get('port'), () => {
     console.log(`server on port ${app.get('port')}`);
