@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+    <div class="col s5">
+      <div class="card">
+        <div class="card-content">
+          <form #institucionForm="ngForm" (ngSubmit)="addInstitucion(institucionForm)">
+            <input type="hidden" name="_id" #_id="ngModel" 
+            [(ngModel)]="serviceInstitucion.selectInstitucion._id">
+            <div class="row">
+              <div class="input-field col-s12">
+                <input type="text" name="idInstitucion" #name="ngModel" 
+                [(ngModel)]="serviceInstitucion.selectInstitucion.idInstitucion" placeholder="Id de la institucion">
+              </div>
+              <div class="input-field col-s12">
+                <input type="text" name="nombre" #name="ngModel" 
+                [(ngModel)]="serviceInstitucion.selectInstitucion.nombre" placeholder="nombre de la institucion">
+              </div>
+              <div class="input-field col-s12">
+                <input type="text" name="ruc" #name="ngModel" 
+                [(ngModel)]="serviceInstitucion.selectInstitucion.ruc" placeholder="Ruc de la institucion">
+              </div>
+              <div class="input-field col-s12">
+                <input type="text" name="descripcion" #name="ngModel" 
+                [(ngModel)]="serviceInstitucion.selectInstitucion.descripcion" value="0" placeholder="Descripcion">
+              </div>
+              <div class="card-action">
+                <div class="input-field col-s12">
+                  <button class="btn right  purple darken-4" (click)="resetForm(institucionForm)">Limpiar</button>
+                  <button class="btn ">Guardar</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col s7">
+      <table class="striped highlight black-text">
+        <thead>
+          <th>Id institucion</th>
+          <th>Nombre</th>
+          <th>Ruc</th>
+          <th>Descripcion</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let institucion of serviceInstitucion.instituciones">
+            <td>{{ institucion.idInstitucion }}</td>
+            <td>{{ institucion.nombre }}</td>
+            <td>{{ institucion.ruc }}</td>
+            <td>{{ institucion.descripcion }}</td>
+            <td>
+              <a (click)="editInstitucion(institucion)">
+                <i class="material-icons">edit</i>
+              </a>
+              <a (click)="deleteIntitucion(institucion._id, institucionForm)">
+                <i class="material-icons">delete</i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

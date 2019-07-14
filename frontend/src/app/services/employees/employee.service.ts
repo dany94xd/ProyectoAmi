@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Employee } from '../models/employee';
+import { Employee } from '../../models/employee';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class EmployeeService {
   selectedEmployee: Employee;
   employees: Employee[];
   
- readonly URL_API = 'http://162.212.130.145:3000/api/employees';
+ readonly URL_API = 'http://162.212.130.145:3002/api/employees';
   //readonly URL_API = 'http://localhost:3000/api/employees';
 
   constructor(public http: HttpClient) {

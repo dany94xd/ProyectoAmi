@@ -1,6 +1,6 @@
 import { NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from '../../services/employee.service';
+import { EmployeeService } from '../../services/employees/employee.service';
 import { Employee } from '../../models/employee';
 
 declare var M: any;
