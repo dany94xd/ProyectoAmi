@@ -7,7 +7,6 @@ import { NgModule } from '@angular/core';
 // Components
 import { AppComponent } from './app.component';
 import { EmployeeComponent } from './components/employee/employee.component';
-import { LoginComponent } from './components/login/login.component';
 import { InstitucionesComponent } from './components/instituciones/instituciones.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { PersonaComponent } from './components/persona/persona.component';
@@ -16,7 +15,6 @@ import { PersonaComponent } from './components/persona/persona.component';
   declarations: [
     AppComponent,
     EmployeeComponent,
-    LoginComponent,
     InstitucionesComponent,
     PersonaComponent
   ],

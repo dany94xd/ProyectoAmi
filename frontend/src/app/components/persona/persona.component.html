@@ -1,3 +1,70 @@
-<p>
-  persona works!
-</p>
+<div class="container">
+    <div class="row">
+      <div class="col s5">
+        <div class="card">
+          <div class="card-content">
+            <form #personaForm="ngForm" (ngSubmit)="addPersona(personaForm)">
+              <input type="hidden" name="_id" #_id="ngModel" 
+              [(ngModel)]="personaService.selectPersona._id">
+              <div class="row">
+                <div class="input-field col-s12">
+                  <input type="text" name="idPersona" #name="ngModel" 
+                  [(ngModel)]="personaService.selectPersona.idPersona" placeholder="Id de la institucion">
+                </div>
+                <div class="input-field col-s12">
+                  <input type="text" name="idInstitucion" #name="ngModel" 
+                  [(ngModel)]="personaService.selectPersona.idInstitucion" placeholder="nombre de la institucion">
+                </div>
+                <div class="input-field col-s12">
+                  <input type="text" name="cedula" #name="ngModel" 
+                  [(ngModel)]="personaService.selectPersona.cedula" placeholder="Ruc de la institucion">
+                </div>
+                <div class="input-field col-s12">
+                  <input type="text" name="nombre" #name="ngModel" 
+                  [(ngModel)]="personaService.selectPersona.nombre" value="0" placeholder="Descripcion">
+                </div>
+                <div class="input-field col-s12">
+                    <input type="text" name="apellido" #name="ngModel" 
+                    [(ngModel)]="personaService.selectPersona.apellido" value="0" placeholder="Apellido">
+                  </div>
+                <div class="card-action">
+                  <div class="input-field col-s12">
+                    <button class="btn right  purple darken-4" (click)="resetForm(institucionForm)">Limpiar</button>
+                    <button class="btn ">Guardar</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col s7">
+        <table class="striped highlight black-text">
+          <thead>
+            <th>Id institucion</th>
+            <th>Nombre</th>
+            <th>Ruc</th>
+            <th>Descripcion</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let persona of personaService.personas">
+              <td>{{ persona.idPersona }}</td>
+              <td>{{ persona.idInstitucion }}</td>
+              <td>{{ persona.cedula }}</td>
+              <td>{{ persona.nombre }}</td>
+              <td>{{ persona.apellido }}</td>
+              <td>
+                <a (click)="editPersona(persona)">
+                  <i class="material-icons">edit</i>
+                </a>
+                <a (click)="deletePersona(persona._id, personaForm)">
+                  <i class="material-icons">delete</i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
