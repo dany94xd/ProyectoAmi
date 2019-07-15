@@ -4,13 +4,15 @@ import { RouterModule, Routes,PreloadAllModules } from '@angular/router';
 import { InstitucionesComponent } from './components/instituciones/instituciones.component';
 import { EmployeeComponent } from './components/employee/employee.component';
 import { PersonaComponent } from './components/persona/persona.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 
 const routes: Routes = [
   { path: 'empleados', component: EmployeeComponent},
   { path: 'instituciones', component: InstitucionesComponent },
-  { path: 'personas', component: PersonaComponent }
+  { path: 'personas', component: PersonaComponent },
+  { path: '', component: LoginComponent }
 ];
 
 @NgModule({
