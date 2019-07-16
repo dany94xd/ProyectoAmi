@@ -1,0 +1,114 @@
+
+<section>
+
+  <!-- <div *ngFor="let evento of eventos" >
+      <img src="{{evento.portada}}">
+  </div> -->
+
+</section>
+
+
+<section id="eventos">
+
+    <div style ="text-align: center">
+      <h1 class="display-3  "></h1>
+      </div>
+      
+<div class="container">
+   <div class="row">
+     <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let evento of eventos">
+        <div class="card_evento">
+          <div class="card">
+           <div class="card-body text-center">
+              <p>
+                <img class="img-fluid" style="width: 400px; height: 200px"src="{{evento.portada}}" alt="{{evento.titulo}}">
+              </p>
+                <h4 routerLink="/evento/{{evento.id}}" class="card-title">{{evento.titulo}}</h4>
+              <p class="card-text">
+                {{evento.descripcion | truncateText:20}}
+              </p>
+                <div class="container-precio-idioma">
+              <!-- <p class="badge badge-info">
+                {{book.precio}}€
+              </p>
+              <p class="badge badge-info">
+                {{book.idioma}}
+              </p> -->
+                 </div>
+              <a href="/user/localidad/{{evento.id}}" class="btn btn-block btn-primary" >Comprar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- <h4 routerLink="/evento/{{evento.id}}" class="card-title">{{evento.titulo}}</h4> -->
+
+</section>
+
+<br>
+
+<br>
+
+
+
+   
+    <!-- Section: Testimonials v.3 -->
+<section class="team-section text-center my-5">
+
+    <!-- Section heading -->
+    <h1 class="display-3  ">SPONSORS</h1>
+    <!-- Section description -->
+  
+    <!--Grid row-->
+    <div class="row text-center">
+  
+      <!--Grid column-->
+      <div class="col-md-4 mb-md-0 mb-5">
+  
+        <div class="testimonial">
+          <!--Avatar-->
+          <div class="avatar mx-auto">
+            <img src="assets/img/logoespol.jpg" class="rounded-circle z-depth-1 img-fluid">
+          </div>
+         
+        </div>
+  
+      </div>
+      <!--Grid column-->
+  
+      <!--Grid column-->
+      <div class="col-md-4 mb-md-0 mb-5">
+  
+        <div class="testimonial">
+          <!--Avatar-->
+          <div class="avatar mx-auto">
+            <img src="assets/img/logoSC.jpg" class="rounded-circle z-depth-1 img-fluid">
+          </div>
+          <!--Content-->
+         
+        </div>
+  
+      </div>
+      <!--Grid column-->
+  
+      <!--Grid column-->
+      <div class="col-md-4">
+  
+        <div class="testimonial">
+          <!--Avatar-->
+          <div class="avatar mx-auto">
+            <img src="assets/img/logobpp.png" class="rounded-circle z-depth-1 img-fluid">
+          </div>
+          
+        </div>
+  
+      </div>
+      <!--Grid column-->
+  
+    </div>
+    <!--Grid row-->
+  
+  </section>
+    

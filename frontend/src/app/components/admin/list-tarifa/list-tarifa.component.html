@@ -1,0 +1,36 @@
+
+  
+  <div class="row mt-5">
+    <div class="col">
+      <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalTarifa" (click)="resetForm()">Nuevo Tarifa</button>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Caracter</th>
+            <th scope="col">&nbsp;</th>
+            <th scope="col">&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tarifa of tarifas | paginate: {itemsPerPage: 7, currentPage: pageActual}; index as i">
+  
+            <th scope="row"> {{i+1}}</th>
+            <td>{{tarifa.descripcion}}</td>
+            <td>{{tarifa.caracter}}</td>
+            <td>
+              <button class="btn btn-primary" (click)="onPreUpdateTarifa(tarifa)" data-toggle="modal" data-target="#modalTarifa">Actualizar</button>
+            </td>
+            <td>
+              <a href="/admin/list-tarifa" class="btn btn-danger" (click)="onDeleteTarifa(tarifa.id)">Borrar</a>
+            </td>
+          </tr>
+  
+        </tbody>
+      </table>
+      <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+    </div>
+  </div>
+  <app-modal></app-modal>
+  

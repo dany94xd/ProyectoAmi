@@ -1,0 +1,38 @@
+
+<div class="row mt-5">
+  <div class="col">
+    <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" 
+    data-target="#modalBloque" (click)="resetForm()">Nuevo Bloque</button>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Id Bloque</th>
+          <th scope="col">Id Localidad</th>
+          <th scope="col">Descripcion</th>          
+          <th scope="col">&nbsp;</th>
+          <th scope="col">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let bloque of bloques | paginate: {itemsPerPage: 7, currentPage: pageActual}; index as i">
+
+          <th scope="row"> {{i+1}}</th>
+          <td>{{bloque.idbloque}}</td>
+          <td>{{bloque.idlocalidad}}</td>
+          <td>{{bloque.descripcion}}</td>           
+          <td>
+            <button class="btn btn-primary" (click)="onPreUpdateBloque(bloque)" data-toggle="modal" data-target="#modalBloque">Actualizar</button>
+          </td>
+          <td>
+            <a href="/admin/list-bloques" 
+            class="btn btn-danger" (click)="onDeleteBloque(bloque.id)">Borrar</a>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+  </div>
+</div>
+<app-modal></app-modal>
