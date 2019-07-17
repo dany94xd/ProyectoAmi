@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl , Validators} from '@angular/forms';
-import { DataApiService } from "../../../services/data-api.service";
+//import { DataApiService } from "../../../services/data-api.service";
 
 @Component({
   selector: 'app-form',
@@ -15,7 +15,7 @@ export class FormComponent implements OnInit {
     Validators.email
   ]);
 
-  constructor(public http: DataApiService) { }
+  //constructor(public http: DataApiService) { }
 
   ngOnInit() {
   }
@@ -25,22 +25,22 @@ export class FormComponent implements OnInit {
       name: this.name.value,
       email: this.email.value
     }
-    this.http.sendEmail("http://localhost:4000/sendmail", user).subscribe(
-      data => {
-        let res:any = data; 
-        alert("Mensaje Enviado Correctamente")
-        console.log(
-          `${user.name} is successfully register and mail has been sent and the message id is ${res.messageId}`
-        );
-        this.limpiarForm()
-      },
-      err => {
-        console.log(err);
+    // this.http.sendEmail("http://localhost:4000/sendmail", user).subscribe(
+    //   data => {
+    //     let res:any = data; 
+    //     alert("Mensaje Enviado Correctamente")
+    //     console.log(
+    //       `${user.name} is successfully register and mail has been sent and the message id is ${res.messageId}`
+    //     );
+    //     this.limpiarForm()
+    //   },
+    //   err => {
+    //     console.log(err);
         
-      },() => {
+    //   },() => {
         
-      }
-    );
+    //   }
+    // );
   }
 
 

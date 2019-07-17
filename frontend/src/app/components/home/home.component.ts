@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { DataApiService } from "src/app/services/data-api.service";
+//import { DataApiService } from "src/app/services/data-api.service";
 //import { BookInterface } from "../../models/book-interface";
-import{EventoInterface} from "../../models/evento-interface";
+//import{EventoInterface} from "../../models/evento-interface";
 
 @Component({
   selector: "app-home",
@@ -9,12 +9,12 @@ import{EventoInterface} from "../../models/evento-interface";
   styleUrls: ["./home.component.css"]
 })
 export class HomeComponent implements OnInit {
-  constructor(private dataApi: DataApiService) {}
+ // constructor(private dataApi: DataApiService) {}
  // private books: BookInterface;
-  private eventos:EventoInterface;
+  //private eventos:EventoInterface;
   ngOnInit() {
    //this.getListBooks();
-    this.getListEventos();
+    //this.getListEventos();
   }
 
   // getListBooks() {
@@ -23,10 +23,10 @@ export class HomeComponent implements OnInit {
   //     .subscribe((books: BookInterface) => (this.books = books));
   // }
 
-  getListEventos(){
-    this.dataApi
-    .getAllEventos()
-    .subscribe((eventos:EventoInterface)=>(this.eventos = eventos));
-   // .subscribe((eventos:EventoInterface)=>(this.eventos=eventos));
-  }
+  // getListEventos(){
+  //   this.dataApi
+  //   .getAllEventos()
+  //   .subscribe((eventos:EventoInterface)=>(this.eventos = eventos));
+  //  // .subscribe((eventos:EventoInterface)=>(this.eventos=eventos));
+  // }
 }
