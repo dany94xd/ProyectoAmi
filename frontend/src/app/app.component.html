@@ -1,3 +1,8 @@
-
-
-<router-outlet></router-outlet>
+<app-navbar></app-navbar>
+<app-hero [hidden]="hideElement"></app-hero>
+<div class="container">
+  <!-- <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#9b9b9b" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: white">EVENTUM</p>
+  </ngx-spinner> -->
+  <router-outlet></router-outlet>
+</div>
