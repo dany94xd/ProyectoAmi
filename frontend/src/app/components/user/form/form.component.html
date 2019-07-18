@@ -1,0 +1,64 @@
+<br>
+<br>
+
+<div style ="text-align: center">
+    <h1 class="display-3">CONTÁCTANOS</h1>
+  </div>
+
+<section class="my-5">
+    <p class="text-center w-responsive mx-auto mb-5">Tus comentarios y sugerencias son valiosos para nosotros.</p>
+<div class="row">
+
+  <div  class="col-md-9 mb-md-0 mb-5">
+  <form>
+
+    
+  <label> <i class="fas fa-user prefix grey-text"></i>
+    Nombre:
+    <br><input type="text" class="form-control" [formControl]="name" size="40">
+    
+
+
+
+  </label><br>
+  <label><i class="fas fa-envelope prefix grey-text"></i>
+    Email:
+    <br><input type="text" class="form-control" [formControl]="email" size="40">
+    <div *ngIf="email.hasError('email')">
+      Ingrese un email valido
+    </div>
+  </label><br>
+  <label><i class="fas fa-pencil-alt prefix grey-text"></i>
+    Mensaje:
+    <br><textarea class="form-control" name="" id="" cols="40" rows="5"></textarea>
+  </label>
+</form>
+
+  <br>
+  <button class="btn btn-primary" (click)="enviarMail()">Enviar</button>
+
+  </div>
+    <!-- Grid column -->
+    <div class="col-md-3 text-center">
+        <ul class="list-unstyled mb-0">
+          <li>
+            <i class="fas fa-map-marker-alt fa-2x blue-text"></i>
+            <p>Escuela Superior Politécnica del Litoral - Campus Gustavo Galindo</p>
+          </li>
+          <li>
+            <i class="fas fa-phone fa-2x mt-4 blue-text"></i>
+            <p>+ 593 947161198</p>
+          </li>
+          <li>
+            <i class="fas fa-envelope fa-2x mt-4 blue-text"></i>
+            <p class="mb-0">info@tarjetaverde.com</p>
+          </li>
+        </ul>
+      </div>
+      <!-- Grid column -->
+  
+    </div>
+    <!-- Grid row -->
+ 
+</section>
+<!-- Section: Contact v.2 -->
