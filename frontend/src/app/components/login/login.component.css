@@ -14,7 +14,7 @@ body {
 }
 /* Menu - profile */
 .bg-card-user {
-	background: rgba(0,77,64,.5);
+	background: rgba(42, 85, 61, 0.5);
 	padding: 15px 0;
 }
 .truncate >img {
