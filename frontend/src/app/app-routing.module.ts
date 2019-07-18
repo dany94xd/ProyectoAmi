@@ -22,6 +22,8 @@ import { RouterModule, Routes,PreloadAllModules } from '@angular/router';
 import { InstitucionesComponent } from './components/instituciones/instituciones.component';
 import { EmployeeComponent } from './components/employee/employee.component';
 import { PersonaComponent } from './components/persona/persona.component';
+import { LoginRecicladorComponent } from './components/login-reciclador/login-reciclador.component';
+import { PerfilRecicladorComponent } from './components/perfil-reciclador/perfil-reciclador.component';
 
 
 
@@ -38,7 +40,9 @@ const routes: Routes = [
   { path: 'user/portfolio',component:PortfolioComponent},
   { path: 'user/nosotros', component: NosotrosComponent },
   { path: 'user/contactanos', component: FormComponent },
-
+  
+  { path: 'loginReciclador', component: LoginRecicladorComponent},
+  { path: 'perfilreciclador', component: PerfilRecicladorComponent},
 
   { path: '**', component: Page404Component },
  
