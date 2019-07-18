@@ -44,6 +44,14 @@ import { EmployeeComponent } from './components/employee/employee.component';
 import { InstitucionesComponent } from './components/instituciones/instituciones.component';
 //import { AppRoutingModule } from './/app-routing.module';
 import { PersonaComponent } from './components/persona/persona.component';
+
+
+import { LoginrecolectorComponent } from './components/user/loginrecolector/loginrecolector.component';
+import { PerfilrecolectorComponent } from './components/user/perfilrecolector/perfilrecolector.component';
+
+import { LoginRecicladorComponent } from './components/login-reciclador/login-reciclador.component';
+import { PerfilRecicladorComponent } from './components/perfil-reciclador/perfil-reciclador.component';
+
 //import { LoginComponent } from './components/login/login.component';
 
 
@@ -66,7 +74,16 @@ import { PersonaComponent } from './components/persona/persona.component';
     EmployeeComponent,
     InstitucionesComponent,
     PersonaComponent,
-    FormComponent
+    FormComponent,
+
+    
+    LoginrecolectorComponent,
+    
+    PerfilrecolectorComponent,
+
+    LoginRecicladorComponent,
+    PerfilRecicladorComponent
+
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule,AngularFontAwesomeModule, MDBBootstrapModule.forRoot()],
   bootstrap: [AppComponent],

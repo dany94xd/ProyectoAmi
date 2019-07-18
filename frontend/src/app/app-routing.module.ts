@@ -16,12 +16,20 @@ import { ProfileComponent } from 'src/app/components/user/profile/profile.compon
 import { Page404Component } from 'src/app/components/page404/page404.component';
 
 
+
 ///nuevas lineas
 
 import { RouterModule, Routes,PreloadAllModules } from '@angular/router';
 import { InstitucionesComponent } from './components/instituciones/instituciones.component';
 import { EmployeeComponent } from './components/employee/employee.component';
 import { PersonaComponent } from './components/persona/persona.component';
+
+import { LoginrecolectorComponent } from './components/user/loginrecolector/loginrecolector.component';
+import { PerfilrecolectorComponent } from './components/user/perfilrecolector/perfilrecolector.component';
+
+import { LoginRecicladorComponent } from './components/login-reciclador/login-reciclador.component';
+import { PerfilRecicladorComponent } from './components/perfil-reciclador/perfil-reciclador.component';
+
 
 
 
@@ -38,6 +46,13 @@ const routes: Routes = [
   { path: 'user/portfolio',component:PortfolioComponent},
   { path: 'user/nosotros', component: NosotrosComponent },
   { path: 'user/contactanos', component: FormComponent },
+
+  { path: 'user/loginrecolector', component: LoginrecolectorComponent },
+  { path: 'user/perfilrecolector', component: PerfilrecolectorComponent },
+
+  
+  { path: 'loginReciclador', component: LoginRecicladorComponent},
+  { path: 'perfilreciclador', component: PerfilRecicladorComponent},
 
 
   { path: '**', component: Page404Component },

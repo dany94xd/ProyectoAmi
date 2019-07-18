@@ -1,0 +1,37 @@
+.bg-light{
+    background-color: #fcfcfc !important;
+}
+
+#botondere{
+    position:absolute;
+    right:5%;
+    margin-top: -50px;
+}
+
+#datos{
+
+    padding-left:250px;
+ margin-top: 0px;
+    position: absolute;
+  
+ 
+ }
+
+
+ #cc-expiration{
+     margin-left: 300px;
+     margin-top: -40px;
+ }
+
+
+ #numbotellas{
+    margin-top: 50px;
+  }
+
+ 
+
+  #dato{
+position: absolute;
+    padding-left:300px;
+  margin-top: -45px;
+  }
