@@ -51,6 +51,7 @@ import { PerfilrecolectorComponent } from './components/user/perfilrecolector/pe
 
 import { LoginRecicladorComponent } from './components/login-reciclador/login-reciclador.component';
 import { PerfilRecicladorComponent } from './components/perfil-reciclador/perfil-reciclador.component';
+import { PerfilsponsorComponent } from './components/user/perfilsponsor/perfilsponsor.component';
 
 //import { LoginComponent } from './components/login/login.component';
 
@@ -82,7 +83,8 @@ import { PerfilRecicladorComponent } from './components/perfil-reciclador/perfil
     PerfilrecolectorComponent,
 
     LoginRecicladorComponent,
-    PerfilRecicladorComponent
+    PerfilRecicladorComponent,
+    PerfilsponsorComponent
 
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule,AngularFontAwesomeModule, MDBBootstrapModule.forRoot()],
