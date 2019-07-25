@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from 'src/app/components/home/home.component';
 import { NosotrosComponent } from 'src/app/components/user/nosotros/nosotros.component';
 import { PortfolioComponent } from 'src/app/components/user/portfolio/portfolio.component';
+import { PremiosComponent } from 'src/app/components/user/premios/premios.component';
+
+
 import { OffersComponent } from 'src/app/components/user/offers/offers.component';
 
 
@@ -44,6 +47,7 @@ const routes: Routes = [
   { path: 'user/register', component: RegisterComponent },
   { path: 'user/profile', component: ProfileComponent }, // TODO: only users auth
   { path: 'user/portfolio',component:PortfolioComponent},
+  { path: 'user/premios',component:PremiosComponent},
   { path: 'user/nosotros', component: NosotrosComponent },
   { path: 'user/contactanos', component: FormComponent },
 

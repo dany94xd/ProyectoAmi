@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
  // constructor(private dataApi: DataApiService) {}
  // private books: BookInterface;
   //private eventos:EventoInterface;
+  
   ngOnInit() {
    //this.getListBooks();
     //this.getListEventos();
