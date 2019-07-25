@@ -31,6 +31,9 @@ import { LoginRecicladorComponent } from './components/login-reciclador/login-re
 import { PerfilRecicladorComponent } from './components/perfil-reciclador/perfil-reciclador.component';
 import { PerfilsponsorComponent } from './components/user/perfilsponsor/perfilsponsor.component';
 
+import { RegistroComponent } from './components/user/registro/registro.component';
+import { LogrosComponent } from './components/logros/logros.component';
+import { ReportesComponent } from './components/reportes/reportes.component';
 
 
 
@@ -39,6 +42,9 @@ const routes: Routes = [
   { path: 'empleados', component: EmployeeComponent},
   { path: 'instituciones', component: InstitucionesComponent },
   { path: 'personas', component: PersonaComponent },
+
+  { path: 'logros', component: LogrosComponent },
+  { path: 'reportes', component: ReportesComponent },
 
   { path: 'user/offers', component: OffersComponent }, 
   { path: 'user/login', component: LoginComponent },
@@ -54,6 +60,8 @@ const routes: Routes = [
   
   { path: 'loginReciclador', component: LoginRecicladorComponent},
   { path: 'perfilreciclador', component: PerfilRecicladorComponent},
+  { path: 'user/registro', component: RegistroComponent},
+
 
 
 
