@@ -32,6 +32,7 @@ import { PerfilrecolectorComponent } from './components/user/perfilrecolector/pe
 
 import { LoginRecicladorComponent } from './components/login-reciclador/login-reciclador.component';
 import { PerfilRecicladorComponent } from './components/perfil-reciclador/perfil-reciclador.component';
+import { PerfilsponsorComponent } from './components/user/perfilsponsor/perfilsponsor.component';
 
 
 
@@ -53,10 +54,14 @@ const routes: Routes = [
 
   { path: 'user/loginrecolector', component: LoginrecolectorComponent },
   { path: 'user/perfilrecolector', component: PerfilrecolectorComponent },
-
+  { path: 'user/perfilsponsor', component: PerfilsponsorComponent},
   
   { path: 'loginReciclador', component: LoginRecicladorComponent},
   { path: 'perfilreciclador', component: PerfilRecicladorComponent},
+
+
+
+
 
 
   { path: '**', component: Page404Component },

@@ -1,0 +1,21 @@
+.bg-light {
+    background-color: #fcfcfc !important;
+}
+
+#razon{
+    position: absolute;
+    margin-left:310px;
+    margin-top: -85px;
+}
+
+#sociedad{
+    position: absolute;
+    margin-left:295px;
+    margin-top: -55px;
+}
+
+#nombre{
+    position: absolute;
+    margin-left:120;
+    margin-top: -55px;
+}
