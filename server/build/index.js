@@ -15,7 +15,7 @@ class Server {
         this.routes();
     }
     config() {
-        this.app.set('port', process.env.port || 3003);
+        this.app.set('port', process.env.port || 5100);
         this.app.use(morgan_1.default('dev'));
         this.app.use(cors_1.default());
         this.app.use(express_1.default.json());
