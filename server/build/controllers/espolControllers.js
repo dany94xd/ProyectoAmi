@@ -15,7 +15,7 @@ const database_1 = __importDefault(require("../database"));
 class EspolControllers {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const espol = yield database_1.default.query('select usuario.id_persona, usuario.identificacion, persona.cedula, persona.nombre, persona.apellido from usuario inner join persona on usuario.id_persona=persona.id_persona');
+            const espol = yield database_1.default.query('select usuario.id, usuario.identificacion, persona.cedula, persona.nombre, persona.apellido from usuario inner join persona on usuario.id_persona=persona.id');
             res.json(espol);
         });
     }
