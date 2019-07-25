@@ -5,7 +5,7 @@ const app = express();
 var path = require('path')
 
 // Settings
-app.set('port', process.env.PORT || 3030);
+app.set('port', process.env.PORT || 5110);
 
 // Middlewares
 app.use('/',express.static('client',{redirect:false}));
