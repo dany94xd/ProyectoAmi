@@ -4,8 +4,7 @@
       <div class="card">
         <div class="card-content">
           <form #reportesForm="ngForm" (ngSubmit)="addReportes(reportesForm)">
-            <input type="hidden" name="_id" #_id="ngModel" 
-            [(ngModel)]="reportesService.selectedReportes._id">
+ 
             <div class="row">
               <div class="input-field col-s12">
                 <input type="text" name="idReportes" #name="ngModel" 
@@ -21,7 +20,7 @@
               </div>
               <div class="input-field col-s12">
                 <input type="text" name="numBotellas" #name="ngModel" 
-                [(ngModel)]="reportesService.selectedReportes.numBotellas" value="0" placeholder="numBotellas">
+                [(ngModel)]="reportesService.selectedReportes.numBotellas"  placeholder="numBotellas">
               </div>
      
               <div class="card-action">
@@ -46,7 +45,7 @@
           <th>Operaciones</th>
         </thead>
         <tbody>
-          <tr *ngFor="let logros of logrosService.logros">
+          <tr *ngFor="let reportes of reportesService.reportes">
             <td>{{ reportes.idReportes }}</td>
             <td>{{ reportes.idInstitucion }}</td>
             <td>{{ reportes.fecha }}</td>

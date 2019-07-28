@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import {Reportes} from '../../models/reportes'
-
+import { from } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +11,7 @@ export class ReportesService {
   selectedReportes: Reportes;
   reportes: Reportes[];
   
- readonly URL_API = 'http://162.212.130.145:3000/api/reportes';
+ readonly URL_API = 'http://162.212.130.145/api/reportes';
   
 
   constructor(public http: HttpClient) {
