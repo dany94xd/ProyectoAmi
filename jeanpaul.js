@@ -6,7 +6,7 @@ const { mongoose } = require('./database');
 //var path = require('path')
 
 // Settings
-app.set('port', process.env.PORT || 3002);
+app.set('port', process.env.PORT || 3006);
 
 // Middlewares
 //app.use('/',express.static('client',{redirect:false}));
