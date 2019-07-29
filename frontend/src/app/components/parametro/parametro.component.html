@@ -1,11 +1,11 @@
 <br>
 <br>
-<br>
-<br>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
 
 
 <div class="container">
+    <h3 class="center">TABLA PARAMETROS</h3>
   <div class="row">
     <div class="col s5">
       <div class="card">
@@ -13,29 +13,37 @@
           <form #parametroForm="ngForm" (ngSubmit)="addParametro(parametroForm)">
             <input type="hidden" name="_id" #_id="ngModel" 
             [(ngModel)]="serviceParametro.selectedParametro._id">
-            <div class="row">
+            <div>
               <div class="input-field col-s12">
+                  <label>Ingresar id parametro</label>
                 <input type="text" name="idParametro" #name="ngModel" 
                 [(ngModel)]="serviceParametro.selectedParametro.idParametro" placeholder="idParametro">
               </div>
-            
+            </div>
+
+            <div>
               <div class="input-field col-s12">
+                  <label>Ingresar nombre parametro</label>
                 <input type="text" name="nombreParametro" #name="ngModel" 
                 [(ngModel)]="serviceParametro.selectedParametro.nombreParametro" placeholder="nombreParametro">
               </div>
-
+            </div>
+            
+             <div>
               <div class="input-field col-s12">
+                  <label>Ingresar valor del parametro</label>
                 <input type="text" name="valor" #name="ngModel" 
                 [(ngModel)]="serviceParametro.selectedParametro.valor" placeholder="valor">
               </div>
-     
+            </div>
+
               <div class="card-action">
                 <div class="input-field col-s12">
                   <button class="btn right  purple darken-4" (click)="resetForm(reportesForm)">Limpiar</button>
                   <button class="btn ">Guardar</button>
                 </div>
               </div>
-            </div>
+            
           </form>
         </div>
       </div>
@@ -43,16 +51,16 @@
     <div class="col s7">
       <table class="striped highlight black-text">
         <thead>
-          <th>id Parametro</th>
-          <th>nombre Parametro</th>
-          <th>valor</th>
+          <th>Id Parametro</th>
+          <th>Nombre Parametro</th>
+          <th>Valor</th>
 
           <th>Operaciones</th>
         </thead>
         <tbody>
           <tr *ngFor="let parametro of serviceParametro.parametro">
-            <td>{{parametro.idParametro }}</td>
-            <td>{{parametro.nombreParametro }}</td>
+            <td>{{parametro.idParametro}}</td>
+            <td>{{parametro.nombreParametro}}</td>
             <td>{{parametro.valor }}</td>
             
             

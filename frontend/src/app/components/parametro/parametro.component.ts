@@ -26,6 +26,7 @@ export class ParametroComponent implements OnInit {
   public getParametro(){
     this.serviceParametro.getParametro().subscribe(res=> {
       this.serviceParametro.parametro = res as Parametro[];
+      console.log(this.serviceParametro);
     });
   }
 

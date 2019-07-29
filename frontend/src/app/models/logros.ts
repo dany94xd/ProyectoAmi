@@ -2,7 +2,7 @@ export class Logros {
 
 
 
-    constructor(_id = '', idLogro = 0, idInstitucion = 0, nombre = '', minBotellas = 0, maxBotellas = 0) {
+    constructor(_id = '', idLogro = '', idInstitucion = '', nombre = '', minBotellas = 0, maxBotellas = 0) {
         this._id = _id;
         this.idLogro = idLogro;
         this.idInstitucion = idInstitucion;
@@ -11,8 +11,8 @@ export class Logros {
         this.maxBotellas = maxBotellas;
     }
     _id: string;
-    idLogro: Number;
-    idInstitucion: Number;
+    idLogro: string;
+    idInstitucion: string;
     nombre: string;
     minBotellas: Number;
     maxBotellas: Number;

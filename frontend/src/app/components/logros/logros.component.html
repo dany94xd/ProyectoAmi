@@ -6,7 +6,7 @@
 
           /////////////////ingresos de nuevos datos para la tabla
           <form #logrosForm="ngForm" (ngSubmit)="addLogros(logrosForm)">
-          <form #logroForm="ngForm" (ngSubmit)="addReportes(logroForm)">
+          
             <input type="hidden" name="_id" #_id="ngModel" 
             [(ngModel)]="logrosService.selectedLogros._id">
             <div class="row">
@@ -80,7 +80,7 @@
   </div>
 </div> -->
 
-  <div class="row mt-5">
+  <!-- <div class="row mt-5">
   <div class="col">
     <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalLogros" (click)="resetForm()">Nuevo Logro</button>
     <table class="table table-hover">
@@ -99,8 +99,8 @@
         </tr>
       </thead>
       <tbody>
-        <!-- <tr *ngFor="let logros of serviceLogros.logros"> -->
-            <tr >
+         <tr *ngFor="let logros of serviceLogros.logros"> -->
+            <!-- <tr >
           <th scope="row"> {{i+1}}</th>
           <td>{{logros.idLogro}}</td>
           <td>{{logros.idInstitucion}}</td>
@@ -118,7 +118,108 @@
       </tbody>
     </table>
   </div>
-</div> 
+</div>  -->
+
+<br>
+<br>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+
+<div class="container">
+    <h3 class="center">TABLA LOGROS</h3>
+  <div class="row">
+    <div class="col s5">
+      <div class="card">
+        <div class="card-content">
+            <form #logrosForm="ngForm" (ngSubmit)="addLogros(logrosForm)">
+          
+                <input type="hidden" name="_id" #_id="ngModel" 
+                [(ngModel)]="logrosService.selectedLogros._id">
+                <div>
+                  <div class="input-field col-s12">
+                    <label>Ingresar id logro</label>
+                    <input type="text" name="idLogro" #name="ngModel" 
+                    [(ngModel)]="logrosService.selectedLogros.idLogro" placeholder="idLogro">
+                  </div>
+                </div>
+              <div>
+                  <div class="input-field col-s12">
+                      <label>Ingresar id institucion</label>
+                    <input type="text" name="idInstitucion" #name="ngModel" 
+                    [(ngModel)]="logrosService.selectedLogros.idInstitucion" placeholder="nombre de la institucion">
+                  </div>
+                </div>
+              <div>
+                  <div class="input-field col-s12">
+                      <label>Ingresar nombre</label>
+                    <input type="text" name="nombre" #name="ngModel" 
+                    [(ngModel)]="logrosService.selectedLogros.nombre" placeholder="nombre">
+                  </div>
+                </div>
+              <div>
+                  <div class="input-field col-s12">
+                      <label>Ingresar minimo botellas</label>
+                    <input type="text" name="minBotellas" #name="ngModel" 
+                    [(ngModel)]="logrosService.selectedLogros.minBotellas"  placeholder="minBotellas">
+                  </div>
+                </div>
+    
+              <div>
+                  <div class="input-field col-s12">
+                      <label>Ingresar maximo botellas</label>
+                    <input type="text" name="maxBotellas" #name="ngModel" 
+                    [(ngModel)]="logrosService.selectedLogros.maxBotellas"  placeholder="maxBotellas">
+                  </div>
+                </div>
+                 
+                  <div class="card-action">
+                    <div class="input-field col-s12">
+                      <button class="btn right  purple darken-4" (click)="resetForm(logroForm)">Limpiar</button>
+                      <button class="btn ">Guardar</button>
+                    </div>
+                  </div>
+               
+              </form>
+              <!-- estructura de la tabla logros-->
+        </div>
+      </div>
+    </div>
+    <div class="col s7">
+        <table class="striped highlight black-text">
+          <thead>
+            <th>Id Logro</th>
+            <th>Id Institucion</th>
+            <th>Nombre</th>
+            <th>Minimo Botellas</th>
+            <th>Maximo Botellas</th>
+  
+            <th>Operaciones</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let logro of logrosService.logro">
+              <td>{{ logro.idLogro }}</td>
+              <td>{{ logro.idInstitucion }}</td>
+              <td>{{ logro.nombre }}</td>
+              <td>{{ logro.minBotellas }}</td>
+              <td>{{ logro.maxBotellas }}</td>
+              
+              
+              <td>
+                <a (click)="editLogros(reportes)">
+                  <i class="material-icons">edit</i>
+                </a>
+                <a (click)="deleteLogros(logro._id, logroForm)">
+                  <i class="material-icons">delete</i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
+</div>
+
 
 
 
