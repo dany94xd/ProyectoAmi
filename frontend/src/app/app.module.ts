@@ -7,7 +7,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NosotrosComponent } from './components/user/nosotros/nosotros.component';
+
 import { PortfolioComponent } from './components/user/portfolio/portfolio.component';
+import { PremiosComponent } from './components/user/premios/premios.component';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { OffersComponent } from './components/user/offers/offers.component';
@@ -65,6 +67,7 @@ import { ReportesComponent } from './components/reportes/reportes.component';
     HomeComponent,
     NosotrosComponent,
     PortfolioComponent,
+    PremiosComponent,
     
     NavbarComponent,
     OffersComponent,

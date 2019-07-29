@@ -38,12 +38,12 @@ export class LogrosComponent implements OnInit {
       this.logrosService.deleteLogros(_id).subscribe(res => {
         this.getLogros();
         this.resetForm();
-        M.toast({html: 'Logo eliminada'});
+        M.toast({html: 'Logro eliminada'});
       });
     }
   }
-  editPersona(persona: Logros, form: NgForm){
-    this.logrosService.selectedLogros = persona;
+  editLogros(logro: Logros, form: NgForm){
+    this.logrosService.selectedLogros = logro;
   }
   resetForm(form?: NgForm) {
     if (form) {

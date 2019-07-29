@@ -14,7 +14,7 @@ export class LogrosService {
   selectedLogros: Logros;
   logro: Logros[];
   
- readonly URL_API = 'http://162.212.130.145/api/logros';
+ readonly URL_API = 'http://162.212.130.145:3002/api/logros';
   
 
   constructor(public http: HttpClient) {

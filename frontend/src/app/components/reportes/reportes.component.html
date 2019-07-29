@@ -3,18 +3,24 @@
     <div class="col s5">
       <div class="card">
         <div class="card-content">
-          <form #reportesForm="ngForm" (ngSubmit)="addReportes(reportesForm)">
- 
+          <form #reporteForm="ngForm" (ngSubmit)="addReportes(reporteForm)">
+            <input type="hidden" name="_id" #_id="ngModel" 
+            [(ngModel)]="reportesService.selectedReportes._id">
             <div class="row">
               <div class="input-field col-s12">
-                <input type="text" name="idReportes" #name="ngModel" 
-                [(ngModel)]="reportesService.selectedReportes.idReportes" placeholder="idReportes">
+                <input type="text" name="idReporte" #name="ngModel" 
+                [(ngModel)]="reportesService.selectedReportes.idReporte" placeholder="Id Reporte">
               </div>
               <div class="input-field col-s12">
                 <input type="text" name="idInstitucion" #name="ngModel" 
-                [(ngModel)]="reportesService.selectedReportes.idInstitucion" placeholder="idInstitucion">
+                [(ngModel)]="reportesService.selectedReportes.idInstitucion" placeholder="nombre de la institucion">
               </div>
+
+
+         
+
               <div class="input-field col-s12">
+                
                 <input type="text" name="fecha" #name="ngModel" 
                 [(ngModel)]="reportesService.selectedReportes.fecha" placeholder="fecha">
               </div>
@@ -22,10 +28,10 @@
                 <input type="text" name="numBotellas" #name="ngModel" 
                 [(ngModel)]="reportesService.selectedReportes.numBotellas"  placeholder="numBotellas">
               </div>
-     
+             
               <div class="card-action">
                 <div class="input-field col-s12">
-                  <button class="btn right  purple darken-4" (click)="resetForm(reportesForm)">Limpiar</button>
+                  <button class="btn right  purple darken-4" (click)="resetForm(reporteForm)">Limpiar</button>
                   <button class="btn ">Guardar</button>
                 </div>
               </div>
