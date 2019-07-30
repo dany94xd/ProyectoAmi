@@ -8,7 +8,7 @@ import { Institucion } from 'src/app/models/institucion';
 })
 export class PersonasService {
 
-  readonly URL_API = 'http://162.212.130.145/api/personas';
+  readonly URL_API = 'http://162.212.130.145:3002/api/personas';
 
   selectPersona: Persona
   personas: Persona[];
