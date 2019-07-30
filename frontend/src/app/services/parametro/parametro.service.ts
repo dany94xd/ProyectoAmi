@@ -11,7 +11,7 @@ export class ParametroService {
   selectedParametro: Parametro;
   parametro: Parametro[];
   
- readonly URL_API = 'http://162.212.130.145:3000/api/parametros';
+ readonly URL_API = 'http://162.212.130.145:3002/api/parametros';
   
 
   constructor(public http: HttpClient) {
