@@ -1,6 +1,6 @@
 'use strict'
 
-const authRoutes = require('./routes/auth.routes')
+//const authRoutes = require('./routes/auth.routes')
 const express = require('express');
 const cors = require('cors');
 const app = express();
@@ -23,13 +23,13 @@ const bodyParserURLEncoded = bodyParse.urlencoded({extended:true})
 //usando el body parse
 app.use(bodyParseJson)
 app.use(bodyParserURLEncoded)
-app.use('/api',router)
-authRoutes(router)
+//app.use('/api',router)
+//authRoutes(router)
 //router.get('/',(req,res)=>{
  //   res.send("hello")
 //}) //rama home prueba pero ya no sirve por el dist
 
-app.use(router)
+//app.use(router)
 
 
 

@@ -1,5 +1,7 @@
 const Usuario = require('../models/usuario');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken')
+const SECRET_KEY ='secretkey94'
 
 //mongoose.set('useCreateIndex',true);
 
@@ -61,4 +63,67 @@ usuarioCtrl.deleteUsuario = async (req, res, next) => {
     res.json({status: 'Usuario Deleted'});
 };
 
+// usuarioCtrl.createUser=async(req,res,next)=>{
+//     const newUser = new Usuario({
+//         user:req.body.user,
+//         password:bcrypt.hashSync(req.body.password)
+//     })
+//     User.create=(newUser,(err,user)=>{
+//        if(err)return res.status(500).send('server error');
+//        const expiresIn = 24*60*60;
+//        const accesToken = jwt.sign({id:user.id},
+//            SECRET_KEY,{
+//                expiresIn:expiresIn
+//            });
+//            const dataUser={
+//                user:user.user,
+//                accesToken:accesToken,
+//                expiresIn:expiresIn
+//            }
+   
+//         //response
+//         //res.send({user});
+//         res.send({dataUser});
+   
+//     })
+   
+//    }
+
+
+///login 
+
+
+usuarioCtrl.loginUser=(req,res,next)=>{
+    const userData={
+        user:req.body.user,
+        password:req.body.password
+    }
+
+    Usuario.findOne({user:userData.user},(err,user)=>{
+        if(err)return res.status(500).send('error en servidor');
+        if (!user){
+            //email does not exist
+            res.status(409).send({message:'somthing is worng'});
+    
+        }else {
+            const resultPassword = bcrypt.compareSync(userData.password,user.password);
+            if(resultPassword){
+                const expiresIn=24*60*60;
+                const accesToken = jwt.sign({id:user.id},SECRET_KEY,{
+                    expiresIn:expiresIn
+                }); 
+    
+                const dataUser={
+                    user:user.user,
+                    accesToken:accesToken,
+                    expiresIn:expiresIn
+                }
+                res.send({dataUser})
+            } else{
+                //paswword wrong
+                res.status(409).send({message:"error de password"});
+            }
+        }
+    })
+}
 module.exports = usuarioCtrl;
