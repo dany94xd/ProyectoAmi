@@ -40,6 +40,8 @@ import { ReportesComponent } from './components/reportes/reportes.component';
 
 import { ParametroComponent } from './components/parametro/parametro.component';
 
+import { EventoComponent } from './components/evento/evento.component';
+
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'empleados', component: EmployeeComponent},
@@ -48,6 +50,7 @@ const routes: Routes = [
 
   { path: 'logros', component: LogrosComponent },
   { path: 'reportes', component: ReportesComponent },
+  { path: 'evento', component: EventoComponent },
 
   { path: 'parametro', component: ParametroComponent },
   
