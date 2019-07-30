@@ -3,6 +3,17 @@
 <br>
 <br>
 
+<header>
+  <nav class="estiloNav">
+    <ul>
+      <li><a href="/instituciones">Instituciones</a></li>
+      <li><a href="/personas">Personas</a></li>
+      <li><a href="/evento">Eventos</a></li>
+      <li><a href="/logros">Logros</a></li>
+      <li><a href="/personas">Personas</a></li>
+    </ul>
+  </nav>
+</header>
 
 <div class="container">
 
@@ -32,6 +43,9 @@
                 </div>
 
                 <div class="input-field col-s12">
+                    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
                     <input type="text" name="fechainicio" #name="ngModel" 
                     [(ngModel)]="eventoService.selectedEvento.fechainicio" placeholder="fechainicio">
                   </div>

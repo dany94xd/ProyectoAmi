@@ -4,8 +4,8 @@ import { EventoService } from '../../services/evento/evento.service';
 import { Evento } from 'src/app/models/evento'
 declare var M: any;
 @Component({
-  selector: 'app-evento',
-  templateUrl: './evento.component.html',
+  selector: 'datepicker-overview-app-evento',
+  templateUrl: '/evento.component.html',
   styleUrls: ['./evento.component.scss']
 })
 export class EventoComponent implements OnInit {
