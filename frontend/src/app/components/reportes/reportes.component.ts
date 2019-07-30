@@ -24,7 +24,7 @@ export class ReportesComponent implements OnInit {
   
     console.log(form.value);
     if(form.value._id){
-      this.reportesService.postReportes(form.value).subscribe(res => {
+      this.reportesService.putReportes(form.value).subscribe(res => {
         this.getReportes();
         M.toast({html: 'reporte guardado'});
       })

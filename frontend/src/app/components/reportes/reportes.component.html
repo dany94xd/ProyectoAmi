@@ -1,7 +1,14 @@
 <br>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+<br>
+<br>
+
 
 <div class="container">
+
+    <h3 class="center">TABLA REPORTES</h3>
+    <br>
+<br>
   <div class="row">
     <div class="col s5">
       <div class="card">
@@ -28,8 +35,8 @@
                 [(ngModel)]="reportesService.selectedReportes.fecha" placeholder="fecha">
               </div>
               <div class="input-field col-s12">
-                <input type="text" name="numBotellas" #name="ngModel" 
-                [(ngModel)]="reportesService.selectedReportes.numBotellas"  placeholder="numBotellas">
+                <input type="text" name="NumBotellas" #name="ngModel" 
+                [(ngModel)]="reportesService.selectedReportes.NumBotellas"  placeholder="NumBotellas">
               </div>
              
               <div class="card-action">
@@ -49,16 +56,16 @@
           <th>idReportes</th>
           <th>idInstitucion</th>
           <th>fecha</th>
-          <th>numBotellas</th>
+          <th>NumBotellas</th>
 
           <th>Operaciones</th>
         </thead>
         <tbody>
           <tr *ngFor="let reportes of reportesService.reportes">
-            <td>{{ reportes.idReportes }}</td>
+            <td>{{ reportes.idReporte }}</td>
             <td>{{ reportes.idInstitucion }}</td>
             <td>{{ reportes.fecha }}</td>
-            <td>{{ reportes.numBotellas }}</td>
+            <td>{{ reportes.NumBotellas }}</td>
             
             
             <td>
