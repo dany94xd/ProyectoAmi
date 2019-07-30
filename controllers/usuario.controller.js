@@ -115,6 +115,7 @@ usuarioCtrl.loginUser=(req,res,next)=>{
     
                 const dataUser={
                     user:user.user,
+                    idRol:user.idRol,
                     accesToken:accesToken,
                     expiresIn:expiresIn
                 }
