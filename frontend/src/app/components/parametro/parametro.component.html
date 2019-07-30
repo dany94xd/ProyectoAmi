@@ -1,11 +1,28 @@
 <br>
 <br>
 
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
 
 
+<header>
+    <nav class="estiloNav">
+      <ul>
+        <li><a href="/instituciones">Instituciones</a></li>
+        <li><a href="/personas">Personas</a></li>
+        <li><a href="/evento">Eventos</a></li>
+        <li><a href="/logros">Logros</a></li>
+        <li><a href="/personas">Personas</a></li>
+        <li><a href="/reportes">Reportes</a></li>
+        <li><a href="/parametro">Parametros</a></li>
+      </ul>
+    </nav>
+  </header>
+
 <div class="container">
+  
     
+
     <h3 class="center">TABLA PARAMETROS</h3>
   <div class="row">
     <div class="col s5">
@@ -16,7 +33,9 @@
             [(ngModel)]="serviceParametro.selectedParametro._id">
             <div>
               <div class="input-field col-s12">
+                <div>
                   <label>Ingresar id parametro</label>
+                </div>
                 <input type="text" name="idParametro" #name="ngModel" 
                 [(ngModel)]="serviceParametro.selectedParametro.idParametro" placeholder="idParametro">
               </div>
@@ -24,7 +43,9 @@
 
             <div>
               <div class="input-field col-s12">
+                <div>
                   <label>Ingresar nombre parametro</label>
+                </div>
                 <input type="text" name="nombreParametro" #name="ngModel" 
                 [(ngModel)]="serviceParametro.selectedParametro.nombreParametro" placeholder="nombreParametro">
               </div>
@@ -32,7 +53,9 @@
             
              <div>
               <div class="input-field col-s12">
+                <div>
                   <label>Ingresar valor del parametro</label>
+                </div>
                 <input type="text" name="valor" #name="ngModel" 
                 [(ngModel)]="serviceParametro.selectedParametro.valor" placeholder="valor">
               </div>

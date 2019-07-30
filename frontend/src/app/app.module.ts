@@ -99,12 +99,14 @@ import { EventoComponent } from './components/evento/evento.component';
     ReportesComponent,
     ModalComponent,
     ParametroComponent,
-    EventoComponent
+    EventoComponent,
+    
 
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule,AngularFontAwesomeModule, MDBBootstrapModule.forRoot()],
   bootstrap: [AppComponent],
-  schemas:[NO_ERRORS_SCHEMA]
+  schemas:[NO_ERRORS_SCHEMA],
+ 
 
   
 })
