@@ -57,6 +57,8 @@ import { PerfilsponsorComponent } from './components/user/perfilsponsor/perfilsp
 import { RegistroComponent } from './components/user/registro/registro.component';
 import { LogrosComponent } from './components/logros/logros.component';
 import { ReportesComponent } from './components/reportes/reportes.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { ParametroComponent } from './components/parametro/parametro.component';
 
 //import { LoginComponent } from './components/login/login.component';
 
@@ -93,7 +95,9 @@ import { ReportesComponent } from './components/reportes/reportes.component';
     PerfilsponsorComponent,
     RegistroComponent,
     LogrosComponent,
-    ReportesComponent
+    ReportesComponent,
+    ModalComponent,
+    ParametroComponent
 
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule,AngularFontAwesomeModule, MDBBootstrapModule.forRoot()],

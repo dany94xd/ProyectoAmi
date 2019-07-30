@@ -1,0 +1,70 @@
+<div id="modalLogros" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <!-- datos puro sin interfaces -->
+        <div class="modal-body">
+          <form class="form-logros" #logrosForm="ngForm" (ngSubmit)="addLogros(logrosForm)">
+            <input type="hidden"  name="_id" #_id="ngModel" [(ngModel)]="logrosService.selectedLogros._id">
+            <!-- ////// -->
+
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                  <input type="text" name="idLogro" #name="ngModel" 
+                  [(ngModel)]="logrosService.selectedLogros.idLogro" placeholder="idLogro">
+  
+              </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="text" name="idInstitucion" #name="ngModel" 
+                [(ngModel)]="logrosService.selectedLogros.idInstitucion" placeholder="idInstitucion">
+              </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="text" name="nombre" #name="ngModel" 
+                    [(ngModel)]="logrosService.selectedLogros.nombre" placeholder="nombre">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="text" name="descripcion" #name="ngModel" 
+                    [(ngModel)]="logrosService.selectedLogros.descripcion" value="0" placeholder="descripcion">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="text" name="minBotellas" #name="ngModel" 
+                    [(ngModel)]="logrosService.selectedLogros.minBotellas" placeholder="minBotellas">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="text" name="maxBotellas" #name="ngModel" 
+                    [(ngModel)]="logrosService.selectedLogros.maxBotellas" placeholder="maxBotellas">
+                </div>
+            </div>
+
+
+
+            
+           
+            <button type="submit" class="btn btn-primary float-right">Save Book</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

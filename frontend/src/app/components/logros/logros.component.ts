@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-
-import { NgForm } from '@angular/forms';
 import { LogrosService } from 'src/app/services/logros/logros.service';
-import { Logros } from 'src/app/models/logros';
+import { Logros } from '../../models/logros';
+import { NgForm } from '@angular/forms';
+import { stringify } from 'querystring';
+
 declare var M: any;
+
 
 @Component({
   selector: 'app-logros',
@@ -51,5 +53,7 @@ export class LogrosComponent implements OnInit {
       this.logrosService.selectedLogros = new Logros();
     }
   }
+   
+ } 
 
-}
+
