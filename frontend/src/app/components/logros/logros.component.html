@@ -6,6 +6,7 @@
 
           /////////////////ingresos de nuevos datos para la tabla
           <form #logrosForm="ngForm" (ngSubmit)="addLogros(logrosForm)">
+          <form #logroForm="ngForm" (ngSubmit)="addReportes(logroForm)">
             <input type="hidden" name="_id" #_id="ngModel" 
             [(ngModel)]="logrosService.selectedLogros._id">
             <div class="row">
@@ -15,30 +16,25 @@
               </div>
               <div class="input-field col-s12">
                 <input type="text" name="idInstitucion" #name="ngModel" 
-                [(ngModel)]="logrosService.selectedLogros.idInstitucion" placeholder="idInstitucion">
+                [(ngModel)]="logrosService.selectedLogros.idInstitucion" placeholder="nombre de la institucion">
               </div>
               <div class="input-field col-s12">
                 <input type="text" name="nombre" #name="ngModel" 
                 [(ngModel)]="logrosService.selectedLogros.nombre" placeholder="nombre">
               </div>
               <div class="input-field col-s12">
-                <input type="text" name="descripcion" #name="ngModel" 
-                [(ngModel)]="logrosService.selectedLogros.descripcion" value="0" placeholder="descripcion">
-              </div>
-              <div class="input-field col-s12">
                 <input type="text" name="minBotellas" #name="ngModel" 
-                [(ngModel)]="logrosService.selectedLogros.minBotellas" placeholder="minBotellas">
+                [(ngModel)]="logrosService.selectedLogros.minBotellas"  placeholder="minBotellas">
               </div>
 
               <div class="input-field col-s12">
                 <input type="text" name="maxBotellas" #name="ngModel" 
-                [(ngModel)]="logrosService.selectedLogros.maxBotellas" placeholder="maxBotellas">
+                [(ngModel)]="logrosService.selectedLogros.maxBotellas"  placeholder="maxBotellas">
               </div>
-
-
+             
               <div class="card-action">
                 <div class="input-field col-s12">
-                  <button class="btn right  purple darken-4" (click)="resetForm(logrosForm)">Limpiar</button>
+                  <button class="btn right  purple darken-4" (click)="resetForm(logroForm)">Limpiar</button>
                   <button class="btn ">Guardar</button>
                 </div>
               </div>
@@ -55,26 +51,25 @@
           <th>idLogro</th>
           <th>idInstitucion</th>
           <th>nombre</th>
-          <th>descripcion</th>
           <th>minBotellas</th>
           <th>maxBotellas</th>
+
           <th>Operaciones</th>
         </thead>
         <tbody>
-          <tr *ngFor="let logros of logrosService.logros">
-            <td>{{ logros.idLogro }}</td>
-            <td>{{ logros.idInstitucion }}</td>
-            <td>{{ logros.nombre }}</td>
-            <td>{{ logros.descripcion }}</td>
-            <td>{{ logros.minBotellas }}</td>
-            <td>{{ logros.maxBotellas }}</td>
+          <tr *ngFor="let logro of logrosService.logro">
+            <td>{{ logro.idLogro }}</td>
+            <td>{{ logro.idInstitucion }}</td>
+            <td>{{ logro.nombre }}</td>
+            <td>{{ logro.minBotellas }}</td>
+            <td>{{ logro.maxBotellas }}</td>
             
             
             <td>
-              <a (click)="editLogros(logros)">
+              <a (click)="editLogros(reportes)">
                 <i class="material-icons">edit</i>
               </a>
-              <a (click)="deleteLogros(logros._id, logrosForm)">
+              <a (click)="deleteLogros(logro._id, logroForm)">
                 <i class="material-icons">delete</i>
               </a>
             </td>

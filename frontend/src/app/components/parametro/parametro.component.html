@@ -1,0 +1,72 @@
+<br>
+<br>
+<br>
+<br>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col s5">
+      <div class="card">
+        <div class="card-content">
+          <form #parametroForm="ngForm" (ngSubmit)="addParametro(parametroForm)">
+            <input type="hidden" name="_id" #_id="ngModel" 
+            [(ngModel)]="serviceParametro.selectedParametro._id">
+            <div class="row">
+              <div class="input-field col-s12">
+                <input type="text" name="idParametro" #name="ngModel" 
+                [(ngModel)]="serviceParametro.selectedParametro.idParametro" placeholder="idParametro">
+              </div>
+            
+              <div class="input-field col-s12">
+                <input type="text" name="nombreParametro" #name="ngModel" 
+                [(ngModel)]="serviceParametro.selectedParametro.nombreParametro" placeholder="nombreParametro">
+              </div>
+
+              <div class="input-field col-s12">
+                <input type="text" name="valor" #name="ngModel" 
+                [(ngModel)]="serviceParametro.selectedParametro.valor" placeholder="valor">
+              </div>
+     
+              <div class="card-action">
+                <div class="input-field col-s12">
+                  <button class="btn right  purple darken-4" (click)="resetForm(reportesForm)">Limpiar</button>
+                  <button class="btn ">Guardar</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col s7">
+      <table class="striped highlight black-text">
+        <thead>
+          <th>id Parametro</th>
+          <th>nombre Parametro</th>
+          <th>valor</th>
+
+          <th>Operaciones</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let parametro of serviceParametro.parametro">
+            <td>{{parametro.idParametro }}</td>
+            <td>{{parametro.nombreParametro }}</td>
+            <td>{{parametro.valor }}</td>
+            
+            
+            <td>
+              <a (click)="editParametro(parametro)">
+                <i class="material-icons">edit</i>
+              </a>
+              <a (click)="deleteParametro(parametro._id, parametroForm)">
+                <i class="material-icons">delete</i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

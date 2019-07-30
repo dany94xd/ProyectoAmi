@@ -12,7 +12,7 @@ import { from } from 'rxjs';
 export class LogrosService {
 
   selectedLogros: Logros;
-  logros: Logros[];
+  logro: Logros[];
   
  readonly URL_API = 'http://162.212.130.145:3002/api/logros';
   
@@ -21,16 +21,16 @@ export class LogrosService {
     this.selectedLogros = new Logros();
   }
 
-  postLogros(logros: Logros) {
-    return this.http.post(this.URL_API, logros);
+  postLogros(logro: Logros) {
+    return this.http.post(this.URL_API, logro);
   }
 
   getLogros() {
     return this.http.get(this.URL_API);
   }
 
-  putLogros(logros: Logros) {
-    return this.http.put(this.URL_API + `/${logros._id}`, logros);
+  putLogros(logro: Logros) {
+    return this.http.put(this.URL_API + `/${logro._id}`, logro);
   }
 
   deleteLogros(_id: string) {

@@ -6,6 +6,7 @@ import { stringify } from 'querystring';
 
 declare var M: any;
 
+
 @Component({
   selector: 'app-logros',
   templateUrl: './logros.component.html',
@@ -13,55 +14,46 @@ declare var M: any;
 })
 export class LogrosComponent implements OnInit {
 
-  constructor( public serviceLogros: LogrosService ) { }
+  constructor(public logrosService: LogrosService) { }
 
   ngOnInit() {
     this.getLogros();
   }
 
+  addLogros(form: NgForm){
+    debugger
+    if(form.value._id){
+      this.logrosService.putLogros(form.value).subscribe(res => {
+        this.getLogros();
+      })
+    }
+  }
 
-  public getLogros(){
-    this.serviceLogros.getLogros().subscribe(res=> {
-      this.serviceLogros.logros = res as Logros[];
+  getLogros(){
+    this.logrosService.getLogros().subscribe(res => {
+      this.logrosService.logro = res as Logros[];
     });
   }
 
-  public addLogros(form?: NgForm){
-    if(form.value._id){
-      this.serviceLogros.putLogros(form.value).subscribe(res => {
-        this.resetForm(form);
+  deleteLogros(_id: string, form: NgForm){
+    if(confirm("Desea eliminar el dato?")){
+      this.logrosService.deleteLogros(_id).subscribe(res => {
         this.getLogros();
-        M.toast({html: 'Logros Actualizado'});
-      });  
-    }else {
-      this.serviceLogros.postLogros(form.value).subscribe(res => {
-        this.getLogros();
-        this.resetForm(form);
-        M.toast({html: 'Se agrego un Logros'});
+        this.resetForm();
+        M.toast({html: 'Logro eliminada'});
       });
     }
-    
   }
-
- deleteLogros(_id: string, form: NgForm){
-  if(confirm('¿Esta seguro de eliminar?')) {
-    this.serviceLogros.deleteLogros(_id).subscribe(res => {
-      this.getLogros();
-      this.resetForm(form);
-      M.toast({html: 'Se elimino un Logros'})
-   })
+  editLogros(logro: Logros, form: NgForm){
+    this.logrosService.selectedLogros = logro;
+  }
+  resetForm(form?: NgForm) {
+    if (form) {
+      form.reset();
+      this.logrosService.selectedLogros = new Logros();
+    }
   }
    
  } 
 
- editLogros(logros: Logros, form: NgForm){
-   this.serviceLogros.selectedLogros = logros;
- }
 
-  resetForm(form?: NgForm) {
-    if (form) {
-      form.reset();
-      this.serviceLogros.selectedLogros = new Logros();
-    }
-  }
-}

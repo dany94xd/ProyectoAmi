@@ -38,7 +38,7 @@ import { RegistroComponent } from './components/user/registro/registro.component
 import { LogrosComponent } from './components/logros/logros.component';
 import { ReportesComponent } from './components/reportes/reportes.component';
 
-
+import { ParametroComponent } from './components/parametro/parametro.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -48,6 +48,9 @@ const routes: Routes = [
 
   { path: 'logros', component: LogrosComponent },
   { path: 'reportes', component: ReportesComponent },
+
+  { path: 'parametro', component: ParametroComponent },
+  
 
   { path: 'user/offers', component: OffersComponent }, 
   { path: 'user/login', component: LoginComponent },

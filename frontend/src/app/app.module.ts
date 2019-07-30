@@ -58,6 +58,7 @@ import { RegistroComponent } from './components/user/registro/registro.component
 import { LogrosComponent } from './components/logros/logros.component';
 import { ReportesComponent } from './components/reportes/reportes.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { ParametroComponent } from './components/parametro/parametro.component';
 
 //import { LoginComponent } from './components/login/login.component';
 
@@ -95,7 +96,8 @@ import { ModalComponent } from './components/modal/modal.component';
     RegistroComponent,
     LogrosComponent,
     ReportesComponent,
-    ModalComponent
+    ModalComponent,
+    ParametroComponent
 
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule,AngularFontAwesomeModule, MDBBootstrapModule.forRoot()],
