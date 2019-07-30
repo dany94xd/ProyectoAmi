@@ -138,28 +138,47 @@
                 [(ngModel)]="logrosService.selectedLogros._id">
                 <div>
                   <div class="input-field col-s12">
+                    <div>
                     <label>Ingresar id logro</label>
+                  </div>
                     <input type="text" name="idLogro" #name="ngModel" 
                     [(ngModel)]="logrosService.selectedLogros.idLogro" placeholder="idLogro">
                   </div>
                 </div>
               <div>
                   <div class="input-field col-s12">
+                      <div>
                       <label>Ingresar id institucion</label>
+                    </div>
                     <input type="text" name="idInstitucion" #name="ngModel" 
                     [(ngModel)]="logrosService.selectedLogros.idInstitucion" placeholder="nombre de la institucion">
                   </div>
                 </div>
               <div>
                   <div class="input-field col-s12">
+                    <div>
                       <label>Ingresar nombre</label>
+                    </div>
                     <input type="text" name="nombre" #name="ngModel" 
                     [(ngModel)]="logrosService.selectedLogros.nombre" placeholder="nombre">
                   </div>
                 </div>
+
+                <div>
+                    <div class="input-field col-s12">
+                      <div>
+                        <label>Ingresar Descripcion</label>
+                      </div>
+                      <input type="text" name="descripcion" #name="ngModel" 
+                      [(ngModel)]="logrosService.selectedLogros.descripcion" placeholder="descripcion">
+                    </div>
+                  </div>
+
               <div>
                   <div class="input-field col-s12">
+                    <div>
                       <label>Ingresar minimo botellas</label>
+                    </div>
                     <input type="text" name="minBotellas" #name="ngModel" 
                     [(ngModel)]="logrosService.selectedLogros.minBotellas"  placeholder="minBotellas">
                   </div>
@@ -167,7 +186,9 @@
     
               <div>
                   <div class="input-field col-s12">
+                    <div>
                       <label>Ingresar maximo botellas</label>
+                    </div>
                     <input type="text" name="maxBotellas" #name="ngModel" 
                     [(ngModel)]="logrosService.selectedLogros.maxBotellas"  placeholder="maxBotellas">
                   </div>
@@ -191,6 +212,7 @@
             <th>Id Logro</th>
             <th>Id Institucion</th>
             <th>Nombre</th>
+            <th>Descripcion</th>
             <th>Minimo Botellas</th>
             <th>Maximo Botellas</th>
   
@@ -201,6 +223,7 @@
               <td>{{ logro.idLogro }}</td>
               <td>{{ logro.idInstitucion }}</td>
               <td>{{ logro.nombre }}</td>
+              <td>{{ logro.descripcion }}</td>
               <td>{{ logro.minBotellas }}</td>
               <td>{{ logro.maxBotellas }}</td>
               
