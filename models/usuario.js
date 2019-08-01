@@ -8,6 +8,7 @@ const usuarioSchema = new Schema({
     idLogros: { type: String, required: false },
     idRol: { type: String, required: false},
     idInstitucion:{type:String ,required:false},
+    matricula:{type:String ,required:false},	
     NroBotellas:{type:Number,required:false},
     saldoActual:{type:Number,required:false},
     saldoVerde:{type:Number,required:false},
