@@ -61,10 +61,10 @@ mobileAppCtrl.restarSaldo = async (req, res, next) => {
     //res.send({usuarioData});
     usuarioData.saldoActual = parseFloat(usuarioData.saldoActual) - 0.30;
     if(parseFloat(usuarioData.saldoActual) >= 0.30){
-        usuarioData.saldoActual = parseFloat(usuarioData.saldoActual) - 0.30;
-        res.send({status:"1"});
+        //usuarioData.saldoActual = parseFloat(usuarioData.saldoActual) - 0.30;
+        res.send({usuarioData}, {status:"1"});
     }else{
-        res.send({status:"0"});
+        res.send({usuarioData}, {status:"0"});
     }
 
     //console.log(usuarioData.id)
