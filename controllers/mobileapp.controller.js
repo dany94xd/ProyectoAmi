@@ -58,17 +58,13 @@ mobileAppCtrl.restarSaldo = async (req, res, next) => {
     //const usuarioData = await Usuario.find({where: {'user':id}, select: ['NroBotellas', 'saldoTotal','saldoActual']});
     //const usuarioData = await Usuario.find({ 'user': id });
     const usuarioData = await Usuario.find({ 'user': id }).select({ user: 1, NroBotellas: 1, saldoVerde: 1, saldoActual: 1 });
-    const dataUsuario={
-        usuario:usuarioData.user,
-        botellas:usuarioData.NroBotellas,
-        saldoTotal:usuarioData.saldoTotal,
-        saldoActual:usuarioData.saldoActual
-    }
+    //res.send({usuarioData});
+    usuarioData.saldoActual = parseFloat(usuarioData.saldoActual) - 0.30;
     if(parseFloat(usuarioData.saldoActual) >= 0.30){
-        usuarioData.saldoActual = parseFloat(usuarioData.saldoActual) - 0.30
-        res.json(usuarioData);
+        //usuarioData.saldoActual = parseFloat(usuarioData.saldoActual) - 0.30;
+        res.send({usuarioData}, {status:"1"});
     }else{
-        res.json(usuarioData);
+        res.send({usuarioData}, {status:"0"});
     }
 
     //console.log(usuarioData.id)
