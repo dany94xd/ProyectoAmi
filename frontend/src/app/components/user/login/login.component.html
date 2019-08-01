@@ -1,60 +1,46 @@
 <br>
 <br>
+<br>
+<br>
 
-<div style ="text-align: center">
-    <h1 class="display-3">INICIAR SESIÓN</h1>
+
+
+<div >
+    <article class="card-body mx-auto" style="max-width: 400px;">
+        <img src="assets/img/logo.png" alt="Jane" style="width:100% ;height:200%">
+      <h4 class="card-title mt-3 text-center">INICIAR SESIÓN</h4>
+      <p class="text-center">BIENVENIDO A TARJETA VERDE</p>
+    
+  
+      <form>
+     
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+         </div>
+            <input name="" class="form-control" placeholder="Ingrese su correo electronico" type="email">
+        </div> <!-- form-group// -->
+      
+      
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+        </div>
+            <input class="form-control" placeholder="Ingrese su contraseña" type="password">
+        </div> <!-- form-group// -->
+                                
+        <div class="form-group">
+         
+            <button type="submit" class="btn btn-lg btn-dark btn-block">Iniciar sesión</button>
+        </div> <!-- form-group// -->   
+        
+       
+        
+        <p class="text-center">¿No tienes una cuenta? <a href="/user/registro">Regístrate</a> </p>                                                                 
+    </form>
+    </article>
   </div>
 
-<section id="login" class="mb-5 mt-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
-        <div class="card_login">
-          <div class="card " >
-              <img src="assets/img/logo.png" alt="Jane" style="width:100% ;height:100%">
-            <div class="card-body text-center">
-              <form #formLogin="ngForm" (ngSubmit)="onLogin(formLogin)">
-            
-                <div class="alert alert-danger" role="alert" *ngIf="isError">
-                  La contraseña que has introducido es incorrecta!
-                </div>
-                <div class="form-group">
-                  <input type="email" id="email" name="email" class="form-control" placeholder="Correo Electrónico"  required>
-                </div>
-                <div class="form-group">
-                  <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" 
-                    required>
-                </div>
-                <button type="submit" class="btn btn-lg btn-dark btn-block">Iniciar sesión</button>
-              
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section id="register" class="mb-5 mt-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-10 col-sm-2 col-md-4 mx-auto">
-          <div class="card_register">
-            <div class="card">
 
-              <div class="card-body text-center">
-               
-                    <div class="form-group">
-                        <a class="nav-link"  routerLink= "/user/registro"> ¿No tienes una cuenta?  Regístrate</a>
-                        
-                  </div>
-              
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
   
