@@ -9,7 +9,7 @@ router.get('/data/:id', mobileapp.getMatriculaData);
 
 //router.put('/:id', mobileapp.editUsuario);
 
-router.put('/data/:id', mobileapp.restarSaldo);
+router.get('/restarsaldo/:id', mobileapp.restarSaldo);
 
 
 module.exports = router;
