@@ -20,7 +20,7 @@ usuarioCtrl.createUsuario = async (req, res, next) => {
         idInstitucion: req.body.idInstitucion,
         NroBotellas: req.body.NroBotellas,
         saldoActual: req.body.saldoActual,
-        saldoTotal: req.body.saldoTotal,
+        saldoVerde: req.body.saldoVerde,
         UrlFoto: req.body.UrlFoto,
         user: req.body.user,
       //  password: req.body.password
@@ -47,7 +47,7 @@ usuarioCtrl.editUsuario = async (req, res, next) => {
         idInstitucion: req.body.idInstitucion,
         NroBotellas: req.body.NroBotellas,
         saldoActual: req.body.saldoActual,
-        saldoTotal: req.body.saldoTotal,
+        saldoVerde: req.body.saldoVerde,
         UrlFoto: req.body.UrlFoto,
         user: req.body.user,
        // password: req.body.password
