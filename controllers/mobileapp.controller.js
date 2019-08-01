@@ -29,7 +29,7 @@ mobileAppCtrl.getUsuarioData = async (req, res, next) => {
 mobileAppCtrl.getMatriculaData = async (req, res, next) => {
     const { id } = req.params;
     
-    const usuarioData = await Usuario.find({ 'matricula': id}).select({ idInstitucion:1, matricula:1, NroBotellas: 1, saldoTotal: 1, saldoActual: 1 });
+    const usuarioData = await Usuario.find({ 'matricula': id}).select({ idInstitucion:1, matricula:1, NroBotellas: 1, saldoVerde: 1, saldoActual: 1 });
  
  const { personaId } = await Usuario.find({ 'matricula': id}).select({ idPersona:1});
 
