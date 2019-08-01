@@ -10,7 +10,7 @@ export class menuService {
 selectedmenu:Menu;
 Menu:Menu[];
 
-readonly URL_API = 'http://162.212.130.145:3000/api/menu';
+readonly URL_API = 'http://162.212.130.145:3000/api/menus';
   //readonly URL_API = 'http://localhost:3000/api/opcionesmenu';
 
   constructor(public http: HttpClient) {

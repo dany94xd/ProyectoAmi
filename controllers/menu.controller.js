@@ -13,7 +13,8 @@ MenuCtrl.createMenu = async (req, res, next) => {
         idRol:req.body.idRol
     });
     await menus.save();
-    res.json({status: 'menu created'});
+    //res.json({status: 'menu created'});
+    res.json({status: menus.idRol});
 };
 
 MenuCtrl.getMenu = async (req, res, next) => {
