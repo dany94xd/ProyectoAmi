@@ -28,11 +28,13 @@ mobileAppCtrl.getUsuarioData = async (req, res, next) => {
 //la puta madre
 mobileAppCtrl.getMatriculaData = async (req, res, next) => {
     const { id } = req.params;
-    //const usuarioData = await Usuario.findOne({where: {idInstitucion:matricula}, select: ['nroBotellas', 'saldoTotal','saldoActual']});
+    
     const usuarioData = await Usuario.find({ 'matricula': id}).select({ idInstitucion:1, matricula:1, NroBotellas: 1, saldoTotal: 1, saldoActual: 1 });
- //const personaData = await Persona.findOne({where: {idInstitucion:matricula}, select: ['nombre', 'apellido']});
- const personaData = await Persona.find({ 'matricula': id }).select({ nombre: 1, apellido: 1});
-    //res.json({nombre:personaData.nombre, apellido:personaData.apellido, nroBotellas:usuarioData.nroBotellas, saldoTotal:usuarioData.saldoTotal});
+ 
+ const userId = await Usuario.find({ 'matricula': id}).select({ id:1});
+
+ //const personaData = await Persona.find({ 'matricula': id }).select({ nombre: 1, apellido: 1});
+   const personaData = await Persona.find({ 'id': userId }).select({ nombre: 1, apellido: 1}); 
     
     const dataFinal= [await usuarioData, await personaData];
     
