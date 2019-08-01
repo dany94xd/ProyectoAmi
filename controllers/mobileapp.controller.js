@@ -57,16 +57,27 @@ mobileAppCtrl.restarSaldo = async (req, res, next) => {
     //{ 'username': userName }
     //const usuarioData = await Usuario.find({where: {'user':id}, select: ['NroBotellas', 'saldoTotal','saldoActual']});
     //const usuarioData = await Usuario.find({ 'user': id });
-    const usuarioData = await Usuario.find({ 'user': id }).select({ user: 1, NroBotellas: 1, saldoVerde: 1, saldoActual: 1 });
+    //const usuarioData = await Usuario.find({ 'user': id }).select({ user: 1, NroBotellas: 1, saldoVerde: 1, saldoActual: 1 });
     //res.send({usuarioData});
+
+    const usuarioData = await Usuario.find({ 'matricula': id }).select({ saldoActual: 1});
+
+    console.log(usuarioData);
+   // res.send({usuarioData});
+
+   // await Usuario.findByIdAndUpdate(matricula, {$set: usuarioData}, {new: true});
+    res.json({status: 'Usuario Updated'});
+
+    //await Usuario.findByIdAndUpdate(usuarioid.id, {$set: usuarioData}, {new: true});
+    /*
     usuarioData.saldoActual = parseFloat(usuarioData.saldoActual) - 0.30;
     if(parseFloat(usuarioData.saldoActual) >= 0.30){
-        //usuarioData.saldoActual = parseFloat(usuarioData.saldoActual) - 0.30;
-        res.send({usuarioData}, {status:"1"});
+        usuarioData.saldoActual = parseFloat(usuarioData.saldoActual) - 0.30;
+        res.send({usuarioData});
     }else{
-        res.send({usuarioData}, {status:"0"});
+        res.send({usuarioData});
     }
-
+*/
     //console.log(usuarioData.id)
     //res.send({dataUsuario});
     //res.json(usuarioData);
