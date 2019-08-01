@@ -1,18 +1,18 @@
 export class Reportes {
 
-    constructor(_id = '', idReporte = '', idInstitucion = '', fecha='' , NumBotellas = 0) {
+    constructor(_id = '', idReporte = '', idInstitucion = '', fecha='' , NroBotellas = 0) {
         this._id = _id;
         this.idReporte = idReporte;
         this.idInstitucion= idInstitucion;
         this.fecha = fecha;
-        this.NumBotellas = NumBotellas;
+        this.NroBotellas = NroBotellas;
   
     }
     _id: string;
     idReporte: string;
     idInstitucion: string;
     fecha: string;
-    NumBotellas: Number;
+    NroBotellas: Number;
    
 
 

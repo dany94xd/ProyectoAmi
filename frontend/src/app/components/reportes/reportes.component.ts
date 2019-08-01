@@ -20,15 +20,21 @@ export class ReportesComponent implements OnInit {
     this.getReportes();
   }
 
-  addReportes(form: NgForm){
-  
-    console.log(form.value);
+  public addReportes(form?: NgForm){
     if(form.value._id){
       this.reportesService.putReportes(form.value).subscribe(res => {
+        this.resetForm(form);
         this.getReportes();
-        M.toast({html: 'reporte guardado'});
-      })
+        M.toast({html: 'Reporte Actualizado'});
+      });  
+    }else {
+      this.reportesService.postReportes(form.value).subscribe(res => {
+        this.getReportes();
+        this.resetForm(form);
+        M.toast({html: 'Se agrego un reporte'});
+      });
     }
+    
   }
 
   getReportes(){

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { EventoService } from '../../services/evento/evento.service';
 import { Evento } from 'src/app/models/evento'
+
 declare var M: any;
 @Component({
   selector: 'datepicker-overview-app-evento',
@@ -16,16 +17,23 @@ export class EventoComponent implements OnInit {
     this.getEvento();
   }
 
-  addEvento(form: NgForm){
-  
-    console.log(form.value);
+  public addEvento(form?: NgForm){
     if(form.value._id){
       this.eventoService.putEvento(form.value).subscribe(res => {
+        this.resetForm(form);
         this.getEvento();
-        
-      })
+    
+      });  
+    }else {
+      this.eventoService.postEvento(form.value).subscribe(res => {
+        this.getEvento();
+        this.resetForm(form);
+     
+      });
     }
+    
   }
+
 
   getEvento(){
     this.eventoService.getEvento().subscribe(res => {
