@@ -10,7 +10,7 @@ mobileAppCtrl.getUsuarioData = async (req, res, next) => {
     //{ 'username': userName }
     //const usuarioData = await Usuario.find({where: {'user':id}, select: ['NroBotellas', 'saldoTotal','saldoActual']});
     //const usuarioData = await Usuario.find({ 'user': id });
-    const usuarioData = await Usuario.find({ 'user': id }).select({ user: 1, NroBotellas: 1, saldoTotal: 1, saldoActual: 1 });
+    const usuarioData = await Usuario.find({ 'user': id }).select({ user: 1, NroBotellas: 1, saldoVerde: 1, saldoActual: 1 });
     const dataUsuario={
         usuario:usuarioData.user,
         botellas:usuarioData.NroBotellas,
@@ -29,16 +29,16 @@ mobileAppCtrl.getUsuarioData = async (req, res, next) => {
 mobileAppCtrl.getMatriculaData = async (req, res, next) => {
     const { id } = req.params;
     
-    const usuarioData = await Usuario.find({ 'matricula': id}).select({ idInstitucion:1, matricula:1, NroBotellas: 1, saldoTotal: 1, saldoActual: 1 });
+    const usuarioData = await Usuario.find({ 'matricula': id}).select({ idInstitucion:1, matricula:1, NroBotellas: 1, saldoVerde: 1, saldoActual: 1 });
  
- const personaId = await Usuario.find({ 'matricula': id}).select({ idPersona:1});
+ //const { personaId } = await Usuario.find({ 'matricula': id}).select({ idPersona:1});
 
- //const personaData = await Persona.find({ 'matricula': id }).select({ nombre: 1, apellido: 1});
-   const personaData = await Persona.find({ '_id': personaId }).select({ nombre: 1, apellido: 1}); 
+ const personaData = await Persona.find({ 'matricula': id }).select({ nombre: 1, apellido: 1});
+   //const personaData = await Persona.find({ '_id': personaId.idPersona }).select({ nombre: 1, apellido: 1}); 
     
     const dataFinal= [await usuarioData, await personaData];
     
-    console.log(dataFinal);
+    //console.log(dataFinal);
     res.json(dataFinal);
 };
 
@@ -50,15 +50,39 @@ mobileAppCtrl.getMatriculaData = async (req, res, next) => {
 
 mobileAppCtrl.restarSaldo = async (req, res, next) => {
     const { id } = req.params;
+
+      
+   
     //const usuario = await Usuario.findById(id);
     //{ 'username': userName }
     //const usuarioData = await Usuario.find({where: {'user':id}, select: ['NroBotellas', 'saldoTotal','saldoActual']});
     //const usuarioData = await Usuario.find({ 'user': id });
-    console.log("ingresa resta saldo");
-    console.log(id);
+    const usuarioData = await Usuario.find({ 'user': id }).select({ user: 1, NroBotellas: 1, saldoVerde: 1, saldoActual: 1 });
+    const dataUsuario={
+        usuario:usuarioData.user,
+        botellas:usuarioData.NroBotellas,
+        saldoTotal:usuarioData.saldoTotal,
+        saldoActual:usuarioData.saldoActual
+    }
+    if(parseFloat(usuarioData.saldoActual) >= 0.30){
+        usuarioData.saldoActual = parseFloat(usuarioData.saldoActual) - 0.30
+        res.json(usuarioData);
+    }else{
+        res.json(usuarioData);
+    }
 
-    const usuarioData = await Usuario.find({ 'idInstitucion': id });
-    const usuarioid = await Usuario.find({'idInstitucion':id}).select({ id:1});
+    //console.log(usuarioData.id)
+    //res.send({dataUsuario});
+    //res.json(usuarioData);
+    //const usuario = await Usuario.findById(id);
+    //{ 'username': userName }
+    //const usuarioData = await Usuario.find({where: {'user':id}, select: ['NroBotellas', 'saldoTotal','saldoActual']});
+    //const usuarioData = await Usuario.find({ 'user': id });
+    //console.log("ingresa resta saldo");
+    //console.log(id);
+
+    //const usuarioData = await Usuario.find({ 'idInstitucion': id });
+    //const usuarioid = await Usuario.find({'idInstitucion':id}).select({ id:1});
 
 
    // const restaTotal = parseFloat(usuarioData.saldoTotal)-0.30;
@@ -71,9 +95,9 @@ mobileAppCtrl.restarSaldo = async (req, res, next) => {
     //res.send({dataUsuario});
 
     //res.json(usuarioData.user, usuarioData.nroBotellas, usuarioData.saldoTotal, usuarioData.saldoActual);
-    await Usuario.findByIdAndUpdate(usuarioid.id, {$set: usuarioData}, {new: true});
+    //await Usuario.findByIdAndUpdate(usuarioid.id, {$set: usuarioData}, {new: true});
   //  await Usuario.findByIdAndUpdate(user, {$set: usuarioData}, {new: true});
-    res.json({status: 'Saldo Updated'});
+    //res.json({status: 'Saldo Updated'});
     //res.send({dataUsuario});
 
 };
