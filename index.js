@@ -38,8 +38,8 @@ app.set('port', process.env.PORT || 3000);
 
 // Middlewares
 app.use('/',express.static('client',{redirect:false}));
-app.use(cors({origin: 'http://162.212.130.145'}));
-//app.use(cors({origin: 'http://localhost:4200'}));
+//app.use(cors({origin: 'http://162.212.130.145'}));
+app.use(cors({origin: 'http://localhost:4200'}));
 
 app.use(function (req, res, next) {
 
@@ -62,6 +62,8 @@ app.use('/api/opcionesmenu', require('./routes/opcionesmenu.routes'));
 app.use('/api/menus', require('./routes/menu.routes'));
 app.use('/api/mobilapp', require('./routes/mobileapp.routes'));
 app.use('/api/logros', require('./routes/logro.routes'));
+
+app.use('/api/webapp', require('./routes/webapp.routes'));
 //app.use('/api/register',require('./routes/auth.routes'));
 //app.use('/api/login',require('./routes/auth.routes'));
 
