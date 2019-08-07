@@ -61,36 +61,36 @@ usuarioCtrl.editUsuario = async (req, res, next) => {
 };
 
 // jc--------------------------------------------
-usuarioCtrl.editUsuario = async (req, res, next) => {
-    const { id } = req.params;
-    const usuario = {
-        NroBotellas: req.body.NroBotellas
-    };
-    await Usuario.findByIdAndUpdate(id, {$set: usuario}, {new: true});
-    res.json({status: 'Usuario Nro Botellas Updated'});
-};
+// usuarioCtrl.editUsuario = async (req, res, next) => {
+//     const { id } = req.params;
+//     const usuario = {
+//         NroBotellas: req.body.NroBotellas
+//    };
+//     await Usuario.findByIdAndUpdate(id, {$set: usuario}, {new: true});
+//     res.json({status: 'Usuario Nro Botellas Updated'});
+// };
 
 
 
 
-usuarioCtrl.editUsuario = async (req, res, next) => {
-    const { id } = req.params;
-    const usuario = {
-        saldoActual: req.body.saldoActual
-    };
-    await Usuario.findByIdAndUpdate(id, {$set: usuario}, {new: true});
-    res.json({status: 'Usuario Saldo Actual Updated'});
-};
+// usuarioCtrl.editUsuario = async (req, res, next) => {
+//     const { id } = req.params;
+//     const usuario = {
+//         saldoActual: req.body.saldoActual
+//     };
+//     await Usuario.findByIdAndUpdate(id, {$set: usuario}, {new: true});
+//     res.json({status: 'Usuario Saldo Actual Updated'});
+// };
 
 
-usuarioCtrl.editUsuario = async (req, res, next) => {
-    const { id } = req.params;
-    const usuario = {
-        saldoVerde: req.body.saldoVerde
-    };
-    await Usuario.findByIdAndUpdate(id, {$set: usuario}, {new: true});
-    res.json({status: 'Usuario Saldo Verde Updated'});
-};
+// usuarioCtrl.editUsuario = async (req, res, next) => {
+//     const { id } = req.params;
+//     const usuario = {
+//         saldoVerde: req.body.saldoVerde
+//     };
+//     await Usuario.findByIdAndUpdate(id, {$set: usuario}, {new: true});
+//     res.json({status: 'Usuario Saldo Verde Updated'});
+// };
 
 
 // jc--------------------------------------------
