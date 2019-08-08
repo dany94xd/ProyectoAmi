@@ -23,6 +23,7 @@ export class EventoService {
 
   getEvento() {
     return this.http.get(this.URL_API);
+    console.log(this.selectedEvento.urlfoto);
   }
 
   putEvento(evento: Evento) {
@@ -32,4 +33,5 @@ export class EventoService {
   deleteEvento(_id: string) {
     return this.http.delete(this.URL_API + `/${_id}`);
   }
+
 }
