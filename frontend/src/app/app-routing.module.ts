@@ -32,7 +32,7 @@ import { PerfilrecolectorComponent } from './components/user/perfilrecolector/pe
 
 import { LoginRecicladorComponent } from './components/login-reciclador/login-reciclador.component';
 import { PerfilRecicladorComponent } from './components/perfil-reciclador/perfil-reciclador.component';
-import { PerfilsponsorComponent } from './components/user/perfilsponsor/perfilsponsor.component';
+import { PerfilsponsorComponent } from './components/sponsor/perfilsponsor/perfilsponsor.component';
 
 import { RegistroComponent } from './components/user/registro/registro.component';
 import { LogrosComponent } from './components/logros/logros.component';
@@ -66,7 +66,7 @@ const routes: Routes = [
 
   { path: 'user/loginrecolector', component: LoginrecolectorComponent },
   { path: 'user/perfilrecolector', component: PerfilrecolectorComponent },
-  { path: 'user/perfilsponsor', component: PerfilsponsorComponent},
+  { path: 'sponsor/perfilsponsor', component: PerfilsponsorComponent},
   
   { path: 'loginReciclador', component: LoginRecicladorComponent},
   { path: 'perfilreciclador', component: PerfilRecicladorComponent},
