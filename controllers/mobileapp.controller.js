@@ -3,53 +3,42 @@ const Persona = require('../models/persona');
 
 const mobileAppCtrl = {};
 
+//Usuario
 mobileAppCtrl.getUsuarioData = async (req, res, next) => {
     
     const { id } = req.params;
-    //const usuario = await Usuario.findById(id);
-    //{ 'username': userName }
-    //const usuarioData = await Usuario.find({where: {'user':id}, select: ['NroBotellas', 'saldoTotal','saldoActual']});
-    //const usuarioData = await Usuario.find({ 'user': id });
-    const usuarioData = await Usuario.find({ 'user': id }).select({ user: 1, NroBotellas: 1, saldoVerde: 1, saldoActual: 1 });
-    const dataUsuario={
-        usuario:usuarioData.user,
-        botellas:usuarioData.NroBotellas,
-        saldoTotal:usuarioData.saldoTotal,
-        saldoActual:usuarioData.saldoActual
-    }
 
-    //console.log(usuarioData.id)
-    //res.send({dataUsuario});
+    const usuarioData = await Usuario.find({ 'user': id }).select({ user: 1, idPersona: 1, NroBotellas: 1, saldoVerde: 1, saldoActual: 1 });
+
     res.json(usuarioData);
-    //res.json(usuarioData.user, usuarioData.nroBotellas, usuarioData.saldoTotal, usuarioData.saldoActual);
-
-
 };
-//la puta madre
+
+//Matricula
 mobileAppCtrl.getMatriculaData = async (req, res, next) => {
     const { id } = req.params;
     
     const usuarioData = await Usuario.find({ 'matricula': id}).select({ idInstitucion:1, matricula:1, NroBotellas: 1, saldoVerde: 1, saldoActual: 1 });
- 
- //const { personaId } = await Usuario.find({ 'matricula': id}).select({ idPersona:1});
 
  const personaData = await Persona.find({ 'matricula': id }).select({ nombre: 1, apellido: 1});
-   //const personaData = await Persona.find({ '_id': personaId.idPersona }).select({ nombre: 1, apellido: 1}); 
-    
+ 
     const dataFinal= [await usuarioData, await personaData];
     
     //console.log(dataFinal);
     res.json(dataFinal);
 };
 
-//mobileAppCtrl.getSaldoResponse = async (req, res, next) => {
-//    const { matricula } = req.params;
-//    const usuarioData = await Usuario.findOne({where: {idInstitucion:matricula}, select:['saldoTotal']});
-//    res.json(usuarioData);
-//};
+
+//Matricula-Usuario
+mobileAppCtrl.getMatricula = async (req, res, next) => {
+    const { id } = req.params;
+    
+    const usuarioData = await Usuario.find({ 'matricula': id});
+
+    res.json(usuarioData);
+};
 
 
-
+//Saldo
 mobileAppCtrl.prueba = async (req, res, next) => {
     const { id } = req.params; //recibe matricula
     console.log("matricula: " + id);
