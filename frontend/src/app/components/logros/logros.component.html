@@ -118,12 +118,12 @@
               <td>{{ logro.idInstitucion }}</td>
               <td>{{ logro.nombre }}</td>
               <td>{{ logro.descripcion }}</td>
-              <td>{{ logro.minBotellas }}</td>
-              <td>{{ logro.maxBotellas }}</td>
+              <td>{{ logro.minbotella }}</td>
+              <td>{{ logro.maxbotella }}</td>
               
               
               <td>
-                <a (click)="editLogros(reportes)">
+                <a (click)="editLogros(logros)">
                   <i class="material-icons">edit</i>
                 </a>
                 <a (click)="deleteLogros(logro._id, logroForm)">
