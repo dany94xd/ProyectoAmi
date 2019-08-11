@@ -42,20 +42,23 @@ import { ParametroComponent } from './components/parametro/parametro.component';
 
 import { EventoComponent } from './components/evento/evento.component';
 
+import { RolComponent } from 'src/app/components/rol/rol.component';
+
 const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'empleados', component: EmployeeComponent},
-  { path: 'instituciones', component: InstitucionesComponent },
-  { path: 'personas', component: PersonaComponent },
+  { path: 'admin/empleados', component: EmployeeComponent},
+  { path: 'admin/instituciones', component: InstitucionesComponent },
+  { path: 'admin/personas', component: PersonaComponent },
 
-  { path: 'logros', component: LogrosComponent },
-  { path: 'reportes', component: ReportesComponent },
-  { path: 'evento', component: EventoComponent },
+  { path: 'admin/logros', component: LogrosComponent },
+  { path: 'admin/reportes', component: ReportesComponent },
+  { path: 'admin/evento', component: EventoComponent },
 
-  { path: 'parametro', component: ParametroComponent },
+  { path: 'admin/parametro', component: ParametroComponent },
+  { path: 'admin/rol', component: RolComponent },
   
 
-  { path: 'user/offers', component: OffersComponent }, 
+
   { path: 'user/login', component: LoginComponent },
   { path: 'user/register', component: RegisterComponent },
   { path: 'user/profile', component: ProfileComponent }, // TODO: only users auth

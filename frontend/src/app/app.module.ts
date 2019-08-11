@@ -60,6 +60,7 @@ import { ReportesComponent } from './components/reportes/reportes.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ParametroComponent } from './components/parametro/parametro.component';
 import { EventoComponent } from './components/evento/evento.component';
+import { RolComponent } from './components/rol/rol.component';
 
 //import { LoginComponent } from './components/login/login.component';
 
@@ -100,6 +101,7 @@ import { EventoComponent } from './components/evento/evento.component';
     ModalComponent,
     ParametroComponent,
     EventoComponent,
+    RolComponent,
     
 
   ],
