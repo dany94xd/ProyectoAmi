@@ -42,7 +42,7 @@ import { ParametroComponent } from './components/parametro/parametro.component';
 
 import { EventoComponent } from './components/evento/evento.component';
 
-import { RolComponent } from 'src/app/components/rol/rol.component';
+import { RolComponent } from './components/rol/rol.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -55,7 +55,8 @@ const routes: Routes = [
   { path: 'admin/evento', component: EventoComponent },
 
   { path: 'admin/parametro', component: ParametroComponent },
-  { path: 'admin/rol', component: RolComponent },
+
+  { path: 'admin/roles', component: RolComponent },
   
 
 
