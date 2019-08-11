@@ -6,7 +6,7 @@ import { PortfolioComponent } from 'src/app/components/user/portfolio/portfolio.
 import { PremiosComponent } from 'src/app/components/user/premios/premios.component';
 
 
-import { OffersComponent } from 'src/app/components/user/offers/offers.component';
+//import { OffersComponent } from 'src/app/components/user/offers/offers.component';
 
 
 
@@ -14,8 +14,8 @@ import { OffersComponent } from 'src/app/components/user/offers/offers.component
 import {FormComponent} from 'src/app/components/user/form/form.component'
 
 import { LoginComponent } from 'src/app/components/user/login/login.component';
-import { RegisterComponent } from 'src/app/components/user/register/register.component';
-import { ProfileComponent } from 'src/app/components/user/profile/profile.component';
+//import { RegisterComponent } from 'src/app/components/user/register/register.component';
+//import { ProfileComponent } from 'src/app/components/user/profile/profile.component';
 import { Page404Component } from 'src/app/components/page404/page404.component';
 
 
@@ -27,10 +27,10 @@ import { InstitucionesComponent } from './components/instituciones/instituciones
 import { EmployeeComponent } from './components/employee/employee.component';
 import { PersonaComponent } from './components/persona/persona.component';
 
-import { LoginrecolectorComponent } from './components/user/loginrecolector/loginrecolector.component';
+//import { LoginrecolectorComponent } from './components/user/loginrecolector/loginrecolector.component';
 import { PerfilrecolectorComponent } from './components/user/perfilrecolector/perfilrecolector.component';
 
-import { LoginRecicladorComponent } from './components/login-reciclador/login-reciclador.component';
+//import { LoginRecicladorComponent } from './components/login-reciclador/login-reciclador.component';
 import { PerfilRecicladorComponent } from './components/perfil-reciclador/perfil-reciclador.component';
 import { PerfilsponsorComponent } from './components/sponsor/perfilsponsor/perfilsponsor.component';
 
@@ -61,18 +61,18 @@ const routes: Routes = [
 
 
   { path: 'user/login', component: LoginComponent },
-  { path: 'user/register', component: RegisterComponent },
-  { path: 'user/profile', component: ProfileComponent }, // TODO: only users auth
+ // { path: 'user/register', component: RegisterComponent },
+  //{ path: 'user/profile', component: ProfileComponent }, // TODO: only users auth
   { path: 'user/portfolio',component:PortfolioComponent},
   { path: 'user/premios',component:PremiosComponent},
   { path: 'user/nosotros', component: NosotrosComponent },
   { path: 'user/contactanos', component: FormComponent },
 
-  { path: 'user/loginrecolector', component: LoginrecolectorComponent },
+  //{ path: 'user/loginrecolector', component: LoginrecolectorComponent },
   { path: 'user/perfilrecolector', component: PerfilrecolectorComponent },
   { path: 'sponsor/perfilsponsor', component: PerfilsponsorComponent},
   
-  { path: 'loginReciclador', component: LoginRecicladorComponent},
+  //{ path: 'loginReciclador', component: LoginRecicladorComponent},
   { path: 'perfilreciclador', component: PerfilRecicladorComponent},
   { path: 'user/registro', component: RegistroComponent},
 

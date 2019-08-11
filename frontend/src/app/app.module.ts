@@ -12,11 +12,11 @@ import { PortfolioComponent } from './components/user/portfolio/portfolio.compon
 import { PremiosComponent } from './components/user/premios/premios.component';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { OffersComponent } from './components/user/offers/offers.component';
+//import { OffersComponent } from './components/user/offers/offers.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { LoginComponent } from './components/user/login/login.component';
-import { RegisterComponent } from './components/user/register/register.component';
-import { ProfileComponent } from './components/user/profile/profile.component';
+//import { RegisterComponent } from './components/user/register/register.component';
+//import { ProfileComponent } from './components/user/profile/profile.component';
 import { Page404Component } from './components/page404/page404.component';
 import { TruncateTextPipe } from './pipes/truncate-text.pipe';
 
@@ -48,16 +48,16 @@ import { InstitucionesComponent } from './components/instituciones/instituciones
 import { PersonaComponent } from './components/persona/persona.component';
 
 
-import { LoginrecolectorComponent } from './components/user/loginrecolector/loginrecolector.component';
+//import { LoginrecolectorComponent } from './components/user/loginrecolector/loginrecolector.component';
 import { PerfilrecolectorComponent } from './components/user/perfilrecolector/perfilrecolector.component';
 
-import { LoginRecicladorComponent } from './components/login-reciclador/login-reciclador.component';
+//import { LoginRecicladorComponent } from './components/login-reciclador/login-reciclador.component';
 import { PerfilRecicladorComponent } from './components/perfil-reciclador/perfil-reciclador.component';
 import { PerfilsponsorComponent } from './components/sponsor/perfilsponsor/perfilsponsor.component';
 import { RegistroComponent } from './components/user/registro/registro.component';
 import { LogrosComponent } from './components/logros/logros.component';
 import { ReportesComponent } from './components/reportes/reportes.component';
-import { ModalComponent } from './components/modal/modal.component';
+// import { ModalComponent } from './components/modal/modal.component';
 import { ParametroComponent } from './components/parametro/parametro.component';
 import { EventoComponent } from './components/evento/evento.component';
 
@@ -75,12 +75,12 @@ import { RolComponent } from './components/rol/rol.component';
     PremiosComponent,
     
     NavbarComponent,
-    OffersComponent,
+    //OffersComponent,
     HeroComponent,
    
     LoginComponent,
-    RegisterComponent,
-    ProfileComponent,
+   // RegisterComponent,
+    //ProfileComponent,
     Page404Component,
     TruncateTextPipe,
     EmployeeComponent,
@@ -89,17 +89,17 @@ import { RolComponent } from './components/rol/rol.component';
     FormComponent,
 
     
-    LoginrecolectorComponent,
+    //LoginrecolectorComponent,
     
     PerfilrecolectorComponent,
 
-    LoginRecicladorComponent,
+   // LoginRecicladorComponent,
     PerfilRecicladorComponent,
     PerfilsponsorComponent,
     RegistroComponent,
     LogrosComponent,
     ReportesComponent,
-    ModalComponent,
+    //ModalComponent,
     ParametroComponent,
     EventoComponent,
 
