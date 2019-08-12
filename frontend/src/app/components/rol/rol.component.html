@@ -1,57 +1,84 @@
 
 <br>
 <br>
-
+<h1 class="modal-title w-100 font-weight-bold">TABLA ROL</h1>
+        <div >
           <form #rolForm="ngForm" (ngSubmit)="addRol(rolForm)">
-            <input type="hidden" name="_id" #_id="ngModel" 
+            <input class="form-control" type="hidden" name="_id" #_id="ngModel" 
             [(ngModel)]="rolService.selectedRol._id">
+
+            <!-- Grid id Rol -->
             <div class="row">
-              <div class="input-field col-s12">
-                <input type="text" name="idRol" #name="ngModel" 
-                [(ngModel)]="rolService.selectedRol.idRol" placeholder="idRol">
-              </div>
-              <div class="input-field col-s12">
-                <input type="text" name="tipoRol" #name="ngModel" 
-                [(ngModel)]="rolService.selectedRol.tipoRol" placeholder="Tipo Rol">
-              </div>
-              <div class="input-field col-s12">
-                <input type="text" name="descripcion" #name="ngModel" 
-                [(ngModel)]="rolService.selectedRol.descripcion" placeholder="Descripcion del Rol">
-              </div>              
-              <div class="card-action">
-                <div class="input-field col-s12">
-                  <button class="btn right  purple darken-4" (click)="resetForm(rolForm)">Limpiar</button>
-                  <button class="btn ">Guardar</button>
-                </div>
+                <div class="col-md-12">
+                    <div class="md-form form-group">    
+                <input mdbInput  class="form-control" type="text" name="idRol" #name="ngModel" 
+                [(ngModel)]="rolService.selectedRol.idRol" placeholder="id Rol">
+                <label for="">id Rol</label>
               </div>
             </div>
-          </form>
+              </div>
+             <!-- Grid id Rol -->  
 
+             <!-- Grid Tipo Rol -->  
+              <div class="row">
+                <div class="col-md-12">
+                    <div class="md-form form-group">    
+                <input  mdbInput  class="form-control" type="text" name="tipoRol" #name="ngModel" 
+                [(ngModel)]="rolService.selectedRol.tipoRol" placeholder="Tipo de Rol">
+                <label for="">Tipo de Rol</label>
+              </div>
+            </div>
+              </div>
+              <!-- Grid Tipo Rol -->  
+
+               <!-- Grid Descripcion Rol --> 
+               <div class="row">
+                  <div class="col-md-12">
+                      <div class="md-form form-group">    
+                <input mdbInput  class="form-control"type="text" name="descripcion" #name="ngModel" 
+                [(ngModel)]="rolService.selectedRol.descripcion" placeholder="Descripcion del Rol">
+                <label for="">Descripcion del Rol</label>
+              </div>
+            </div>
+              </div>  
+              
+               <!-- Grid Descripcion Rol --> 
+               <!-- Grid Botones --> 
+              <div class="card-action">
+                <div class="input-field col-s12">
+                  <button mdbBtn color="primary"  class="btn right" (click)="resetForm(rolForm)">Limpiar</button>
+                  <button mdbBtn color="light-green" class="btn ">Guardar</button>
+                </div>
+              </div>
+             <!-- Grid Botones--> 
+          </form>
+        </div>
         
 
     <!-- Construccion de la tabla -->     
     <br>
     <br>
 <!-- Construccion de la tabla -->
-    <div class="col s7">
-      <table class="striped highlight black-text">
+<h1 class="modal-title w-100 font-weight-bold">DATOS</h1>      
+<div class="table-responsive-lg">
+    <table mdbTable responsive="true">
         <thead>
           <th>idRol</th>
           <th>tipoRol</th>
           <th>Descripcion</th>
-          <th>Operations</th>
+          <th>Operaciones</th>
         </thead>
         <tbody>
-          <tr *ngFor="let rol of rolService.rols">
+          <tr mdbTableCol *ngFor="let rol of rolService.rols">
             <td>{{ rol.idRol }}</td>
             <td>{{ rol.tipoRol }}</td>
             <td>{{ rol.descripcion }}</td>
             <td>
               <a (click)="editRol(rol)">
-                <i class="material-icons">edit</i>
+                  <i class="fas fa-pencil-alt"></i>
               </a>
               <a (click)="deleteRol(rol._id, rolForm)">
-                <i class="material-icons">delete</i>
+                  <i class="fas fa-trash"></i>
               </a>
             </td>
           </tr>
