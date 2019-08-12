@@ -1,29 +1,7 @@
+
 <br>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-<br>
 <br>
 
-<header>
-  <nav class="estiloNav">
-    <ul>
-      <li><a href="admin/instituciones">Instituciones</a></li>
-      <li><a href="admin/personas">Personas</a></li>
-      <li><a href="admin/evento">Eventos</a></li>
-      <li><a href="admin/logros">Logros</a></li>
-      <li><a href="admin/reportes">Reportes</a></li>
-      <li><a href="admin/parametro">Parametros</a></li>
-      <li><a href="admin/roles">Rol</a></li>
-    </ul>
-  </nav>
-</header>
-
-
-
-<div class="container">
-  <div class="row">
-    <div class="col s5">
-      <div class="card">
-        <div class="card-content">
           <form #rolForm="ngForm" (ngSubmit)="addRol(rolForm)">
             <input type="hidden" name="_id" #_id="ngModel" 
             [(ngModel)]="rolService.selectedRol._id">
@@ -48,9 +26,13 @@
               </div>
             </div>
           </form>
-        </div>
-      </div>
-    </div>
+
+        
+
+    <!-- Construccion de la tabla -->     
+    <br>
+    <br>
+<!-- Construccion de la tabla -->
     <div class="col s7">
       <table class="striped highlight black-text">
         <thead>
@@ -76,5 +58,3 @@
         </tbody>
       </table>
     </div>
-  </div>
-</div>

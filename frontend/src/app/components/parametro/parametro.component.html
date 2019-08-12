@@ -5,75 +5,72 @@
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"> -->
 
 
-<header>
-  <nav class="estiloNav">
-    <ul>
-      <li><a href="admin/instituciones">Instituciones</a></li>
-      <li><a href="admin/personas">Personas</a></li>
-      <li><a href="admin/evento">Eventos</a></li>
-      <li><a href="admin/logros">Logros</a></li>
-      <li><a href="admin/reportes">Reportes</a></li>
-      <li><a href="admin/parametro">Parametros</a></li>
-      <li><a href="admin/roles">Rol</a></li>
-    </ul>
-  </nav>
-</header>
 
-<div class="container">
   
     
+    <h1 class="modal-title w-100 font-weight-bold">TABLA PARAMETROS</h1>
+    
+ 
 
-    <h3 class="center">TABLA PARAMETROS</h3>
-  <div class="row">
-    <div class="col s5">
-      <div class="card">
-        <div class="card-content">
-          <form #parametroForm="ngForm" (ngSubmit)="addParametro(parametroForm)">
-            <input type="hidden" name="_id" #_id="ngModel" 
+<form #parametroForm="ngForm" (ngSubmit)="addParametro(parametroForm)">
+            <!-- Grid row -->
+          <div >
+            <input class="form-control" type="hidden" name="_id" #_id="ngModel" 
             [(ngModel)]="serviceParametro.selectedParametro._id">
-            <div>
-              <div class="input-field col-s12">
-                <div>
-                  <label>Ingresar id parametro</label>
-                </div>
-                <input type="text" name="idParametro" #name="ngModel" 
-                [(ngModel)]="serviceParametro.selectedParametro.idParametro" placeholder="idParametro">
+
+            <div class="">
+              <div class="row">
+                <div class="col-md-12"> 
+                    <div class="md-form form-group">
+                  
+                <input mdbInput  type="text" class="form-control"  name="idParametro" #name="ngModel" 
+                [(ngModel)]="serviceParametro.selectedParametro.idParametro" placeholder="id Parametro">
+                <label for="">id Parametro</label>
               </div>
             </div>
+          </div>
+        </div>
 
             <div>
-              <div class="input-field col-s12">
-                <div>
-                  <label>Ingresar nombre parametro</label>
-                </div>
-                <input type="text" name="nombreParametro" #name="ngModel" 
-                [(ngModel)]="serviceParametro.selectedParametro.nombreParametro" placeholder="nombreParametro">
+              <div  class="row">
+                <div class="col-md-12">
+                    <div class="md-form form-group">
+                <input mdbInput type="text" class="form-control" name="nombreParametro" #name="ngModel" 
+                [(ngModel)]="serviceParametro.selectedParametro.nombreParametro" placeholder="nombre del Parametro">
+                <label for="">Nombre del Parametro</label>
               </div>
             </div>
-            
+          </div>
+        </div>
+
              <div>
-              <div class="input-field col-s12">
-                <div>
-                  <label>Ingresar valor del parametro</label>
-                </div>
-                <input type="text" name="valor" #name="ngModel" 
+              <div  class="row">
+                <div class="col-md-12">
+                    <div class="md-form form-group">
+                <input mdbInput type="text" class="form-control" name="valor" #name="ngModel" 
                 [(ngModel)]="serviceParametro.selectedParametro.valor" placeholder="valor">
+                <label for="">Valor del Parametro</label>
               </div>
             </div>
+          </div>
+        </div>
 
               <div class="card-action">
                 <div class="input-field col-s12">
-                  <button class="btn right  purple darken-4" (click)="resetForm(parametroForm)">Limpiar</button>
-                  <button class="btn ">Guardar</button>
+                  <button  mdbBtn color="primary" class="btn right" (click)="resetForm(parametroForm)">Limpiar</button>
+                  <button  mdbBtn color="light-green" class="btn ">Guardar</button>
                 </div>
               </div>
-            
+            </div>
           </form>
-        </div>
-      </div>
-    </div>
+
+     <!-- Construccion de la tabla -->     
+          <br>
+          <br>
+    <!-- Construccion de la tabla -->
+    <h1 class="modal-title w-100 font-weight-bold">DATOS</h1>      
     <div class="table-responsive-lg">
-      <table class="striped highlight black-text">
+        <table mdbTable responsive="true">
         <thead>
           <th>Id Parametro</th>
           <th>Nombre Parametro</th>
@@ -82,23 +79,25 @@
           <th>Operaciones</th>
         </thead>
         <tbody>
-          <tr *ngFor="let parametro of serviceParametro.parametro">
+          <tr mdbTableCol  *ngFor="let parametro of serviceParametro.parametro">
             <td>{{parametro.idParametro}}</td>
             <td>{{parametro.nombreParametro}}</td>
             <td>{{parametro.valor }}</td>
             
             
             <td>
+              
               <a (click)="editParametro(parametro)">
-                <i class="material-icons">edit</i>
+                  <i class="fas fa-pencil-alt"></i>
               </a>
+              
               <a (click)="deleteParametro(parametro._id, parametroForm)">
-                <i class="material-icons">delete</i>
+                  <i class="fas fa-trash"></i>
+
               </a>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
-  </div>
-</div>
+

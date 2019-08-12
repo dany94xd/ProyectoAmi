@@ -3,106 +3,105 @@
 <br>
 <br>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
 
-
-<header>
-  <nav class="estiloNav">
-    <ul>
-      <li><a href="admin/instituciones">Instituciones</a></li>
-      <li><a href="admin/personas">Personas</a></li>
-      <li><a href="admin/evento">Eventos</a></li>
-      <li><a href="admin/logros">Logros</a></li>
-      <li><a href="admin/reportes">Reportes</a></li>
-      <li><a href="admin/parametro">Parametros</a></li>
-      <li><a href="admin/roles">Rol</a></li>
-    </ul>
-  </nav>
-</header>
-
-
-<div class="container">
-    <h3 class="center">TABLA LOGROS</h3>
-  <div class="row">
-    <div class="col s5">
-      <div class="card">
-        <div class="card-content">
+    <h1 class="modal-title w-100 font-weight-bold">TABLA LOGROS</h1>
+     
             <form #logrosForm="ngForm" (ngSubmit)="addLogros(logrosForm)">
-          
-                <input type="hidden" name="_id" #_id="ngModel" 
+           <!-- Grid row -->
+           <div >
+                <input class="form-control" type="hidden" name="_id" #_id="ngModel" 
                 [(ngModel)]="logrosService.selectedLogros._id">
-                <div>
-                  <div class="input-field col-s12">
-                    <div>
-                    <label>Ingresar id logro</label>
-                  </div>
-                    <input type="text" name="idLogro" #name="ngModel" 
-                    [(ngModel)]="logrosService.selectedLogros.idLogro" placeholder="idLogro">
-                  </div>
-                </div>
-              <div>
-                  <div class="input-field col-s12">
-                      <div>
-                      <label>Ingresar id institucion</label>
-                    </div>
-                    <input type="text" name="idInstitucion" #name="ngModel" 
-                    [(ngModel)]="logrosService.selectedLogros.idInstitucion" placeholder="nombre de la institucion">
+                
+                 <!-- Grid id Logros -->
+              
+                  <div class="form-row">
+                    <div class="col-md-6">
+                        <div class="md-form form-group">
+                    <input mdbInput  class="form-control" type="text" name="idLogro" #name="ngModel" 
+                    [(ngModel)]="logrosService.selectedLogros.idLogro" placeholder="id Logro">
+                    <label for="">id Logro</label>
                   </div>
                 </div>
-              <div>
-                  <div class="input-field col-s12">
-                    <div>
-                      <label>Ingresar nombre</label>
-                    </div>
-                    <input type="text" name="nombre" #name="ngModel" 
-                    [(ngModel)]="logrosService.selectedLogros.nombre" placeholder="nombre">
-                  </div>
-                </div>
+          
+            
+             <!-- Grid id Logros -->
 
-                <div>
-                    <div class="input-field col-s12">
-                      <div>
-                        <label>Ingresar Descripcion</label>
+            <!-- Grid id Institucion -->
+              
+                  <div class="col-md-6">
+                      <div class="md-form form-group">
+                        <input mdbInput  class="form-control" type="text" name="idInstitucion" #name="ngModel" 
+                        [(ngModel)]="logrosService.selectedLogros.idInstitucion" placeholder="id de la institucion">
+                        <label for="">id de la Institucion</label>
                       </div>
-                      <input type="text" name="descripcion" #name="ngModel" 
-                      [(ngModel)]="logrosService.selectedLogros.descripcion" placeholder="descripcion">
-                    </div>
-                  </div>
+               
+              </div>
+            </div>
+            <!-- Grid id Institucion -->
 
-              <div>
-                  <div class="input-field col-s12">
-                    <div>
-                      <label>Ingresar minimo botellas</label>
+            <!-- Grid Nombre -->
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="md-form form-group">                  
+                    <input  mdbInput  class="form-control" type="text" name="nombre" #name="ngModel" 
+                    [(ngModel)]="logrosService.selectedLogros.nombre" placeholder="Nombre">
+                    <label for="">Nombre</label>
+                  </div>
+                </div>
+              </div>
+                <!-- Grid Nombre -->
+
+                  <!-- Grid Descripcion -->
+                <div  class="row">
+                    <div class="col-md-12">
+                        <div class="md-form form-group">
+                      <input  mdbInput  class="form-control"  type="text" name="descripcion" #name="ngModel" 
+                      [(ngModel)]="logrosService.selectedLogros.descripcion" placeholder="Descripcion">
+                      <label for="">Descripcion</label>
                     </div>
-                    <input type="text" name="minbotella" #name="ngModel" 
+                  </div>
+                </div>
+                 <!-- Grid Descripcion -->
+
+                <!-- Grid botellas -->
+              <div class="form-row">
+                  <div class="col-md-6">
+                      <div class="md-form form-group">
+                    <input mdbInput class="form-control" type="text" name="minbotella" #name="ngModel" 
                     [(ngModel)]="logrosService.selectedLogros.minbotella"  placeholder="minBotellas">
+                    <label for="">Maximo de Botellas</label>
                   </div>
                 </div>
-    
-              <div>
-                  <div class="input-field col-s12">
-                    <div>
-                      <label>Ingresar maximo botellas</label>
-                    </div>
-                    <input type="text" name="maxbotella" #name="ngModel" 
+                  <div class="col-md-6">
+                      <div class="md-form form-group">
+                    <input mdbInput class="form-control"  type="text" name="maxbotella" #name="ngModel" 
                     [(ngModel)]="logrosService.selectedLogros.maxbotella"  placeholder="maxBotellas">
+                    <label for="">Minimo  de Botellas</label>
                   </div>
                 </div>
-                 
+              </div>
+                 <!-- Grid botellas -->
+
+                  <!-- Grid Botones -->
                   <div class="card-action">
                     <div class="input-field col-s12">
-                      <button class="btn right  purple darken-4" (click)="resetForm(logrosForm)">Limpiar</button>
-                      <button class="btn ">Guardar</button>
+                      <button mdbBtn color="primary"  class="btn right" (click)="resetForm(logrosForm)">Limpiar</button>
+                      <button mdbBtn color="light-green" class="btn ">Guardar</button>
                     </div>
                   </div>
-               
+                   <!-- Grid Botones -->
+                </div>
               </form>
-              <!-- estructura de la tabla logros-->
-        </div>
-      </div>
-    </div>
-    <div class="col s7">
-        <table class="striped highlight black-text">
+            
+        
+     
+      <!-- Construccion de la tabla -->     
+      <br>
+      <br>
+<!-- Construccion de la tabla -->
+<h1 class="modal-title w-100 font-weight-bold">DATOS</h1>      
+<div class="table-responsive-lg">
+    <table mdbTable responsive="true">
           <thead>
             <th>Id Logro</th>
             <th>Id Institucion</th>
@@ -114,7 +113,7 @@
             <th>Operaciones</th>
           </thead>
           <tbody>
-            <tr *ngFor="let logro of logrosService.logro">
+            <tr mdbTableCol *ngFor="let logro of logrosService.logro">
               <td>{{ logro.idLogro }}</td>
               <td>{{ logro.idInstitucion }}</td>
               <td>{{ logro.nombre }}</td>
@@ -125,18 +124,18 @@
               
               <td>
                 <a (click)="editLogros(logro)">
-                  <i class="material-icons">edit</i>
+                    <i class="fas fa-pencil-alt"></i>
                 </a>
                 <a (click)="deleteLogros(logro._id, logroForm)">
-                  <i class="material-icons">delete</i>
+                    <i class="fas fa-trash"></i>
                 </a>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
-  </div>
-</div>
+ 
+
 
 
 
