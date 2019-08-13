@@ -6,62 +6,74 @@
 
 
 
-<nav class="navbar navbar-white bg navbar-expand-sm fixed-top" style="background-color: #ffffff; color:#0000">
-  
-  <a href="#" class="brand-logo" *ngIf="!isLogged">
-    <img class="logo" width="100" src="assets/img/logo.png">
-  </a> 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar"
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #ffffff; color:#0000">
+ 
+    <a href="#" class="navbar-brand" *ngIf="!isLogged">
+      <img class="logo" width="100" src="assets/img/logo.png">
+   </a> 
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="mainNavbar" *ngIf="!isLogged && !isLoggedUser">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
   
     <ul class="navbar-nav ml-auto">
-        <li class="nav-item" >
+        <li class="nav-item " >
             <a class="nav-link" style="color:#000000"  href="#">INICIO
             </a>
           </li>
-        <li class="nav-item">
+
+        <li class="nav-item ">
 
             <a class="nav-link" style="color:#000000" routerLink="/user/nosotros">NOSOTROS
 
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item ">
             <a class="nav-link" style="color:#000000" routerLink="/user/portfolio">EVENTOS
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item ">
             <a class="nav-link" style="color:#000000" routerLink="/user/premios">PREMIOS
             </a>
           </li>
 
-          <li class="nav-item">
-
-              <a class="nav-link" style="color:#000000" routerLink="/user/contactanos">CONTÁCTANOS
-
-
+          <li class="nav-item ">
+              <a class="nav-link " style="color:#000000" routerLink="/user/contactanos">CONTÁCTANOS
               </a>
             </li>
-        
-      <li class="nav-item">
-        <a class="nav-link" style="color:#000000" routerLink="/personas">ADMIN
-        </a>
-      </li>    
+                 
+              <li class="nav-item dropdown btn-group" dropdown  >
+                <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                 INICIAR SESION <span class="caret"></span></a>
+                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                    <a class="dropdown-item waves-light" routerLink="#">Reciclador</a>
+                    <a class="dropdown-item waves-light" routerLink="#">Recolector</a>
+                    <a class="dropdown-item waves-light" routerLink="#">Sponsor</a>
+                    <a class="dropdown-item waves-light" routerLink="#"> Administrador</a>
+                </div>
+            </li>
 
-      <li class="nav-item">
-        <a class="nav-link" style="color:#000000" routerLink="/user/login">INICIAR SESIÓN
-        </a>
-      </li>
-     
+           <li class="nav-item dropdown btn-group" dropdown  >
+                <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                  ADMINISTRACION <span class="caret"></span></a>
+                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                    <a class="dropdown-item waves-light" routerLink="admin/instituciones">Instituciones</a>
+                    <a class="dropdown-item waves-light" routerLink="admin/personas">Personas</a>
+                    <a class="dropdown-item waves-light" routerLink="admin/evento"> Eventos</a>
+                    <a class="dropdown-item waves-light" routerLink="admin/logros"> Logros</a>
+                    <a class="dropdown-item waves-light" routerLink="admin/reportes">Reportes</a>
+                    <a class="dropdown-item waves-light" routerLink="admin/parametro"> Parametros</a> 
+                    <a class="dropdown-item waves-light" routerLink="admin/roles">Roles</a>
+                   
+                </div>
+            </li> 
+
 
     </ul>
   </div>
-
-
-
  
 </nav>
 

@@ -10,11 +10,11 @@ logroCtrl.getlogros = async (req, res, next) => {
 logroCtrl.createLogro = async (req, res, next) => {
     const logro = new Logro({
         idLogro: req.body.idLogro,
+        idInstitucion: req.body.idInstitucion,
         nombre: req.body.nombre,
         descripcion: req.body.descripcion,
         minbotella: req.body.minbotella,
-        maxbotella: req.body.maxbotella,
-        idInstitucion: req.body.idInstitucion
+        maxbotella: req.body.maxbotella
     });
     await logro.save();
     res.json({ status: 'logro created' });
@@ -30,11 +30,12 @@ logroCtrl.editLogro = async (req, res, next) => {
     const { id } = req.params;
     const logro = {
         idLogro: req.body.idLogro,
+        idInstitucion: req.body.idInstitucion,
         nombre: req.body.nombre,
         descripcion: req.body.descripcion,
         minbotella: req.body.minbotella,
-        maxbotella: req.body.maxbotella,
-        idInstitucion: req.body.idInstitucion
+        maxbotella: req.body.maxbotella
+        
     };
     await Logro.findByIdAndUpdate(id, { $set: logro }, { new: true });
     res.json({ status: 'logro Updated' });

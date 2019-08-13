@@ -1,96 +1,135 @@
 <br>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-<br>
 <br>
 
 
-<header>
-
-  <nav class="estiloNav">
-    <ul>
-      <li><a href="/instituciones">Instituciones</a></li>
-      <li><a href="/personas">Personas</a></li>
-      <li><a href="/evento">Eventos</a></li>
-      <li><a href="/logros">Logros</a></li>
-      <li><a href="/reportes">Reportes</a></li>
-      <li><a href="/parametro">Parametros</a></li>
-    </ul>
-  </nav>
-</header>
-
-
-<div class="container">
-
-    <div class="container">
-        <h3 class="center">TABLA PERSONA</h3>
-        <br>
-    <br>
-    <div class="row">
-      <div class="col s5">
-        <div class="card">
-          <div class="card-content">
-            <form #personaForm="ngForm" (ngSubmit)="addPersona(personaForm)">
-              <input type="hidden" name="_id" #_id="ngModel" 
-              [(ngModel)]="personaService.selectPersona._id">
-              <div class="row">
-                <div class="input-field col-s12">
-                  <input type="text" name="idPersona" #name="ngModel" 
-                  [(ngModel)]="personaService.selectPersona.idPersona" placeholder="Id de la institucion">
-                </div>
-                <div class="input-field col-s12">
-                  <input type="text" name="idInstitucion" #name="ngModel" 
-                  [(ngModel)]="personaService.selectPersona.idInstitucion" placeholder="nombre de la institucion">
-                </div>
-                <div class="input-field col-s12">
-                  <input type="text" name="cedula" #name="ngModel" 
-                  [(ngModel)]="personaService.selectPersona.cedula" placeholder="Ruc de la institucion">
-                </div>
-                <div class="input-field col-s12">
-                  <input type="text" name="nombre" #name="ngModel" 
-                  [(ngModel)]="personaService.selectPersona.nombre" value="0" placeholder="Descripcion">
-                </div>
-                <div class="input-field col-s12">
-                    <input type="text" name="apellido" #name="ngModel" 
-                    [(ngModel)]="personaService.selectPersona.apellido" value="0" placeholder="Apellido">
+    <h1 class="modal-title w-100 font-weight-bold">TABLA PERSONA</h1>
+     
+            <form #PersonaForm="ngForm" (ngSubmit)="addPersona(PersonaForm)">
+           <!-- Grid row -->
+           <div >
+                <input class="form-control" type="hidden" name="_id" #_id="ngModel" 
+                [(ngModel)]="personaService.selectPersona._id">
+                
+                 <!-- Grid id Logros -->
+              
+                  <div class="form-row">
+                    <div class="col-md-6">
+                        <div class="md-form form-group">
+                    <input mdbInput  class="form-control" type="text" name="idPersona" #name="ngModel" 
+                    [(ngModel)]="personaService.selectPersona.idPersona" placeholder="idPersona">
+                    <label for="">idPersona</label>
                   </div>
-                <div class="card-action">
-                  <div class="input-field col-s12">
-                    <button class="btn right  purple darken-4" (click)="resetForm(institucionForm)">Limpiar</button>
-                    <button class="btn ">Guardar</button>
+                </div>
+          
+            
+             <!-- Grid id Logros -->
+
+            <!-- Grid id Institucion -->
+              
+                  <div class="col-md-6">
+                      <div class="md-form form-group">
+                        <input mdbInput  class="form-control" type="text" name="idInstitucion" #name="ngModel" 
+                        [(ngModel)]="personaService.selectPersona.idInstitucion" placeholder="idInstitucion">
+                        <label for="">idInstitucion</label>
+                      </div>
+               
+              </div>
+            </div>
+            <!-- Grid id Institucion -->
+
+            <!-- Grid Nombre -->
+      
+                <!-- Grid Nombre -->
+
+                  <!-- Grid Descripcion -->
+                <div  class="row">
+                    <div class="col-md-12">
+                        <div class="md-form form-group">
+                      <input  mdbInput  class="form-control"  type="text" name="cedula" #name="ngModel" 
+                      [(ngModel)]="personaService.selectPersona.cedula" placeholder="cedula">
+                      <label for="">cedula</label>
+                    </div>
+                  </div>
+                </div>
+                 <!-- Grid Descripcion -->
+
+                <!-- Grid botellas -->
+              <div class="form-row">
+                  <div class="col-md-6">
+                      <div class="md-form form-group">
+                    <input mdbInput class="form-control" type="text" name="nombre" #name="ngModel" 
+                    [(ngModel)]="personaService.selectPersona.nombre"  placeholder="nombre">
+                    <label for="">fechainicio</label>
+                  </div>
+                </div>
+                  <div class="col-md-6">
+                      <div class="md-form form-group">
+                    <input mdbInput class="form-control"  type="text" name="apellido" #name="ngModel" 
+                    [(ngModel)]="personaService.selectPersona.apellido"  placeholder="apellido">
+                    <label for="">apellido</label>
                   </div>
                 </div>
               </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="col s7">
-        <table class="striped highlight black-text">
+                 <!-- Grid botellas -->
+
+
+         
+
+         
+
+                  <!-- Grid Botones -->
+                  <div class="card-action">
+                    <div class="input-field col-s12">
+                      <button mdbBtn color="primary"  class="btn right" (click)="resetForm(PersonaForm)">Limpiar</button>
+                      <button mdbBtn color="light-green" class="btn ">Guardar</button>
+                    </div>
+                  </div>
+                   <!-- Grid Botones -->
+                </div>
+              </form>
+            
+        
+     
+      <!-- Construccion de la tabla -->     
+      <br>
+      <br>
+<!-- Construccion de la tabla -->
+<h1 class="modal-title w-100 font-weight-bold">DATOS</h1>      
+<div class="table-responsive-lg">
+    <table mdbTable responsive="true">
           <thead>
-            <th>Id institucion</th>
-            <th>Nombre</th>
-            <th>Ruc</th>
-            <th>Descripcion</th>
+            <th>idPersona</th>
+            <th>idInstitucion</th>
+            <th>cedula</th>
+            <th>nombre</th>
+            <th>apellido</th>
+        
+  
+            <th>Operaciones</th>
           </thead>
           <tbody>
-            <tr *ngFor="let persona of personaService.personas">
-              <td>{{ persona.idPersona }}</td>
-              <td>{{ persona.idInstitucion }}</td>
-              <td>{{ persona.cedula }}</td>
-              <td>{{ persona.nombre }}</td>
-              <td>{{ persona.apellido }}</td>
+            <tr mdbTableCol *ngFor="let personas of personaService.personas">
+              <td>{{ personas.idPersona }}</td>
+              <td>{{ personas.idInstitucion }}</td>
+              <td>{{ personas.cedula }}</td>
+              <td>{{ personas.nombre }}</td>
+              <td>{{ personas.apellido }}</td>
+           
+              
+              
               <td>
-                <a (click)="editPersona(persona)">
-                  <i class="material-icons">edit</i>
+                <a (click)="editPersona(personas)">
+                    <i class="fas fa-pencil-alt"></i>
                 </a>
-                <a (click)="deletePersona(persona._id, personaForm)">
-                  <i class="material-icons">delete</i>
+                <a (click)="deletePersona(personas._id, PersonaForm)">
+                    <i class="fas fa-trash"></i>
                 </a>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
-    </div>
-  </div>
-  
+ 
+
+
+

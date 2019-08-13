@@ -4,14 +4,22 @@ export class Persona {
         this._id = _id;
         this.idPersona = idPersona;
         this.idInstitucion = idInstitucion;
+   
         this.cedula = cedula;
         this.nombre = nombre;
-        this.apellido = apellido;
+      this.apellido= apellido;
+  
+        
+     
+    
     }
     _id: string;
     idPersona: Number;
     idInstitucion: Number;
+
     cedula: string;
     nombre: string;
     apellido: string;
+   
+  
 }

@@ -1,118 +1,156 @@
+
+
 <br>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-<br>
 <br>
 
-<header>
-    <nav class="estiloNav">
-      <ul>
-        <li><a href="/instituciones">Instituciones</a></li>
-        <li><a href="/personas">Personas</a></li>
-        <li><a href="/evento">Eventos</a></li>
-        <li><a href="/logros">Logros</a></li>
-        <li><a href="/reportes">Reportes</a></li>
-        <li><a href="/parametro">Parametros</a></li>
-      </ul>
-    </nav>
-  </header>
 
-<div class="container">
-
-    <h3 class="center">TABLA EVENTO</h3>
-    <br>
-<br>
-  <div class="row">
-    <div class="col s5">
-      <div class="card">
-        <div class="card-content">
-          <form #eventoForm="ngForm" (ngSubmit)="addEvento(eventoForm)">
-            <input type="hidden" name="_id" #_id="ngModel" 
-            [(ngModel)]="eventoService.selectedEvento._id">
-            <div class="row">
-              <div class="input-field col-s12">
-                <input type="text" name="idInstitucion" #name="ngModel" 
-                [(ngModel)]="eventoService.selectedEvento.idInstitucion" placeholder="idInstitucion">
-              </div>
-              <div class="input-field col-s12">
-                <input type="text" name="idLogro" #name="ngModel" 
-                [(ngModel)]="eventoService.selectedEvento.idLogro" placeholder="idLogro">
-              </div>
-
-              <div class="input-field col-s12">
-                  <input type="text" name="descripcion" #name="ngModel" 
-                  [(ngModel)]="eventoService.selectedEvento.descripcion" placeholder="descripcion">
-                </div>
-
-                <div class="input-field col-s12">
+    <h1 class="modal-title w-100 font-weight-bold">TABLA EVENTOS</h1>
+     
+            <form #EventosForm="ngForm" (ngSubmit)="addEvento(EventosForm)">
+           <!-- Grid row -->
+           <div >
+                <input class="form-control" type="hidden" name="_id" #_id="ngModel" 
+                [(ngModel)]="eventoService.selectedEvento._id">
                 
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
-                    <input type="text" name="fechainicio" #name="ngModel" 
-                    [(ngModel)]="eventoService.selectedEvento.fechainicio" placeholder="fechainicio">
+                 <!-- Grid id Logros -->
+              
+                  <div class="form-row">
+                    <div class="col-md-6">
+                        <div class="md-form form-group">
+                    <input mdbInput  class="form-control" type="text" name="idInstitucion" #name="ngModel" 
+                    [(ngModel)]="eventoService.selectedEvento.idInstitucion" placeholder="idInstitucion">
+                    <label for="">idInstitucion</label>
                   </div>
+                </div>
+          
+            
+             <!-- Grid id Logros -->
 
-                  <div class="input-field col-s12">
-                      <input type="text" name="fechafin" #name="ngModel" 
-                      [(ngModel)]="eventoService.selectedEvento.fechafin" placeholder="fechafin">
+            <!-- Grid id Institucion -->
+              
+                  <div class="col-md-6">
+                      <div class="md-form form-group">
+                        <input mdbInput  class="form-control" type="text" name="idLogro" #name="ngModel" 
+                        [(ngModel)]="eventoService.selectedEvento.idLogro" placeholder="idLogro">
+                        <label for="">idLogro</label>
+                      </div>
+               
+              </div>
+            </div>
+            <!-- Grid id Institucion -->
+
+            <!-- Grid Nombre -->
+      
+                <!-- Grid Nombre -->
+
+                  <!-- Grid Descripcion -->
+                <div  class="row">
+                    <div class="col-md-12">
+                        <div class="md-form form-group">
+                      <input  mdbInput  class="form-control"  type="text" name="descripcion" #name="ngModel" 
+                      [(ngModel)]="eventoService.selectedEvento.descripcion" placeholder="Descripcion">
+                      <label for="">Descripcion</label>
                     </div>
+                  </div>
+                </div>
+                 <!-- Grid Descripcion -->
 
-                    <div class="input-field col-s12">
-                      <input type="text" name="urlfoto" #name="ngModel" 
-                      [(ngModel)]="eventoService.selectedEvento.urlfoto" placeholder="urlfoto">
-                    </div>
+                <!-- Grid botellas -->
+              <div class="form-row">
+                  <div class="col-md-6">
+                      <div class="md-form form-group">
+                    <input mdbInput class="form-control" type="text" name="fechainicio" #name="ngModel" 
+                    [(ngModel)]="eventoService.selectedEvento.fechainicio"  placeholder="fechainicio">
+                    <label for="">fechainicio</label>
+                  </div>
+                </div>
+                  <div class="col-md-6">
+                      <div class="md-form form-group">
+                    <input mdbInput class="form-control"  type="text" name="fechafin" #name="ngModel" 
+                    [(ngModel)]="eventoService.selectedEvento.fechafin"  placeholder="fechafin">
+                    <label for="">fechafin</label>
+                  </div>
+                </div>
+              </div>
+                 <!-- Grid botellas -->
 
-                      <div class="input-field col-s12">
-                          <input type="text" name="premios" #name="ngModel" 
-                          [(ngModel)]="eventoService.selectedEvento.premios" placeholder="premios">
-                        </div>
-  
-             
-              <div class="card-action">
-                <div class="input-field col-s12">
-                  <button class="btn right  purple darken-4" (click)="resetForm(eventoForm)">Limpiar</button>
-                  <button class="btn ">Guardar</button>
+
+                 <div  class="row">
+                  <div class="col-md-12">
+                      <div class="md-form form-group">
+                    <input  mdbInput  class="form-control"  type="text" name="urlfoto" #name="ngModel" 
+                    [(ngModel)]="eventoService.selectedEvento.urlfoto" placeholder="urlfoto">
+                    <label for="">Descripcion</label>
+                  </div>
+                </div>
+              </div>
+
+
+              <div  class="row">
+                <div class="col-md-12">
+                    <div class="md-form form-group">
+                  <input  mdbInput  class="form-control"  type="text" name="premios" #name="ngModel" 
+                  [(ngModel)]="eventoService.selectedEvento.premios" placeholder="premios">
+                  <label for="">premios</label>
                 </div>
               </div>
             </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    <div class="col s7">
-      <table class="striped highlight black-text">
-        <thead>
-          <th>idInstitucion</th>
-          <th>idLogro</th>
-          <th>descripcion</th>
-          <th>fechainicio</th>
-          <th>fechafin</th>
-          <th>urlfoto</th>
-          <th>premios</th>
 
-          <th>Operaciones</th>
-        </thead>
-        <tbody>
-          <tr *ngFor="let evento of eventoService.evento">
-            <td>{{ evento.idInstitucion }}</td>
-            <td>{{ evento.idLogro }}</td>
-            <td>{{ evento.descripcion }}</td>
-            <td>{{ evento.fechainicio }}</td>
-            <td>{{ evento.fechafin }}</td>
-            <td>{{ evento.urlfoto}}</td>
-            <td>{{ evento.premios }}</td>
+                  <!-- Grid Botones -->
+                  <div class="card-action">
+                    <div class="input-field col-s12">
+                      <button mdbBtn color="primary"  class="btn right" (click)="resetForm(EventosForm)">Limpiar</button>
+                      <button mdbBtn color="light-green" class="btn ">Guardar</button>
+                    </div>
+                  </div>
+                   <!-- Grid Botones -->
+                </div>
+              </form>
             
-            
-            <td>
-              <a (click)="editEvento(evento)">
-                <i class="material-icons">edit</i>
-              </a>
-              <a (click)="deleteEvento(evento._id, eventoForm)">
-                <i class="material-icons">delete</i>
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
+        
+     
+      <!-- Construccion de la tabla -->     
+      <br>
+      <br>
+<!-- Construccion de la tabla -->
+<h1 class="modal-title w-100 font-weight-bold">DATOS</h1>      
+<div class="table-responsive-lg">
+    <table mdbTable responsive="true">
+          <thead>
+            <th>idInstitucion</th>
+            <th>idLogro</th>
+            <th>descripcion</th>
+            <th>fechainicio</th>
+            <th>fechafin</th>
+            <th>urlfoto</th>
+            <th>premios</th>
+  
+            <th>Operaciones</th>
+          </thead>
+          <tbody>
+            <tr mdbTableCol *ngFor="let evento of eventoService.evento">
+              <td>{{ evento.idInstitucion }}</td>
+              <td>{{ evento.idLogro }}</td>
+              <td>{{ evento.descripcion }}</td>
+              <td>{{ evento.fechainicio }}</td>
+              <td>{{ evento.fechafin }}</td>
+              <td>{{ evento.urlfoto }}</td>
+              <td>{{ evento.premios }}</td>
+              
+              
+              <td>
+                <a (click)="editEvento(evento)">
+                    <i class="fas fa-pencil-alt"></i>
+                </a>
+                <a (click)="deleteEvento(evento._id, EventosForm)">
+                    <i class="fas fa-trash"></i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+ 
+
+
+
