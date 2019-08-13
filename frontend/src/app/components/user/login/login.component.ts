@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import {Injectable} from '@angular/core'
+import {HttpClient} from '@angular/common/http'
 //import { AuthService } from 'src/app/services/auth.service';
 //import { UserInterface } from 'src/app/models/user-interface';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { isError } from 'util';
 import { NgForm } from '@angular/forms/src/directives/ng_form';
+//import {UserInterface} from '../models/'
 
 @Component({
   selector: 'app-login',
