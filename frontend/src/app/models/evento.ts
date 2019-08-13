@@ -18,7 +18,7 @@ export class Evento {
     descripcion: string;
     fechainicio: string;
     fechafin:string;
-    urlfoto:string;
+    urlfoto: String;
     premios:string;
    
 }

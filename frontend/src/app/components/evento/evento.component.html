@@ -57,10 +57,9 @@
                     </div>
 
                     <div class="input-field col-s12">
-                        <input type="text" name="urlfoto" #name="ngModel" 
-                        [(ngModel)]="eventoService.selectedEvento.urlfoto" placeholder="urlfoto">
-                        
-                      </div>
+                      <input type="text" name="urlfoto" #name="ngModel" 
+                      [(ngModel)]="eventoService.selectedEvento.urlfoto" placeholder="urlfoto">
+                    </div>
 
                       <div class="input-field col-s12">
                           <input type="text" name="premios" #name="ngModel" 
@@ -99,7 +98,7 @@
             <td>{{ evento.descripcion }}</td>
             <td>{{ evento.fechainicio }}</td>
             <td>{{ evento.fechafin }}</td>
-            <td>{{ evento.urlfoto }}</td>
+            <td>{{ evento.urlfoto}}</td>
             <td>{{ evento.premios }}</td>
             
             

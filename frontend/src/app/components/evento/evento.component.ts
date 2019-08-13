@@ -6,7 +6,7 @@ import { Evento } from 'src/app/models/evento'
 declare var M: any;
 @Component({
   selector: 'datepicker-overview-app-evento',
-  templateUrl: '/evento.component.html',
+  templateUrl: './evento.component.html',
   styleUrls: ['./evento.component.scss']
 })
 export class EventoComponent implements OnInit {
@@ -47,7 +47,7 @@ export class EventoComponent implements OnInit {
       this.eventoService.deleteEvento(_id).subscribe(res => {
         this.getEvento();
         this.resetForm();
-        M.toast({html: 'evento eliminado'});
+     
       });
     }
   }

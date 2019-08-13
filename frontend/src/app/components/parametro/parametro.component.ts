@@ -4,7 +4,7 @@ import { ParametroService } from 'src/app/services/parametro/parametro.service';
 import { Parametro } from '../../models/parametro';
 
 import { NgForm } from '@angular/forms';
-import { stringify } from 'querystring';
+
 
 declare var M: any;
 
@@ -16,58 +16,53 @@ declare var M: any;
 export class ParametroComponent implements OnInit {
 
  
-  constructor( public serviceParametro: ParametroService ) { }
-
+  constructor(public parametrosService: ParametroService) { }
 
   ngOnInit() {
-    this.getParametro();
+    this.getParametros();
   }
 
-  public getParametro(){
-    this.serviceParametro.getParametro().subscribe(res=> {
-      this.serviceParametro.parametro = res as Parametro[];
-      console.log(this.serviceParametro);
-    });
-  }
-
-  public addParametro(form?: NgForm){
+  public addParametros(form?: NgForm){
     if(form.value._id){
-      this.serviceParametro.putParametro(form.value).subscribe(res => {
+      this.parametrosService.putParametros(form.value).subscribe(res => {
         this.resetForm(form);
-        this.getParametro();
-        M.toast({html: 'Parametro Actualizado'});
+        this.getParametros();
+    
       });  
     }else {
-      this.serviceParametro.postParametro(form.value).subscribe(res => {
-        this.getParametro();
+      this.parametrosService.postParametros(form.value).subscribe(res => {
+        this.getParametros();
         this.resetForm(form);
-        M.toast({html: 'Se agrego un parametro'});
+   
       });
     }
     
   }
 
- deleteParametro(_id: string, form: NgForm){
-  if(confirm('¿Esta seguro de eliminar?')) {
-    this.serviceParametro.deleteParametro(_id).subscribe(res => {
-      this.getParametro();
-      this.resetForm(form);
-      M.toast({html: 'Se elimino un parametro'})
-   })
+  getParametros(){
+    this.parametrosService.getParametros().subscribe(res => {
+      this.parametrosService.parametro = res as Parametro[];
+      console.log(res);
+    });
   }
-   
- } 
 
- editParametro(parametro: Parametro, form: NgForm){
-   this.serviceParametro.selectedParametro = parametro;
- }
-
+  deleteParametros(_id: string, form: NgForm){
+    if(confirm("Desea eliminar el reporte?")){
+      this.parametrosService.deleteParametros(_id).subscribe(res => {
+        this.getParametros();
+        this.resetForm();
+  
+      });
+    }
+  }
+  editParametros(parametro: Parametro, form: NgForm){
+    this.parametrosService.selectedParametros = parametro;
+  }
   resetForm(form?: NgForm) {
     if (form) {
       form.reset();
-      this.serviceParametro.selectedParametro = new Parametro();
+      this.parametrosService.selectedParametros = new Parametro();
     }
   }
-
 
 }
