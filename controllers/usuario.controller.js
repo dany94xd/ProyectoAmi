@@ -155,6 +155,15 @@ usuarioCtrl.loginUser=(req,res,next)=>{
                 const dataUser={
                     user:user.user,
                     idRol:user.idRol,
+                    idPersona:user.idPersona,
+                    idLogros:user.idLogros,
+                    idInstitucion:user.idInstitucion,
+                    matricula:user.matricula,
+                    NroBotellas:user.NroBotellas,
+                    saldoActual:user.saldoActual,
+                    saldoVerde:user.saldoVerde,
+                    Urlfoto:user.UrlFoto,
+                    email:user.email,
                     accesToken:accesToken,
                     expiresIn:expiresIn
                 }
