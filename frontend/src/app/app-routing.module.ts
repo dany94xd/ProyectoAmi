@@ -61,7 +61,7 @@ const routes: Routes = [
   
 
 
-  { path: 'user/login', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'user/ingresomatricula', component: IngresomaticulaComponent },
  // { path: 'user/register', component: RegisterComponent },
   //{ path: 'user/profile', component: ProfileComponent }, // TODO: only users auth
