@@ -4,6 +4,7 @@ const { Schema } = mongoose;
 const personaSchema = new Schema({
     idPersona: { type: String, required: false},
     idInstitucion: { type: String, required: false },
+    matricula: { type: String, required: false },
     cedula: { type: String, required: false },
     nombre: { type: String, required: false},
     apellido:{type:String ,required:false}
