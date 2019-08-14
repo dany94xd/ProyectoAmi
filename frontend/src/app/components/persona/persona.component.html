@@ -69,6 +69,16 @@
                     <label for="">apellido</label>
                   </div>
                 </div>
+
+                <div class="col-md-6">
+                  <div class="md-form form-group">
+                <input mdbInput class="form-control"  type="text" name="matricula" #name="ngModel" 
+                [(ngModel)]="personaService.selectPersona.matricula"  placeholder="matricula">
+                <label for="">matricula</label>
+              </div>
+            </div>
+
+
               </div>
                  <!-- Grid botellas -->
 
@@ -103,6 +113,7 @@
             <th>cedula</th>
             <th>nombre</th>
             <th>apellido</th>
+            <th>matricula</th>
         
   
             <th>Operaciones</th>
@@ -114,6 +125,7 @@
               <td>{{ personas.cedula }}</td>
               <td>{{ personas.nombre }}</td>
               <td>{{ personas.apellido }}</td>
+              <td>{{ personas.matricula }}</td>
            
               
               

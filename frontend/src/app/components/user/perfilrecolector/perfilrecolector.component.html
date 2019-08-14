@@ -12,42 +12,116 @@
           <div class="col p-4 d-flex flex-column position-static">
             <h3 class="mb-0">Datos Personales</h3>
             <hr>
-            <form>
-              <div class="form-group row">
-                <h6>Nombre</h6>
-               
-                    <label id="datos">Freddy </label>
-                  
-              </div>
-              <div class="form-group row">
-                <h6>Apellido</h6>
-                 
-                    <label id="datos">Rada </label>
-                  
-              </div>
-              <div class="form-group row">
-                <h6>Correo Electronico</h6>
-                  
-                    <label id="datos">frada@espol.edu.ec</label>
-                
-              </div>
-
-              <div class="form-group row">
-                <h6>Saldo verde</h6>
+            <form #PersonaForm="ngForm" (ngSubmit)="addPersona">
+            <!-- Grid row -->
+           <div >
+              <h5  name="_id" #_id="ngModel" 
+                [(ngModel)]="personaService.selectedPersona._id"> </h5>
               
-                  <label id="datos">8</label>
-                
-            </div>
-
-
-            <div class="form-group row">
-              <h6>Saldo Actual</h6>
-             
-              <label id="datos">$0.16</label>
+               <!-- Grid id Logros -->
             
+                <div class="form-row">
+                  <div class="col-md-6">
+                      <div class="md-form form-group">
+                  <input mdbInput  class="form-control" type="text" name="idPersona" #name="ngModel" 
+                  [(ngModel)]="personaService.selectPersona.idPersona" placeholder="idPersona">
+                  <label for="">idPersona</label>
+                </div>
+              </div>
+        
+          
+           <!-- Grid id Logros -->
+
+          <!-- Grid id Institucion -->
+            
+                <div class="col-md-6">
+                    <div class="md-form form-group">
+                      <input mdbInput  class="form-control" type="text" name="idInstitucion" #name="ngModel" 
+                      [(ngModel)]="personaService.selectPersona.idInstitucion" placeholder="idInstitucion">
+                      <label for="">idInstitucion</label>
+                    </div>
+             
+            </div>
           </div>
+          <!-- Grid id Institucion -->
+
+          <!-- Grid Nombre -->
+    
+              <!-- Grid Nombre -->
+
+                <!-- Grid Descripcion -->
+              <div  class="row">
+                  <div class="col-md-12">
+                      <div class="md-form form-group">
+                    <input  mdbInput  class="form-control"  type="text" name="cedula" #name="ngModel" 
+                    [(ngModel)]="personaService.selectPersona.cedula" placeholder="cedula">
+                    <label for="">cedula</label>
+                  </div>
+                </div>
+              </div>
+               <!-- Grid Descripcion -->
+
+              <!-- Grid botellas -->
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="md-form form-group">
+                  <input mdbInput class="form-control" type="text" name="nombre" #name="ngModel" 
+                  [(ngModel)]="personaService.selectPersona.nombre"  placeholder="nombre">
+                  <label for="">fechainicio</label>
+                </div>
+              </div>
+                <div class="col-md-6">
+                    <div class="md-form form-group">
+                  <input mdbInput class="form-control"  type="text" name="apellido" #name="ngModel" 
+                  [(ngModel)]="personaService.selectPersona.apellido"  placeholder="apellido">
+                  <label for="">apellido</label>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="md-form form-group">
+              <input mdbInput class="form-control"  type="text" name="matricula" #name="ngModel" 
+              [(ngModel)]="personaService.selectPersona.matricula"  placeholder="matricula">
+              <label for="">matricula</label>
+            </div>
+          </div>
+
+
+            </div>
+               <!-- Grid botellas -->
+
+
+       
+
+       
+
+                <!-- Grid Botones -->
+                <div class="card-action">
+                  <div class="input-field col-s12">
+                    <button mdbBtn color="primary"  class="btn right" (click)="resetForm(PersonaForm)">Limpiar</button>
+                    <button mdbBtn color="light-green" class="btn ">Guardar</button>
+                  </div>
+                </div>
+                 <!-- Grid Botones -->
+              </div>
             </form>
             
+
+            <tr mdbTableCol *ngFor="let personas of personaService.personas">
+              <td>{{ personas.nombre }}</td>
+              <td>{{ personas.apellido }}</td>
+              <td>{{ personas.correo }}</td>
+              <td>{{ personas.saldoVerde }}</td>
+              <td>{{ personas.saldoActual }}</td>
+            
+           
+              
+              
+            
+            </tr>
+
+
+
           </div>
           <div class="col-auto d-none d-lg-block">
           </div>
@@ -62,7 +136,8 @@
           
             <label id="numbotellas">Numero de Botellas entregadas:</label>   <div class="col-md-3 mb-3">
              
-              <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+              <input mdbInput  class="form-control" type="text" name="NroBotellas"   #name="ngModel"
+              [(ngModel)]="personaService.selectPersona.NroBotellas" placeholder="NroBotellas">
 
               
             </div>
