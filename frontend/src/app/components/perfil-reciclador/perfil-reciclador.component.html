@@ -9,7 +9,7 @@
           <div class="col p-4 d-flex flex-column position-static">
             <h3 class="mb-0">Datos Personales</h3>
             <hr>
-            <form #PersonaForm="ngForm" (ngSubmit)="addPersona(PersonaForm)">
+            <form >
               <div class="form-group row">
                   
                   <label for="staticEmail" class="col-sm-2 col-form-label">NOMBRES</label>
@@ -22,7 +22,7 @@
               </div>
               <div class="form-group row">
                   <label for="staticEmail" class="col-sm-2 col-form-label">CORREO</label>
-                  <h5>{{usuarioEnSesion.correo}}</h5>
+                  <h5>{{personaEnSesion.email}}</h5>
               </div>
             </form>
 
@@ -47,11 +47,11 @@
             <div class="row text-center">
                 <div class="col-md-3 mb-3">
                   <label for="cc-expiration"># DE BOTELLAS</label>
-                  <input type="text" class="form-control" id="cc-expiration" placeholder="100" required="" disabled>
+                  <h5 class="form-control">{{personaEnSesion.NroBotellas}}</h5>
                 </div>
                 <div class="col-md-3 mb-3">
                   <label for="cc-cvv">SALDO DISPONIBLE</label>
-                  <input type="text" class="form-control" id="cc-cvv" placeholder="$ 0,50" required="" disabled>
+                  <h5  class="form-control" id="cc-cvv"> {{personaEnSesion.saldoActual}} </h5>
                 </div>
               </div>
                 

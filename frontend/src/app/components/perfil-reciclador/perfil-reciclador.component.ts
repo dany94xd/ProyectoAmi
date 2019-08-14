@@ -14,16 +14,18 @@ import { NgForm } from '@angular/forms';
 
 
 export class PerfilRecicladorComponent implements OnInit {
-
-
+  public usuarioEnSesion: any
+  public personaEnSesion: any
 
   constructor(public personaService: PersonasService, private personaServicio: PersonasService) { }
 
   ngOnInit() {
-    let usuarioEnSesion = JSON.parse(localStorage.getItem("currentuser"));
-    console.log(usuarioEnSesion.idPersona)
-    this.personaService.getPersonaById("").subscribe(res =>{
-
+    this.personaEnSesion = JSON.parse(localStorage.getItem("currentuser"));
+    console.log(this.personaEnSesion.idPersona);
+  
+    this.personaService.getPersonaById(this.personaEnSesion.idPersona).subscribe(res =>{
+      this.usuarioEnSesion = res;
+      
     })
   }
 
