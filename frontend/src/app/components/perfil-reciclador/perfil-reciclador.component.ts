@@ -4,17 +4,27 @@ import {PersonaComponent} from 'src/app/components/persona/persona.component';
 import { Persona } from '../../models/persona';
 import { NgForm } from '@angular/forms';
 
+
 @Component({
   selector: 'app-perfil-reciclador',
   templateUrl: './perfil-reciclador.component.html',
   styleUrls: ['./perfil-reciclador.component.css']
 })
+
+
+
 export class PerfilRecicladorComponent implements OnInit {
 
-  constructor(public personaService: PersonasService) { }
+
+
+  constructor(public personaService: PersonasService, private personaServicio: PersonasService) { }
 
   ngOnInit() {
-    this.getPersona();
+    let usuarioEnSesion = JSON.parse(localStorage.getItem("currentuser"));
+    console.log(usuarioEnSesion.idPersona)
+    this.personaService.getPersonaById("").subscribe(res =>{
+
+    })
   }
 
 

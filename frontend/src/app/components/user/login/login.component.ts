@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
           //console.log(rolTmp.tipoRol);
           if(rolTmp.tipoRol == 'admin'){
 
-            localStorage.setItem("currentuser", JSON.stringify(res))
+            localStorage.setItem("currentuser", JSON.stringify(usuarioLoggeado))
             console.log('vaya a la administracion mi perro');
             console.log(localStorage.getItem("currentuser"));
 
