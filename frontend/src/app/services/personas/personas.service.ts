@@ -34,4 +34,8 @@ export class PersonasService {
   deletePersona(_id: string){
     return this.http.delete(this.URL_API + `/${_id}`)
   }
+
+  getPersonaById(personaId: string){
+    return this.http.get(this.URL_API + `/${personaId}`)
+  }
 }

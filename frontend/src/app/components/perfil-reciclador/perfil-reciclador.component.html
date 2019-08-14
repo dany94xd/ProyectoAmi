@@ -9,55 +9,23 @@
           <div class="col p-4 d-flex flex-column position-static">
             <h3 class="mb-0">Datos Personales</h3>
             <hr>
-            <form #PersonaForm="ngForm" (ngSubmit)="addPersona(PersonaForm)">
+            <form >
               <div class="form-group row">
-                  <input class="form-control" type="hidden" name="_id" #_id="ngModel" 
-                  [(ngModel)]="personaService.selectPersona._id">
                   
-                  <input mdbInput class="form-control" type="text" name="nombre" #name="ngModel" 
-                  [(ngModel)]="personaService.selectPersona.nombre"  placeholder="nombre">
                   <label for="staticEmail" class="col-sm-2 col-form-label">NOMBRES</label>
-                  <div class="col-sm-10">
-       
-                  </div>
+                  <h5>{{usuarioEnSesion.nombre}}</h5>
               </div>
               <div class="form-group row">
 
-                  <input mdbInput class="form-control"  type="text" name="apellido" #name="ngModel" 
-                  [(ngModel)]="personaService.selectPersona.apellido"  placeholder="apellido">
                   <label for="staticEmail" class="col-sm-2 col-form-label">APELLIDOS</label>
-                  <div class="col-sm-10">
-                   
-                  </div>
+                  <h5>{{usuarioEnSesion.apellido}}</h5>
               </div>
               <div class="form-group row">
                   <label for="staticEmail" class="col-sm-2 col-form-label">CORREO</label>
-                  <div class="col-sm-10">
-                   
-                  </div>
+                  <h5>{{personaEnSesion.email}}</h5>
               </div>
             </form>
 
-
-            <table mdbTable responsive="true">
-                <thead>
-                  <th>nombre</th>
-                  <th>apellidos</th>
-               
-        
-                  <th>Operaciones</th>
-                </thead>
-                <tbody>
-                  <tr mdbTableCol *ngFor="let personas of personaService.personas">
-                    <td>{{ personas.nombre }}</td>
-                    <td>{{ personas.apellidos }}</td>
-                   
-                    
-                    
-                 
-                  </tr>
-                </tbody>
-              </table>
             
           </div>
           <div class="col-auto d-none d-lg-block">
@@ -79,11 +47,11 @@
             <div class="row text-center">
                 <div class="col-md-3 mb-3">
                   <label for="cc-expiration"># DE BOTELLAS</label>
-                  <input type="text" class="form-control" id="cc-expiration" placeholder="100" required="" disabled>
+                  <h5 class="form-control">{{personaEnSesion.NroBotellas}}</h5>
                 </div>
                 <div class="col-md-3 mb-3">
                   <label for="cc-cvv">SALDO DISPONIBLE</label>
-                  <input type="text" class="form-control" id="cc-cvv" placeholder="$ 0,50" required="" disabled>
+                  <h5  class="form-control" id="cc-cvv"> {{personaEnSesion.saldoActual}} </h5>
                 </div>
               </div>
                 
