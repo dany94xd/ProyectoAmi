@@ -7,7 +7,7 @@ import { from } from 'rxjs';
 })
 export class LoginService {
 
-  readonly URL_API = 'http://162.212.130.145/api/usuarios/login';
+  readonly URL_API = 'http://162.212.130.145:3002/api/usuarios/login';
 
   constructor(public http: HttpClient) { }
 

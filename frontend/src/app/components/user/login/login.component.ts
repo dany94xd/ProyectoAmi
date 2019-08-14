@@ -9,10 +9,16 @@ import { RolService } from 'src/app/services/rol/rol.service';
 import { Rol } from 'src/app/models/rol';
 
 export interface Login{
+  NroBotellas: number,
+  email: string,
+  idInstitucion: string,
+  idLogros: string,
+  idPersona: string,
   user: string;
   idRol: string;
   accesToken: string;
-  expiresIn: string
+  expiresIn: number,
+  saldoActual: number
 }
 
 @Component({
@@ -37,16 +43,21 @@ export class LoginComponent implements OnInit {
   }
 
   login(correo: string, clave: string){
-    this.authService.login(correo, clave).subscribe(res => {
+    this.authService.login(correo, clave).subscribe((res:any) => {
       
       if(res){
-        let usuarioLoggeado = res as Login;
-        console.log(usuarioLoggeado.idRol);
-        this.rolService.getRolById(usuarioLoggeado.idRol).subscribe(res => {
+        //console.log(res)
+        let usuarioLoggeado = res.dataUser as Login;
+        //console.log(usuarioLoggeado.idRol);
+        this.rolService.getRolById("5d41dd216364707db63e7032").subscribe((res: any) => {
           let rolTmp = res as Rol;
-          console.log(rolTmp);
+          //console.log(rolTmp.tipoRol);
           if(rolTmp.tipoRol == 'admin'){
+
+            localStorage.setItem("currentuser", JSON.stringify(res))
             console.log('vaya a la administracion mi perro');
+            console.log(localStorage.getItem("currentuser"));
+
           }
         });
       }
