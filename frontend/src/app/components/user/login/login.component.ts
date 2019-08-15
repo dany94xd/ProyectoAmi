@@ -48,18 +48,41 @@ export class LoginComponent implements OnInit {
       if(res){
         //console.log(res)
         let usuarioLoggeado = res.dataUser as Login;
-        //console.log(usuarioLoggeado.idRol);
-        this.rolService.getRolById("5d41dd216364707db63e7032").subscribe((res: any) => {
-          let rolTmp = res as Rol;
+        console.log(usuarioLoggeado.idRol);
+          
           //console.log(rolTmp.tipoRol);
-          if(rolTmp.tipoRol == 'admin'){
+          if(usuarioLoggeado.idRol == '01'){
+
+            
+            localStorage.setItem("currentuser", JSON.stringify(res))
+
 
             localStorage.setItem("currentuser", JSON.stringify(usuarioLoggeado))
             console.log('vaya a la administracion mi perro');
             console.log(localStorage.getItem("currentuser"));
+            this.router.navigate(['admin/empleados'])
+          }else if(usuarioLoggeado.idRol == '02'){
+
+            localStorage.setItem("currentuser", JSON.stringify(res))
+
+
+            localStorage.setItem("currentuser", JSON.stringify(usuarioLoggeado))
+            console.log('vaya a la administracion mi perro');
+            console.log(localStorage.getItem("currentuser"));
+            this.router.navigate(['user/perfilrecolector']);
+          }else if(usuarioLoggeado.idRol == "03"){
+
+            localStorage.setItem("currentuser", JSON.stringify(res))
+
+
+            localStorage.setItem("currentuser", JSON.stringify(usuarioLoggeado))
+            console.log('vaya a la administracion mi perro');
+            console.log(localStorage.getItem("currentuser"));
+            this.router.navigate(['perfilreciclador']);
+
 
           }
-        });
+        
       }
     })
   }

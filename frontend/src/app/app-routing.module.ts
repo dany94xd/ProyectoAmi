@@ -44,24 +44,28 @@ import { EventoComponent } from './components/evento/evento.component';
 
 import { RolComponent } from './components/rol/rol.component';
 import { IngresomaticulaComponent } from './components/user/ingresomaticula/ingresomaticula.component';
+import { AuthGuard } from './guards/auth.guard';
+import { AuthRecolectorGuard } from './guards/auth-recolector.guard';
+import { NoLoginGuard } from './guards/no-login.guard';
+import { AuthRecicladorGuard } from './guards/auth-reciclador.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'admin/empleados', component: EmployeeComponent},
-  { path: 'admin/instituciones', component: InstitucionesComponent },
-  { path: 'admin/personas', component: PersonaComponent },
+  { path: 'admin/empleados', component: EmployeeComponent, canActivate:[AuthGuard]},
+  { path: 'admin/instituciones', component: InstitucionesComponent, canActivate: [AuthGuard] },
+  { path: 'admin/personas', component: PersonaComponent ,canActivate: [AuthGuard]},
 
-  { path: 'admin/logros', component: LogrosComponent },
-  { path: 'admin/reportes', component: ReportesComponent },
-  { path: 'admin/evento', component: EventoComponent },
+  { path: 'admin/logros', component: LogrosComponent,canActivate: [AuthGuard] },
+  { path: 'admin/reportes', component: ReportesComponent,canActivate: [AuthGuard] },
+  { path: 'admin/evento', component: EventoComponent, canActivate: [AuthGuard] },
 
-  { path: 'admin/parametro', component: ParametroComponent },
+  { path: 'admin/parametro', component: ParametroComponent, canActivate: [AuthGuard] },
 
-  { path: 'admin/roles', component: RolComponent },
+  { path: 'admin/roles', component: RolComponent, canActivate: [AuthGuard] },
   
 
 
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent, canActivate: [NoLoginGuard] },
   { path: 'user/ingresomatricula', component: IngresomaticulaComponent },
  // { path: 'user/register', component: RegisterComponent },
   //{ path: 'user/profile', component: ProfileComponent }, // TODO: only users auth
@@ -71,11 +75,11 @@ const routes: Routes = [
   { path: 'user/contactanos', component: FormComponent },
 
   //{ path: 'user/loginrecolector', component: LoginrecolectorComponent },
-  { path: 'user/perfilrecolector', component: PerfilrecolectorComponent },
+  { path: 'user/perfilrecolector', component: PerfilrecolectorComponent, canActivate: [AuthRecolectorGuard] },
   { path: 'sponsor/perfilsponsor', component: PerfilsponsorComponent},
   
   //{ path: 'loginReciclador', component: LoginRecicladorComponent},
-  { path: 'perfilreciclador', component: PerfilRecicladorComponent},
+  { path: 'perfilreciclador', component: PerfilRecicladorComponent, canActivate: [AuthRecicladorGuard]},
   { path: 'user/registro', component: RegistroComponent},
 
 
