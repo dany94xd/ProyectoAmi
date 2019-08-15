@@ -14,6 +14,7 @@ personaCtrl.createPersona = async (req, res, next) => {
         cedula: req.body.cedula,
         nombre: req.body.nombre,
         apellido: req.body.apellido
+    
     });
     await persona.save();
     res.json({status: 'Persona created'});
@@ -33,6 +34,7 @@ personaCtrl.editPersona = async (req, res, next) => {
         cedula: req.body.cedula,
         nombre: req.body.nombre,
         apellido: req.body.apellido
+       
     };
     await Persona.findByIdAndUpdate(id, {$set: persona}, {new: true});
     res.json({status: 'Persona Updated'});
