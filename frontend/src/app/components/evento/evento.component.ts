@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { EventoService } from '../../services/evento/evento.service';
 import { Evento } from 'src/app/models/evento'
+import { Router } from '@angular/router';
 
 declare var M: any;
 @Component({
@@ -11,10 +12,15 @@ declare var M: any;
 })
 export class EventoComponent implements OnInit {
 
-  constructor(public eventoService: EventoService) { }
+  constructor(public eventoService: EventoService, private router: Router) { }
 
   ngOnInit() {
     this.getEvento();
+  }
+
+  cerrarSesion(){
+    localStorage.removeItem('currentuser');
+    this.router.navigate(['/login']);
   }
 
   public addEvento(form?: NgForm){

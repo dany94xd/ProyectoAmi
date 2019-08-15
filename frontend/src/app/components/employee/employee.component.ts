@@ -2,6 +2,7 @@ import { NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../../services/employees/employee.service';
 import { Employee } from '../../models/employee';
+import { Router } from '@angular/router';
 
 declare var M: any;
 
@@ -13,12 +14,16 @@ declare var M: any;
 })
 export class EmployeeComponent implements OnInit {
 
-  constructor(public employeeService: EmployeeService) { }
+  constructor(public employeeService: EmployeeService, private router: Router) { }
 
   ngOnInit() {
     this.getEmployees();
   }
 
+  cerrarSesion(){
+    localStorage.removeItem('currentuser');
+    this.router.navigate(['/login']);
+  }
   addEmployee(form?: NgForm) {
     console.log(form.value);
     if(form.value._id) {

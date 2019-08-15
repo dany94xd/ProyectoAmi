@@ -21,7 +21,7 @@ export class NoLoginGuard implements CanActivate {
         console.log("hola mundo")
         this.router.navigate(['/admin/personas']);
       }else if(currentuUser.idRol == "02"){
-        this.router.navigate(['/user/perfilrecolector']);
+        this.router.navigate(['/user/ingresomatricular']);
       }else if(currentuUser.idRol == "03"){
         this.router.navigate(['/perfilreciclador']);
       }

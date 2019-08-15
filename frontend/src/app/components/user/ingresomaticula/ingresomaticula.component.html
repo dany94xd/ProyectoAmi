@@ -17,19 +17,19 @@
   
   </head>
   <body class="text-center">
-    <form class="form-signin">
+    <form #PersonaForm="ngForm" (ngSubmit)="addPersona" class="form-signin" >
   
       <div class="table-responsive-lg">
       <h1 class="modal-title w-100 font-weight-bold">INGRESE NUMERO DE MATRICULA</h1>
       <br>
       <br>
 
-  <input  mdbInput  class="form-control" type="text" id="matricula" class="form-control" placeholder="Ingrese numero de matricula" >
+  <input name="matricula" #matricula class="form-control" type="matricula" >
  
   <div class="checkbox mb-3">
   
   </div>
-  <button mdbBtn color="light-green" class="btn ">Ingresar</button>
+  <button mdbBtn color="light-green" class="btn "   (click)="ingresomatricula(matricula.value)">Ingresar</button>
  </div>
 </form>
 </body>

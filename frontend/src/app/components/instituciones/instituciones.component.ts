@@ -3,6 +3,7 @@ import { InstitucionesService } from 'src/app/services/instituciones/institucion
 import { Institucion } from '../../models/institucion';
 import { NgForm } from '@angular/forms';
 import { stringify } from 'querystring';
+import { Router } from '@angular/router';
 
 declare var M: any;
 
@@ -14,12 +15,15 @@ declare var M: any;
 
 export class InstitucionesComponent implements OnInit {
   
-  constructor( public serviceInstitucion: InstitucionesService ) { }
+  constructor( public serviceInstitucion: InstitucionesService, private router: Router ) { }
 
   ngOnInit() {
     this.getInstitucion();
   }
-
+  cerrarSesion(){
+    localStorage.removeItem('currentuser');
+    this.router.navigate(['/login']);
+  }
 
   public getInstitucion(){
     this.serviceInstitucion.getInstitucion().subscribe(res=> {

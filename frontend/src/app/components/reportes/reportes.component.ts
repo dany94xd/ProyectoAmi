@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ReportesService } from '../../services/reportes/reportes.service';
 import { Reportes } from 'src/app/models/reportes'
+import { Router } from '@angular/router';
 
 declare var M: any;
 
@@ -14,7 +15,7 @@ declare var M: any;
 })
 export class ReportesComponent implements OnInit {
 
-  constructor(public reportesService: ReportesService) { }
+  constructor(public reportesService: ReportesService, private router: Router) { }
 
   ngOnInit() {
     this.getReportes();
@@ -34,7 +35,6 @@ export class ReportesComponent implements OnInit {
         M.toast({html: 'Se agrego un reporte'});
       });
     }
-    
   }
 
   getReportes(){
@@ -42,6 +42,10 @@ export class ReportesComponent implements OnInit {
       this.reportesService.reportes = res as Reportes[];
       console.log(res);
     });
+  }
+  cerrarSesion(){
+    localStorage.removeItem('currentuser');
+    this.router.navigate(['/login']);
   }
 
   deleteReportes(_id: string, form: NgForm){

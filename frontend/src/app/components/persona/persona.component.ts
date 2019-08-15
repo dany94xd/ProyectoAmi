@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { PersonasService } from '../../services/personas/personas.service';
 
 import { Persona } from 'src/app/models/persona';
+import { Router } from '@angular/router';
 declare var M: any;
 
 @Component({
@@ -13,13 +14,16 @@ declare var M: any;
 })
 export class PersonaComponent implements OnInit {
 
-  constructor(public personaService: PersonasService) { }
+  constructor(public personaService: PersonasService, private router: Router) { }
 
   ngOnInit() {
     this.getPersona();
   }
 
-
+  cerrarSesion(){
+    localStorage.removeItem('currentuser');
+    this.router.navigate(['/login']);
+  }
 
   public addPersona(form?: NgForm){
     if(form.value._id){

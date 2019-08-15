@@ -1,30 +1,5 @@
 <br>
 <br>
-<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #ffffff; color:#0000">
-    <a href="#" class="navbar-brand" *ngIf="!isLogged">
-      <img class="logo" width="100" src="assets/img/logo.png">
-   </a> 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-        
-          <li class="nav-item dropdown btn-group" dropdown  >
-            <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-              Perfil <span class="caret"></span></a>
-            <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-                <a class="dropdown-item waves-light" href="user/perfilrecolector">Perfil</a>
-                <a class="dropdown-item waves-light" href="">Cerrar sesión</a> 
-            </div>
-        </li> 
-    </ul>
-  </div>
-</nav>
-
-<br>
-<br>
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
  
   <h1 class="modal-title w-100 font-weight-bold">RECOLECTOR</h1>
@@ -36,43 +11,54 @@
         <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
           <div class="col p-4 d-flex flex-column position-static">
             <h3 class="mb-0">Datos Personales</h3>
-            <hr>
-            <form>
-              <div class="form-group row">
-                <h6>Nombre</h6>
-               
-                    <label id="datos">Freddy </label>
-                  
-              </div>
-              <div class="form-group row">
-                <h6>Apellido</h6>
-                 
-                    <label id="datos">Rada </label>
-                  
-              </div>
-              <div class="form-group row">
-                <h6>Correo Electronico</h6>
-                  
-                    <label id="datos">frada@espol.edu.ec</label>
-                
-              </div>
+         
+           
+            <!-- Grid row -->
+           <div class="row">
+              <div class="col -3 "><label>Nombre</label></div>
+              <div class="col-9 form-control"> <h5 >{{usuarioPorMatricula.nombre}}</h5>  </div>
 
-              <div class="form-group row">
-                <h6>Saldo verde</h6>
+                </div>
+            
+
+
+              <div class="row">
+
+                  <div class="col -3 "><label>Apellido</label></div>
+                  <div class="col-9 form-control"> <h5 >{{usuarioPorMatricula.apellido}}</h5>  </div>
+</div>
+            
+
+
+              <div class="row">
+
+                  <div class="col -3 "><label>Correo Electronico</label></div>
+                  <div class="col-9 form-control"> <h5 >{{usuarioPorMatricula.correo}}</h5> </div>
+
+                </div>
+
+              <div class="row">
+
+                  <div class="col -3 "><label> saldoVerde</label></div>
+                  <div class="col-9 form-control"> <h5 >{{personaPorMatricula.saldoVerde}}</h5></div>
+                </div>
               
-                  <label id="datos">8</label>
-                
-            </div>
 
 
-            <div class="form-group row">
-              <h6>Saldo Actual</h6>
-             
-              <label id="datos">$0.16</label>
+              <div class="row">
+
+                  <div class="col -3 "><label> saldoActual</label></div>
+                  <div class="col-9 form-control"> <h5 >{{personaPorMatricula.saldoActual}}</h5> </div>
+                </div>
+
+           
+               
+
             
-          </div>
-            </form>
             
+
+
+
           </div>
           <div class="col-auto d-none d-lg-block">
           </div>
@@ -87,17 +73,18 @@
           
             <label id="numbotellas">Numero de Botellas entregadas:</label>   <div class="col-md-3 mb-3">
              
-              <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+              <input mdbInput  class="form-control" type="text" name="NroBotellas">
 
               
             </div>
 
-            <label id="numbotellas">Numero de Botellas recolectadas:</label>   <div class="col-md-3 mb-3">
+            <label id="numbotellas">Numero de Botellas recolectadas:</label>   
+            <div class="col-md-3 mb-3">
              
-                  <label id="dato">10</label>
+              <div class="col-9 form-control"> <h5 >{{personaPorMatricula.NroBotellas}}</h5> </div>
              
         
-            <HR>
+         
              
       
 
@@ -105,8 +92,7 @@
               
                 
             </div>
-            <HR> 
-            <HR> 
+            
           </div>
          
 
@@ -117,6 +103,6 @@
         </div>
       </div>
       <button type="submit" class="btn btn-lg btn-dark btn-block"  style='width:150px; height:50px'> Ingresar</button>
-      <button type="submit" class="btn btn-lg btn-dark btn-block"  style='width:130px; height:50px' id="botondere"> Salir</button>
+      <a type="submit" class="btn btn-lg btn-dark btn-block"  style='width:130px; height:50px' id="botondere" href="/user/ingresomatricula"> Salir</a>
     </div>
   </div>

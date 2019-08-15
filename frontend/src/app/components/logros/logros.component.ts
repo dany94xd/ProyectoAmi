@@ -3,6 +3,7 @@ import { LogrosService } from 'src/app/services/logros/logros.service';
 import { Logros } from '../../models/logros';
 import { NgForm } from '@angular/forms';
 import { stringify } from 'querystring';
+import { Router } from '@angular/router';
 
 declare var M: any;
 
@@ -14,11 +15,12 @@ declare var M: any;
 })
 export class LogrosComponent implements OnInit {
 
-  constructor(public logrosService: LogrosService) { }
+  constructor(public logrosService: LogrosService, private router: Router) { }
 
   ngOnInit() {
     this.getLogros();
   }
+  
 
   addLogros(form: NgForm){
     debugger
@@ -27,6 +29,10 @@ export class LogrosComponent implements OnInit {
         this.getLogros();
       })
     }
+  }
+  cerrarSesion(){
+    localStorage.removeItem('currentuser');
+    this.router.navigate(['/login']);
   }
 
   getLogros(){

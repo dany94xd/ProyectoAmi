@@ -60,16 +60,16 @@ export class LoginComponent implements OnInit {
             localStorage.setItem("currentuser", JSON.stringify(usuarioLoggeado))
             console.log('vaya a la administracion mi perro');
             console.log(localStorage.getItem("currentuser"));
-            this.router.navigate(['admin/empleados'])
+            this.router.navigate(['admin/instituciones'])
           }else if(usuarioLoggeado.idRol == '02'){
 
             localStorage.setItem("currentuser", JSON.stringify(res))
 
 
-            localStorage.setItem("currentuser", JSON.stringify(usuarioLoggeado))
+            localStorage.setItem("currentuser", JSON.stringify(usuarioLoggeado));
             console.log('vaya a la administracion mi perro');
             console.log(localStorage.getItem("currentuser"));
-            this.router.navigate(['user/perfilrecolector']);
+            this.router.navigate(['user/ingresomatricula']);
           }else if(usuarioLoggeado.idRol == "03"){
 
             localStorage.setItem("currentuser", JSON.stringify(res))
