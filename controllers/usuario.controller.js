@@ -52,8 +52,8 @@ usuarioCtrl.editUsuario = async (req, res, next) => {
         saldoVerde: req.body.saldoVerde,
         UrlFoto: req.body.UrlFoto,
         user: req.body.user,
-        // password: req.body.password
-        password: bcrypt.hashSync(req.body.password),
+         password: req.body.password,
+       // password: bcrypt.hashSync(req.body.password),
         email: req.body.email
     };
     await Usuario.findByIdAndUpdate(id, { $set: usuario }, { new: true });
