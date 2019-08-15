@@ -1,37 +1,30 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import {Persona} from '../../models/persona';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { from} from 'rxjs';
+import { _appIdRandomProviderFactory } from '@angular/core/src/application_tokens';
+import { _ } from 'core-js';
 @Injectable({
   providedIn: 'root'
 })
 export class IngresomatriculaService {
 
-  selectedPersona: Persona;
-  persona: Persona[];
+
   
- readonly URL_API = 'http://162.212.130.145/api/webapp/data/:_id';
+ readonly URL_API = 'http://162.212.130.145/api/webapp/data';
 
-  constructor(public http: HttpClient) {
-    this.selectedPersona = new Persona();
+  constructor(public http: HttpClient) {}
+
+  getUsuarioByMatricula(matricula:string){
+
+    let headers = new HttpHeaders();
+headers.set('Accept', 'application/json');
+headers.set('Content-Type', 'application/json');
+headers.set('Access-Control-Allow-Origin', '*');
+
+return this.http.get(this.URL_API + `/${matricula}`)
+
   }
 
-  postPersona(personas: Persona){
-    return this.http.post(this.URL_API, personas);
-  }
-
-  getPersona(){
-    return this.http.get(this.URL_API);
-    console.log(this.selectedPersona._id + "dfsdfes");
-  }
-
-
-  putPersona(personas: Persona){
-    return this.http.put(this.URL_API +  `/${personas._id}`, personas);
-  }
 
  
-  deletePersona(_id: string){
-    return this.http.delete(this.URL_API + `/${_id}`)
-  }
-  
 }

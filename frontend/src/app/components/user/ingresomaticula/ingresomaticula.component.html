@@ -24,13 +24,12 @@
       <br>
       <br>
 
-  <input  mdbInput class="form-control" type="text" name="._id"   #name="ngModel" 
-  [(ngModel)]="ingresomatriculaService.selectedPersona._id" >
+  <input name="matricula" #matricula class="form-control" type="matricula" >
  
   <div class="checkbox mb-3">
   
   </div>
-  <button mdbBtn color="light-green" class="btn "  routerLink="/user/perfilrecolector" >Ingresar</button>
+  <button mdbBtn color="light-green" class="btn "   (click)="ingresomatricula(matricula.value)">Ingresar</button>
  </div>
 </form>
 </body>

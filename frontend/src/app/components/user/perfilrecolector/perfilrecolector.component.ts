@@ -5,19 +5,28 @@ import {PersonaComponent} from 'src/app/components/persona/persona.component';
 import { Persona } from '../../../models/persona';
 
 import { NgForm } from '@angular/forms';
+
+
+
+
 @Component({
   selector: 'app-perfilrecolector',
   templateUrl: './perfilrecolector.component.html',
   styleUrls: ['./perfilrecolector.component.css']
 })
 export class PerfilrecolectorComponent implements OnInit {
-
-  personas: Persona[];
+public personaPorMatricula: any;
+public usuarioPorMatricula: any;
+ 
   constructor(public personaService: PersonasService) { }
 
   ngOnInit() {
-
-    this.getPersona();
+    let datoPorMatricula = JSON.parse(localStorage.getItem("estudainteMatricula"))
+    
+    this.personaPorMatricula = datoPorMatricula[0][0];
+    this.usuarioPorMatricula = datoPorMatricula[1][0];
+    console.log(this.personaPorMatricula)
+    console.log(this.usuarioPorMatricula)
   }
   
 

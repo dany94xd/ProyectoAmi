@@ -11,7 +11,7 @@ export class PerfilrecolectorService {
  readonly URL_API = 'http://162.212.130.145/api/webapp/data/:_id';
   constructor(public http: HttpClient) { 
  
-public Recolecto: any;
+
 
 
 

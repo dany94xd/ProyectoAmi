@@ -3,6 +3,19 @@ import { NgForm } from '@angular/forms';
 import { IngresomatriculaService } from '../../../services/ingresomatricula/ingresomatricula.service';
 
 import { Persona } from 'src/app/models/persona';
+import { Router } from '@angular/router';
+export interface ingresomatricula{
+  idInstitucion: number,
+  NroBotellas: number,
+  saldoActual: number,
+  matricula: string,
+  saldoVerde: number,
+  nombre: string,
+  apellido: string
+}
+
+
+
 
 @Component({
   selector: 'app-ingresomaticula',
@@ -11,46 +24,24 @@ import { Persona } from 'src/app/models/persona';
 })
 export class IngresomaticulaComponent implements OnInit {
 
-  constructor(public ingresomatriculaService: IngresomatriculaService) { }
+  constructor(public ingresomatriculaService: IngresomatriculaService, public router: Router) { }
 
   ngOnInit() {
-    this.getPersona();
+   
   }
 
-  public addPersona(form?: NgForm){
-    if(form.value._id){
-      this.ingresomatriculaService.putPersona(form.value).subscribe(res => {
-     
-        this.getPersona();
-    
-      });  
-    }else {
-      this.ingresomatriculaService.postPersona(form.value).subscribe(res => {
-        this.getPersona();
-      
-     
-      });
-    }
-    
-  }
+  ingresomatricula(matricula: string){
+    this.ingresomatriculaService.getUsuarioByMatricula(matricula).subscribe(res=>{
+      if(res){
+        let matriculaingresada= JSON.stringify(res);
+        
+        console.log(matriculaingresada);
+        localStorage.setItem("estudainteMatricula", matriculaingresada);
 
-
-  getPersona(){
-    this.ingresomatriculaService.getPersona().subscribe(res => {
-      this.ingresomatriculaService.persona = res as Persona[];
-      console.log(res);
-    });
+        this.router.navigate(["user/perfilrecolector"])
+      }
+    })
   }
-
-
-  editPersona(personas: Persona, form: NgForm){
-    this.ingresomatriculaService.selectedPersona = personas;
-  }
-  resetForm(form?: NgForm) {
-    if (form) {
-      form.reset();
-      this.ingresomatriculaService.selectedPersona= new Persona();
-    }
-  }
+ 
 
 }
