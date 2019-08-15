@@ -1,3 +1,28 @@
+<br>
+<br>
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #ffffff; color:#0000">
+    <a href="#" class="navbar-brand" *ngIf="!isLogged">
+      <img class="logo" width="100" src="assets/img/logo.png">
+   </a> 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+        
+          <li class="nav-item dropdown btn-group" dropdown  >
+            <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+              Perfil <span class="caret"></span></a>
+            <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                <a class="dropdown-item waves-light" href="perfilreciclador">Perfil</a>
+                <a class="dropdown-item waves-light" href="">Cerrar sesión</a> 
+            </div>
+        </li> 
+    </ul>
+  </div>
+</nav>
+
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">RECICLADOR</h1>
   </div>
