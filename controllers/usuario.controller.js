@@ -60,6 +60,33 @@ usuarioCtrl.editUsuario = async (req, res, next) => {
     res.json({ status: 'Usuario Updated' });
 };
 
+
+usuarioCtrl.editUsuarioHash = async (req, res, next) => {
+    const { id } = req.params;
+    const usuario = {
+
+        idPersona: req.body.idPersona,
+        idLogros: req.body.idLogros,
+        idRol: req.body.idRol,
+        idInstitucion: req.body.idInstitucion,
+        matricula: req.body.matricula,
+        NroBotellas: req.body.NroBotellas,
+        saldoActual: req.body.saldoActual,
+        saldoVerde: req.body.saldoVerde,
+        UrlFoto: req.body.UrlFoto,
+        user: req.body.user,
+       //  password: req.body.password,
+        password: bcrypt.hashSync(req.body.password),
+        email: req.body.email
+    };
+    await Usuario.findByIdAndUpdate(id, { $set: usuario }, { new: true });
+    res.json({ status: 'Usuario Updated' });
+};
+
+
+
+
+
 // jc--------------------------------------------
 // usuarioCtrl.editUsuario = async (req, res, next) => {
 //     const { id } = req.params;
