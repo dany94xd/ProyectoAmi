@@ -9,6 +9,6 @@ router.get('/:id', usuario.getUsuario);
 router.put('/:id', usuario.editUsuario);
 router.delete('/:id', usuario.deleteUsuario);
 router.post('/login/',usuario.loginUser);
-router.put('mobile/:id', usuario.editUsuario);
+router.put('/register/:id', usuario.editUsuario);
 
 module.exports = router;
