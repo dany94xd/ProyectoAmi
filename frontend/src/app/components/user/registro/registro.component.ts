@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from 'src/app/services/usuario/usuario.service';
+import { PersonasService } from 'src/app/services/personas/personas.service';
+import { Usuario } from 'src/app/models/usuario';
 
 @Component({
   selector: 'app-registro',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroComponent implements OnInit {
 
-  constructor() { }
+  constructor(private servicioUsuario: UsuarioService, private servicioPersona: PersonasService) { }
+  public name: string;
+  public lastName: string;
+  public email: string;
+  public matricula: string;
+  public cedula: string;
+  public password: string;
+  public user: string;
 
   ngOnInit() {
   }
+
 
 }

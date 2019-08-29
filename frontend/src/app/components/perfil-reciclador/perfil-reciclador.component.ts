@@ -50,6 +50,7 @@ export class PerfilRecicladorComponent implements OnInit {
 
   cerrarSesion(){
     localStorage.removeItem('currentuser');
+    localStorage.removeItem('currentRol');
     
   }
   getPersona(){

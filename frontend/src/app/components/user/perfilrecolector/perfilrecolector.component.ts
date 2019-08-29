@@ -46,6 +46,7 @@ ngOnInit() {
 
   cerrarSesion(){
     localStorage.removeItem('currentuser');
+    localStorage.removeItem('currentRol');
     
   }
 
