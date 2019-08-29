@@ -24,8 +24,8 @@ usuarioCtrl.createUsuario = async (req, res, next) => {
         saldoVerde: req.body.saldoVerde,
         UrlFoto: req.body.UrlFoto,
         user: req.body.user,
-      //  password: req.body.password
-        password: bcrypt.hashSync(req.body.password),
+      password: req.body.password,
+        //password: bcrypt.hashSync(req.body.password),
         email: req.body.email
     });
     await usuario.save();
@@ -102,31 +102,33 @@ usuarioCtrl.deleteUsuario = async (req, res, next) => {
     res.json({status: 'Usuario Deleted'});
 };
 
-// usuarioCtrl.createUser=async(req,res,next)=>{
-//     const newUser = new Usuario({
-//         user:req.body.user,
-//         password:bcrypt.hashSync(req.body.password)
-//     })
-//     User.create=(newUser,(err,user)=>{
-//        if(err)return res.status(500).send('server error');
-//        const expiresIn = 24*60*60;
-//        const accesToken = jwt.sign({id:user.id},
-//            SECRET_KEY,{
-//                expiresIn:expiresIn
-//            });
-//            const dataUser={
-//                user:user.user,
-//                accesToken:accesToken,
-//                expiresIn:expiresIn
-//            }
+
+//Register
+usuarioCtrl.registerUser=async(req,res,next)=>{
+    const newUser = new Usuario({
+        user:req.body.user,
+        password:bcrypt.hashSync(req.body.password)
+    })
+    Usuario.create=(newUser,(err,user)=>{
+       if(err)return res.status(500).send('server error');
+       const expiresIn = 24*60*60;
+       const accesToken = jwt.sign({id:user.id},
+           SECRET_KEY,{
+               expiresIn:expiresIn
+           });
+           const dataUser={
+               user:user.user,
+               accesToken:accesToken,
+               expiresIn:expiresIn
+           }
    
-//         //response
-//         //res.send({user});
-//         res.send({dataUser});
+        //response
+        //res.send({user});
+        res.send({dataUser});
    
-//     })
+    })
    
-//    }
+   }
 
 
 ///login 

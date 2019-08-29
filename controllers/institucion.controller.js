@@ -1,5 +1,8 @@
 const Institucion = require('../models/institucion');
-
+const Usuarioinstitucion = require('../models/usuario');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken')
+const SECRET_KEY ='secretkey94'
 const institucionCtrl = {};
 
 institucionCtrl.getInstitucions = async (req, res, next) => {
@@ -13,7 +16,8 @@ institucionCtrl.createInstitucion = async (req, res, next) => {
         nombre: req.body.nombre,
         ruc: req.body.ruc,
         descripcion: req.body.descripcion,
-        urlfoto: req.body.urlfoto
+        urlfoto: req.body.urlfoto,
+        estado:req.body.estado
     });
     await institucion.save();
     res.json({ status: 'Institucion created' });
@@ -32,7 +36,8 @@ institucionCtrl.editInstitucion = async (req, res, next) => {
         nombre: req.body.nombre,
         ruc: req.body.ruc,
         descripcion: req.body.descripcion,
-        urlfoto: req.body.urlfoto
+        urlfoto: req.body.urlfoto,
+        estado:req.body.estado
     };
     await Institucion.findByIdAndUpdate(id, { $set: institucion }, { new: true });
     res.json({ status: 'Institucion Updated' });

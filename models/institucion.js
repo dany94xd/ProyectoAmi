@@ -7,6 +7,7 @@ const institucionSchema = new Schema({
     ruc: { type: String, required: false },
     descripcion: { type: String, required: false },
     urlfoto: { type: String, required: false },
+    estado:{type:Boolean,required:false}
    
 });
 
