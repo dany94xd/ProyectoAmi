@@ -48,10 +48,38 @@ export class LoginComponent implements OnInit {
       if(res){
         //console.log(res)
         let usuarioLoggeado = res.dataUser as Login;
-        console.log(usuarioLoggeado.idRol);
+        console.log("=====>", usuarioLoggeado.idRol);
+        
+        this.rolService.getRolById(usuarioLoggeado.idRol).subscribe(resRol =>{
+          debugger
+          let rolTmp = resRol as Rol;
+          if(rolTmp.tipoRol == "admin"){
+            //localStorage.setItem("currentuser", JSON.stringify(res))
+            localStorage.setItem("currentuser", JSON.stringify(usuarioLoggeado));
+            localStorage.setItem("currentRol", JSON.stringify(resRol));
+            console.log('vaya a la administracion mi perro');
+            console.log(localStorage.getItem("currentuser"));
+            this.router.navigate(['admin/instituciones'])
+
+          }else if(rolTmp.tipoRol == "recolector"){
+            localStorage.setItem("currentuser", JSON.stringify(usuarioLoggeado));
+            localStorage.setItem("currentRol", JSON.stringify(resRol));
+            this.router.navigate(['user/ingresomatricula']);
+
+          }else if(rolTmp.tipoRol == "reciclador"){
+            localStorage.setItem("currentuser", JSON.stringify(usuarioLoggeado));
+            localStorage.setItem("currentRol", JSON.stringify(resRol));
+            this.router.navigate(['perfilreciclador']);
+
+          }else if(rolTmp.tipoRol == "sponsor"){
+            localStorage.setItem("currentuser", JSON.stringify(usuarioLoggeado));
+            localStorage.setItem("currentRol", JSON.stringify(resRol));
+            this.router.navigate(['sponsor'])
+          }
+        })
           
           //console.log(rolTmp.tipoRol);
-          if(usuarioLoggeado.idRol == '01'){
+        /*  if(usuarioLoggeado.idRol == '01'){
 
             
             localStorage.setItem("currentuser", JSON.stringify(res))
@@ -81,7 +109,7 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['perfilreciclador']);
 
 
-          }
+          } */
         
       }
     })

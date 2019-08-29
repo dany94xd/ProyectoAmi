@@ -22,6 +22,7 @@ export class EmployeeComponent implements OnInit {
 
   cerrarSesion(){
     localStorage.removeItem('currentuser');
+    localStorage.removeItem('currentRol');
     this.router.navigate(['/login']);
   }
   addEmployee(form?: NgForm) {

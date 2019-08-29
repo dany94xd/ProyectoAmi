@@ -40,6 +40,7 @@ public usuarioById: Usuario;
 
   cerrarSesion(){
     localStorage.removeItem('currentuser');
+    localStorage.removeItem('currentRol');
     
   }
 

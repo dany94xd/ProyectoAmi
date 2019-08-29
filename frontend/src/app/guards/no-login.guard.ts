@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { RolService } from '../services/rol/rol.service';
+import { Rol } from '../models/rol';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NoLoginGuard implements CanActivate {
-  constructor (private router: Router){
+  constructor (private router: Router, private rolService: RolService){
 
   }
   canActivate(){
@@ -16,15 +18,21 @@ export class NoLoginGuard implements CanActivate {
         return true;
       
     }else{
-      console.log("hola mundo");
-      if(currentuUser.idRol == "01"){
-        console.log("hola mundo")
-        this.router.navigate(['/admin/personas']);
-      }else if(currentuUser.idRol == "02"){
-        this.router.navigate(['/user/ingresomatricula']);
-      }else if(currentuUser.idRol == "03"){
-        this.router.navigate(['/perfilreciclador']);
-      }
+      //console.log("hola mundo");
+      
+      this.rolService.getRolById(currentuUser.idRol).subscribe(res =>{
+        
+        let rolTmp = res as Rol;
+        if(rolTmp.tipoRol == "admin"){
+          console.log("hola mundo")
+          this.router.navigate(['/admin/personas']);
+        }else if(rolTmp.tipoRol == "recolector"){
+          this.router.navigate(['/user/ingresomatricula']);
+        }else if(rolTmp.tipoRol == "reciclador"){
+          this.router.navigate(['/perfilreciclador']);
+        }
+      })
+
       
     }
   }
