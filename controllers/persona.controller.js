@@ -11,6 +11,7 @@ personaCtrl.createPersona = async (req, res, next) => {
     const persona = new Persona({
         idPersona: req.body.idPersona,
         idInstitucion: req.body.idInstitucion,
+	matricula: req.body.matricula,
         cedula: req.body.cedula,
         nombre: req.body.nombre,
         apellido: req.body.apellido
@@ -31,6 +32,7 @@ personaCtrl.editPersona = async (req, res, next) => {
     const persona = {
         idPersona: req.body.idPersona,
         idInstitucion: req.body.idInstitucion,
+	matricula: req.body.matricula,
         cedula: req.body.cedula,
         nombre: req.body.nombre,
         apellido: req.body.apellido

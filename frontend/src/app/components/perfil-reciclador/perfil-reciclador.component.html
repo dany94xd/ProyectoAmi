@@ -1,3 +1,28 @@
+<br>
+<br>
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #ffffff; color:#0000">
+    <a href="#" class="navbar-brand" *ngIf="!isLogged">
+      <img class="logo" width="100" src="assets/img/logo.png">
+   </a> 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+        
+          <li class="nav-item dropdown btn-group" dropdown >
+            <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+              Perfil <span class="caret"></span></a>
+            <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                <a class="dropdown-item waves-light" href="perfilreciclador">Perfil</a>
+                <a class="dropdown-item waves-light" href="" (click)="cerrarSesion()">Cerrar sesión</a> 
+            </div>
+        </li> 
+    </ul>
+  </div>
+</nav>
+
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">RECICLADOR</h1>
   </div>
@@ -7,57 +32,23 @@
       <div class="col-md-6">
         <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
           <div class="col p-4 d-flex flex-column position-static">
-            <h3 class="mb-0">Datos Personales</h3>
+            <h3 class="text-center">Datos Personales</h3>
             <hr>
-            <form #PersonaForm="ngForm" (ngSubmit)="addPersona(PersonaForm)">
-              <div class="form-group row">
-                  <input class="form-control" type="hidden" name="_id" #_id="ngModel" 
-                  [(ngModel)]="personaService.selectPersona._id">
-                  
-                  <input mdbInput class="form-control" type="text" name="nombre" #name="ngModel" 
-                  [(ngModel)]="personaService.selectPersona.nombre"  placeholder="nombre">
-                  <label for="staticEmail" class="col-sm-2 col-form-label">NOMBRES</label>
-                  <div class="col-sm-10">
-       
-                  </div>
+              <div class="row">
+                  <div class="col-3"><label>NOMBRES</label></div>
+                  <div class="col-9 form-control"><h5>{{usuarioEnSesion.nombre}}</h5></div>
+              </div> 
+              <hr>
+              <div class="row">
+                <div class="col-3"><label>APELLIDOS</label></div>
+                <div class="col-9 form-control"><h5>{{usuarioEnSesion.apellido}}</h5></div>
               </div>
-              <div class="form-group row">
-
-                  <input mdbInput class="form-control"  type="text" name="apellido" #name="ngModel" 
-                  [(ngModel)]="personaService.selectPersona.apellido"  placeholder="apellido">
-                  <label for="staticEmail" class="col-sm-2 col-form-label">APELLIDOS</label>
-                  <div class="col-sm-10">
-                   
-                  </div>
+              <hr>
+              <div class="row">
+                <div class="col-3"><label>CORREO</label></div>
+                <div class="col-9 form-control"><h5>{{personaEnSesion.email}}</h5></div>
               </div>
-              <div class="form-group row">
-                  <label for="staticEmail" class="col-sm-2 col-form-label">CORREO</label>
-                  <div class="col-sm-10">
-                   
-                  </div>
-              </div>
-            </form>
 
-
-            <table mdbTable responsive="true">
-                <thead>
-                  <th>nombre</th>
-                  <th>apellidos</th>
-               
-        
-                  <th>Operaciones</th>
-                </thead>
-                <tbody>
-                  <tr mdbTableCol *ngFor="let personas of personaService.personas">
-                    <td>{{ personas.nombre }}</td>
-                    <td>{{ personas.apellidos }}</td>
-                   
-                    
-                    
-                 
-                  </tr>
-                </tbody>
-              </table>
             
           </div>
           <div class="col-auto d-none d-lg-block">
@@ -76,14 +67,14 @@
                 <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
             </div>
             <HR>
-            <div class="row text-center">
-                <div class="col-md-3 mb-3">
+            <div class="row">
+                <div class="col">
                   <label for="cc-expiration"># DE BOTELLAS</label>
-                  <input type="text" class="form-control" id="cc-expiration" placeholder="100" required="" disabled>
+                  <h5 class="form-control">{{personaEnSesion.NroBotellas}}</h5>
                 </div>
-                <div class="col-md-3 mb-3">
+                <div class="col">
                   <label for="cc-cvv">SALDO DISPONIBLE</label>
-                  <input type="text" class="form-control" id="cc-cvv" placeholder="$ 0,50" required="" disabled>
+                  <h5  class="form-control" id="cc-cvv"> {{personaEnSesion.saldoActual}} </h5>
                 </div>
               </div>
                 

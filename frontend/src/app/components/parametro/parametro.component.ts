@@ -4,6 +4,7 @@ import { ParametroService } from 'src/app/services/parametro/parametro.service';
 import { Parametro } from '../../models/parametro';
 
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 declare var M: any;
@@ -16,7 +17,7 @@ declare var M: any;
 export class ParametroComponent implements OnInit {
 
  
-  constructor(public parametrosService: ParametroService) { }
+  constructor(public parametrosService: ParametroService, private router: Router) { }
 
   ngOnInit() {
     this.getParametros();
@@ -38,7 +39,10 @@ export class ParametroComponent implements OnInit {
     }
     
   }
-
+  cerrarSesion(){
+    localStorage.removeItem('currentuser');
+    this.router.navigate(['/login']);
+  }
   getParametros(){
     this.parametrosService.getParametros().subscribe(res => {
       this.parametrosService.parametro = res as Parametro[];

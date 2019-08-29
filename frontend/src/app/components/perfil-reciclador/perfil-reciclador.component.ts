@@ -3,18 +3,31 @@ import { PersonasService } from '../../services/personas/personas.service';
 import {PersonaComponent} from 'src/app/components/persona/persona.component';
 import { Persona } from '../../models/persona';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-perfil-reciclador',
   templateUrl: './perfil-reciclador.component.html',
   styleUrls: ['./perfil-reciclador.component.css']
 })
-export class PerfilRecicladorComponent implements OnInit {
 
-  constructor(public personaService: PersonasService) { }
+
+
+export class PerfilRecicladorComponent implements OnInit {
+  public usuarioEnSesion: any
+  public personaEnSesion: any
+
+  constructor(public personaService: PersonasService, private personaServicio: PersonasService, private router: Router) { }
 
   ngOnInit() {
-    this.getPersona();
+    this.personaEnSesion = JSON.parse(localStorage.getItem("currentuser"));
+    console.log(this.personaEnSesion.idPersona);
+  
+    this.personaService.getPersonaById(this.personaEnSesion.idPersona).subscribe(res =>{
+      this.usuarioEnSesion = res;
+      
+    })
   }
 
 
@@ -35,7 +48,10 @@ export class PerfilRecicladorComponent implements OnInit {
     
   }
 
-
+  cerrarSesion(){
+    localStorage.removeItem('currentuser');
+    
+  }
   getPersona(){
     this.personaService.getPersona().subscribe(res => {
       this.personaService.personas = res as Persona[];
