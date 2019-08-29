@@ -34,7 +34,7 @@ export class IngresomaticulaComponent implements OnInit {
     this.ingresomatriculaService.getUsuarioByMatricula(matricula).subscribe(res=>{
       if(res){
         let matriculaingresada= JSON.stringify(res);
-        
+        console.log("Matricula ingresada")
         console.log(matriculaingresada);
         localStorage.setItem("estudainteMatricula", matriculaingresada);
 

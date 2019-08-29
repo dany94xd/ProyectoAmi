@@ -44,6 +44,9 @@ export class UsuarioService {
 
 
   putUsuario(usuario: Usuario){
+    console.log("update")
+    console.log(usuario)
+   
     return this.http.put(this.URL_API +  `/${usuario._id}`, usuario);
 
   }

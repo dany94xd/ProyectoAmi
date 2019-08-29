@@ -11,7 +11,7 @@ export class Usuario{
         this.NroBotellas = NroBotellas;
         this.saldoActual = saldoActual;
         this.saldoVerde = saldoVerde;
-        this.Urlfoto = Urlfoto;
+        this.urlFoto = Urlfoto;
         this.email = email;
         this.password = password;
         this.accesToken = accesToken;
@@ -27,7 +27,7 @@ export class Usuario{
     NroBotellas:number;
     saldoActual:number;
     saldoVerde:number;
-    Urlfoto:string;
+    urlFoto:string;
     email:string;
     password: string;
     accesToken:string;
