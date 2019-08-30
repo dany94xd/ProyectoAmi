@@ -37,6 +37,17 @@ mobileAppCtrl.getMatricula = async (req, res, next) => {
     res.json(usuarioData);
 };
 
+mobileAppCtrl.editUsuarioSaldo = async (req, res, next) => {
+    const { id } = req.params;
+    const usuario = {        
+        saldoActual: req.body.saldoActual,       
+    };
+    await Usuario.findByIdAndUpdate(id, { $set :
+		{			
+			"saldoActual" : usuario.saldoActual,			
+		} }, { new: true });
+    res.json({ status: 'Usuario Updated' });
+};
 
 //Saldo
 mobileAppCtrl.prueba = async (req, res, next) => {
