@@ -95,9 +95,9 @@ usuarioCtrl.editUsuarioWeb = async (req, res, next) => {
     };
     await Usuario.findByIdAndUpdate(id, { $set :
 		{
-			"NroBotellas" : usuario.NroBotellas
-			"saldoActual" : usuario.saldoActual
-			"saldoVerde" : usuario.saldoVerde
+			"NroBotellas" : req.body.NroBotellas,
+			"saldoActual" : req.body.saldoActual,
+			"saldoVerde" : req.body.saldoVerde
 		} }, { new: true });
     res.json({ status: 'Usuario Updated' });
 };
