@@ -10,5 +10,6 @@ router.put('/:id', usuario.editUsuario);
 router.delete('/:id', usuario.deleteUsuario);
 router.post('/login/',usuario.loginUser);
 router.put('/register/:id', usuario.editUsuarioHash);
+router.put('/webdata/:id', usuario.editUsuarioHash);
 
 module.exports = router;

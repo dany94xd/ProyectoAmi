@@ -84,6 +84,23 @@ usuarioCtrl.editUsuarioHash = async (req, res, next) => {
 };
 
 
+usuarioCtrl.editUsuarioWeb = async (req, res, next) => {
+    const { id } = req.params;
+    const usuario = {
+
+        NroBotellas: req.body.NroBotellas,
+        saldoActual: req.body.saldoActual,
+        saldoVerde: req.body.saldoVerde,
+        
+    };
+    await Usuario.findByIdAndUpdate(id, { $set :
+		{
+			"NroBotellas" : usuario.NroBotellas
+			"saldoActual" : usuario.saldoActual
+			"saldoVerde" : usuario.saldoVerde
+		} }, { new: true });
+    res.json({ status: 'Usuario Updated' });
+};
 
 
 
