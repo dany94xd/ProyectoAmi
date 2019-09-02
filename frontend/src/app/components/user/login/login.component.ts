@@ -111,7 +111,11 @@ export class LoginComponent implements OnInit {
 
           } */
         
+      }else{
+        alert("No existe el usuario o contrasena")
       }
+    }, err => {
+      alert("usuario o contrasena incorrecta")
     })
   }
 }
