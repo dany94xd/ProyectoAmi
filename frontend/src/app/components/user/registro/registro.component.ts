@@ -40,7 +40,7 @@ export class RegistroComponent implements OnInit {
       
       if(personaPorCedula[0] != undefined){
 
-        
+
           let personaTmp = personaPorCedula[0] as Persona;
         //console.log(personaTmp);
 
@@ -65,10 +65,10 @@ export class RegistroComponent implements OnInit {
             if(res){
               console.log("creado con extio", usuario.user , usuario.password)
               this.auth.login(usuario.user, usuario.password).subscribe(res => {
-                debugger
+                //debugger
                 if(res){
                   this.rolService.getRolById(usuario.idRol).subscribe(resRol => {
-                    debugger
+                    //debugger
                     let rol = resRol as Rol
                     localStorage.setItem("currentuser", JSON.stringify(usuario));
                     localStorage.setItem("currentRol", JSON.stringify(resRol));
