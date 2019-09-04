@@ -13,13 +13,13 @@ DB();
 
 
 //body parse
-const bodyParse=require('body-parser')
-const bodyParseJson=bodyParse.json()
-const bodyParserURLEncoded = bodyParse.urlencoded({extended:true})
+// const bodyParse=require('body-parser')
+// const bodyParseJson=bodyParse.json()
+// const bodyParserURLEncoded = bodyParse.urlencoded({extended:true})
 
-//usando el body parse
-app.use(bodyParseJson)
-app.use(bodyParserURLEncoded)
+// //usando el body parse
+// app.use(bodyParseJson)
+// app.use(bodyParserURLEncoded)
 //app.use('/api',router)
 //authRoutes(router)
 //router.get('/',(req,res)=>{
@@ -31,11 +31,11 @@ app.use(bodyParserURLEncoded)
 
 
 // Settings
-app.set('port', process.env.PORT || 4000);
+app.set('port', process.env.PORT || 3004);
 
 // Middlewares
 app.use('/',express.static('client',{redirect:false}));
-//app.use(cors({origin: 'http://162.212.130.145'}));
+app.use(cors({origin: 'http://162.212.130.145'}));
 //app.use(cors({origin: 'http://localhost:4200'}));
 
 app.use(function (req, res, next) {

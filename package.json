@@ -1,24 +1,17 @@
 {
-  "name": "proyectoami",
+  "name": "servermongo",
   "version": "1.0.0",
   "description": "",
-  "main": "procit.js",
+  "main": "index.js",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.6.7"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dany94xd/ProyectoAmi.git"
-  },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dany94xd/ProyectoAmi/issues"
-  },
-  "homepage": "https://github.com/dany94xd/ProyectoAmi#readme"
+  "license": "ISC"
 }
