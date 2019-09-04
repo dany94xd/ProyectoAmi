@@ -34,12 +34,12 @@
         <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
           <div class="col p-4 d-flex flex-column position-static">
             <h3 class="mb-0">Datos Personales</h3>
-         
-           
+            
+            
             <!-- Grid row -->
            <div class="row">
               <div class="col -3 "><label>Nombre</label></div>
-              <div class="col-9 form-control"> <h5 >{{usuarioPorMatricula.nombre}}</h5>  </div>
+              <div class="col-9 form-control"> <h5 >{{displayName}}</h5>  </div>
 
                 </div>
             
@@ -48,7 +48,7 @@
               <div class="row">
 
                   <div class="col -3 "><label>Apellido</label></div>
-                  <div class="col-9 form-control"> <h5>{{usuarioPorMatricula.apellido}}</h5> </div>
+                  <div class="col-9 form-control"> <h5>{{displayLastname}}</h5> </div>
             </div>
             
 
@@ -58,7 +58,7 @@
               <div class="row">
 
                 <div class="col -3 "><label>Correo Electronico</label></div>
-                  <div class="col-9 form-control"> <h5> {{usuarioById.email}}</h5> </div>
+                  <div class="col-9 form-control"> <h5> {{displayEmail}}</h5> </div>
 
                 </div>
 
@@ -66,7 +66,7 @@
 
 
                   <div class="col -3 "><label> saldoVerde</label></div>
-                  <div class="col-9 form-control"> <h5 >{{personaPorMatricula.saldoVerde}}</h5></div>
+                  <div class="col-9 form-control"> <h5 >{{displaysaldoVerde}}</h5></div>
                 </div>
               
 
@@ -74,16 +74,8 @@
               <div class="row">
 
                   <div class="col -3 "><label> saldoActual</label></div>
-                  <div class="col-9 form-control"> <h5 >{{personaPorMatricula.saldoActual}}</h5> </div>
+                  <div class="col-9 form-control"> <h5 >{{displaySaldoAcutal}}</h5> </div>
                 </div>
-
-           
-               
-
-            
-            
-
-
 
           </div>
           <div class="col-auto d-none d-lg-block">
@@ -111,7 +103,7 @@
             <label id="numbotellas">Numero de Botellas recolectadas:</label>   
             <div class="col-md-3 mb-3">
              
-              <div class="col-9 form-control"> <h5 >{{personaPorMatricula.NroBotellas}}</h5> </div>
+              <div class="col-9 form-control"> <h5 >{{displayNroBotellas}}</h5> </div>
              
         
          

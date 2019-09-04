@@ -17,7 +17,7 @@ export class Usuario{
         this.accesToken = accesToken;
         this.expiresIn = expiresIn;
     }
-    _id: string;
+    _id?: string;
     user:string;
     idRol:string;
     idPersona:string;
@@ -27,9 +27,9 @@ export class Usuario{
     NroBotellas:number;
     saldoActual:number;
     saldoVerde:number;
-    urlFoto:string;
+    urlFoto?:string;
     email:string;
     password: string;
-    accesToken:string;
-    expiresIn:number;
+    accesToken?:string;
+    expiresIn?:number;
 }

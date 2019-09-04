@@ -7,11 +7,10 @@ const webAppCtrl = {};
 webAppCtrl.getMatriculaData = async (req, res, next) => {
     const { id } = req.params;    
     const usuarioData = await Usuario.find({ 'matricula': id}).select({ idInstitucion:1, matricula:1, NroBotellas: 1, saldoVerde: 1, saldoActual: 1 });
-    //const { personaId } = await Usuario.find({ 'matricula': id}).select({ idPersona:1});
     const personaData = await Persona.find({ 'matricula': id }).select({ nombre: 1, apellido: 1});
-    //const personaData = await Persona.find({ '_id': personaId.idPersona }).select({ nombre: 1, apellido: 1}); 
+ 
     const dataFinal= [await usuarioData, await personaData];
-    //console.log(dataFinal);
+   
     res.json(dataFinal);
 };
 
@@ -23,15 +22,25 @@ webAppCtrl.getUserData = async (req, res, next) => {
   res.json(dataFinal);
 };
 
-webAppCtrl.userUpdateSaldo = async (req, res, next) => {
+//hugo
+webAppCtrl.updateSaldo = async (req, res, next) => {
   const { id } = req.params;
   const usuario = {
       saldoActual: req.body.saldoActual      
   };
-  await Usuario.findByIdAndUpdate(id, {$set: usuario}, {new: true});
+  await Usuario.findByIdAndUpdate(id, {$set :
+		{			
+			"saldoActual" : usuario.saldoActual,			
+		}}, {new: true});
   res.json({status: 'Saldo Actualizado'});
 };
 
+
+webAppCtrl.getCedulaData = async (req, res, next) => {
+    const { id } = req.params;
+    const persona = await Persona.find({ 'cedula': id});
+    res.json(persona);
+};
 
 
 module.exports = webAppCtrl;

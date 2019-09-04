@@ -4,6 +4,7 @@ import { IngresomatriculaService } from '../../../services/ingresomatricula/ingr
 
 import { Persona } from 'src/app/models/persona';
 import { Router } from '@angular/router';
+import { Usuario } from 'src/app/models/usuario';
 export interface ingresomatricula{
   idInstitucion: number,
   NroBotellas: number,
@@ -33,9 +34,33 @@ export class IngresomaticulaComponent implements OnInit {
   ingresomatricula(matricula: string){
     this.ingresomatriculaService.getUsuarioByMatricula(matricula).subscribe(res=>{
       if(res){
-        let matriculaingresada= JSON.stringify(res);
-        console.log("Matricula ingresada")
-        console.log(matriculaingresada);
+        
+        console.log("==> ", res)
+        let usuarioTmp = res[0][0] as Usuario
+        let personaTmp = res[1][0] as Persona
+        console.log("==>>>> ", usuarioTmp)
+        console.log("==>>>> ", personaTmp)
+
+        let usuarioIngresado: Usuario = {
+          _id: usuarioTmp._id,
+          user:usuarioTmp.user,
+          idRol:usuarioTmp.idRol,
+          idPersona:usuarioTmp.idPersona,
+          idLogros:usuarioTmp.idLogros,
+          idInstitucion:usuarioTmp.idInstitucion,
+          matricula:usuarioTmp.matricula,
+          NroBotellas:usuarioTmp.NroBotellas,
+          saldoActual:usuarioTmp.saldoActual,
+          saldoVerde:usuarioTmp.saldoVerde,
+          urlFoto:usuarioTmp.urlFoto,
+          email:usuarioTmp.email,
+          password: usuarioTmp.password,
+          accesToken:usuarioTmp.accesToken,
+          expiresIn:usuarioTmp.expiresIn,
+        }
+        let matriculaingresada= JSON.stringify(usuarioIngresado);
+        //console.log("Matricula ingresada");
+        //console.log(matriculaingresada);
         localStorage.setItem("estudainteMatricula", matriculaingresada);
 
         this.router.navigate(["user/perfilrecolector"])

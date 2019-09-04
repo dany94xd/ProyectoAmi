@@ -11,9 +11,15 @@ export class PersonasService {
  selectPersona: Persona;
   personas: Persona[];
   readonly URL_API = 'http://162.212.130.145:3002/api/personas';
+  readonly URL_API_2 = 'http://162.212.130.145/api/webapp/persona'
 
   constructor(public http: HttpClient) { 
     this.selectPersona = new Persona();
+  }
+
+
+  getPersonaByCedula(cedula: string){
+    return this.http.get(this.URL_API_2 + `/${cedula}`)
   }
 
   postPersona(personas: Persona){
