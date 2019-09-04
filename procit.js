@@ -5,8 +5,8 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const router = express.Router(); // rutas primera version
-const propierties = require('../../config/propierties'); // propiedades de la base
-const DB =require('../../config/db') //url de la base 
+const propierties = require('./serverMongo/config/propierties'); // propiedades de la base
+const DB =require('./serverMongo/config/db') //url de la base 
 
 //const { mongoose } = require('./db');
 var path = require('path')
@@ -50,7 +50,7 @@ app.use(function (req, res, next) {
 app.use(express.json());
 
 // Routes
-app.use('/api/persona', require('../../routes/employee.routes'));
+app.use('/api/persona', require('./serverMongo/routes/employee.routes'));
 
 
 
