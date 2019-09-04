@@ -64,6 +64,7 @@ import { EventoComponent } from './components/evento/evento.component';
 import { RolComponent } from './components/rol/rol.component';
 import { IngresomaticulaComponent } from './components/user/ingresomaticula/ingresomaticula.component';
 
+
 //import { LoginComponent } from './components/login/login.component';
 
 
@@ -106,7 +107,9 @@ import { IngresomaticulaComponent } from './components/user/ingresomaticula/ingr
 
     RolComponent,
 
-    IngresomaticulaComponent
+    IngresomaticulaComponent,
+
+    PedidoComponent
     
 
   ],
