@@ -6,7 +6,9 @@ import { Persona } from '../models/Persona';
 })
 export class PersonaService {
   
-  URL_API = 'http://localhost:6100/api/personas';
+  //URL_API = 'http://localhost:6100/api/personas';
+  URL_API = 'http://162.212.130.145:3004/api/personas';
+
   
   constructor(private http: HttpClient) { 
   }
