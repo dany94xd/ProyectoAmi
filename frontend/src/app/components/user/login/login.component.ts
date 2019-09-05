@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
         console.log("=====>", usuarioLoggeado.idRol);
         
         this.rolService.getRolById(usuarioLoggeado.idRol).subscribe(resRol =>{
-          debugger
+          //debugger
           let rolTmp = resRol as Rol;
           if(rolTmp.tipoRol == "admin"){
             //localStorage.setItem("currentuser", JSON.stringify(res))

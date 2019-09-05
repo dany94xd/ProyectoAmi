@@ -30,17 +30,13 @@ public datoPorid: any
   ngOnInit() {
     this.personaEnSesion = JSON.parse(localStorage.getItem("currentuser"));
     console.log(this.personaEnSesion.idPersona);
-    this.datoPorid = JSON.parse(localStorage.getItem("estudainteMatricula"))
-    console.log("=====>>>", this.datoPorid);
+    this.datoPorid = JSON.parse(localStorage.getItem("estudainteMatricula"))  
+    console.log("=====>>>", this.personaEnSesion);
     this.personaService.getPersonaById(this.personaEnSesion.idPersona).subscribe(res =>{
       this.usuarioEnSesion = res;
-      this.serviciousuario.getUsuarioById(this.datoPorid._id).subscribe(res => {
-        this.usuarioById = res as Usuario;
-
-        this.displayNroBotellas = this.usuarioById.NroBotellas;
-        this.displaySaldoActual = this.usuarioById.saldoActual;
-        this.displaysaldoVerde= this.usuarioById.saldoVerde;
-        this.displaysaldoTotal= this.usuarioById.saldoActual+ this.usuarioById.saldoVerde;
+        this.displayNroBotellas = this.personaEnSesion.NroBotellas;
+        this.displaySaldoActual = this.personaEnSesion.saldoActual;
+        this.displaysaldoVerde= this.personaEnSesion.saldoVerde;
        this.ratio=(this.displayNroBotellas/200)*100;
        this.ratio=this.ratio.toFixed(2);
        
@@ -68,7 +64,6 @@ public datoPorid: any
           }
         }
 
-      })
       
     })
   }
