@@ -44,4 +44,7 @@ export class PersonasService {
   getPersonaById(personaId: string){
     return this.http.get(this.URL_API + `/${personaId}`)
   }
+
+ 
+
 }

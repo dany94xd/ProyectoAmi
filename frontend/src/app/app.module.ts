@@ -109,7 +109,7 @@ import { IngresomaticulaComponent } from './components/user/ingresomaticula/ingr
 
     IngresomaticulaComponent,
 
-    PedidoComponent
+ 
     
 
   ],

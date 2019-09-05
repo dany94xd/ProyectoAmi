@@ -73,4 +73,12 @@ putBotellasUsuario(id_usuario, numeroBotella: number, saldoActual: number, saldo
   })
 }
 
+
+putBotellasRango(id_usuario, numeroBotella: number, saldoActual: number, saldoVerde: number){
+  return this.http.put(this.URL_API + `/${id_usuario}`, {
+    NroBotellas: numeroBotella,
+  
+  })
+}
+
 }
