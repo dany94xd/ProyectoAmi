@@ -31,6 +31,7 @@ personaCtrl.editPersona = async (req, res, next) => {
     const persona = {
         id: req.body.id,
         matricula: req.body.matricula,
+        //identificacion:req.body.identificacion
         cedula: req.body.cedula,
         nombre: req.body.nombre,
         apellido: req.body.apellido
