@@ -50,4 +50,8 @@ app.use(express.json());
 
 app.use('/api/personas', require('./routes/persona.route'));
 
+app.get('*',function(req ,res,next){
+  res.sendFile(path.resolve('client/index.html'));
+});
+
 app.listen(propierties.PORT,()=>console.log(`server runing on port ${propierties.PORT}`))
