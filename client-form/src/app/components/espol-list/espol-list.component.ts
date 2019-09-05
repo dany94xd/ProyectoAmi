@@ -36,7 +36,8 @@ export class EspolListComponent implements OnInit {
     /*console.log(perso);
     this.personaService.postPersona(perso);*/
     var juguete: Persona={
-      identificacion:perso.identificacion,
+      idInstitucion:"Espol",
+      matricula:perso.identificacion,
       cedula: perso.cedula,
       nombre: perso.nombre,
       apellido: perso.apellido

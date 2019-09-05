@@ -9,11 +9,12 @@ personaCtrl.getPersonas = async (req, res, next) => {
 
 personaCtrl.createPersona = async (req, res, next) => {
     const persona = new Persona({
-        id: req.body.id,
-        identificacion: req.body.identificacion,
+        idPersona: req.body.idPersona,
+        idInstitucion: "Espol",
         cedula: req.body.cedula,
         nombre: req.body.nombre,
-        apellido: req.body.apellido
+        apellido: req.body.apellido,
+        matricula: req.body.matricula,
     });
     await persona.save();
     res.json({status: 'Persona created'});
@@ -29,7 +30,7 @@ personaCtrl.editPersona = async (req, res, next) => {
     const { id } = req.params;
     const persona = {
         id: req.body.id,
-        identificacion: req.body.identificacion,
+        matricula: req.body.matricula,
         cedula: req.body.cedula,
         nombre: req.body.nombre,
         apellido: req.body.apellido

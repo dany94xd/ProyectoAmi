@@ -1,5 +1,6 @@
 export interface Persona {
-    identificacion?: string,
+    idInstitucion?: string,
+    matricula?: string,
     cedula?: string,
     nombre?: string,
     apellido?: string
