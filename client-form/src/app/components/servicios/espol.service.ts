@@ -5,7 +5,7 @@ import { HttpClient}  from '@angular/common/http';
 })
 export class EspolService {
 
-  API_URI = 'http://162.212.130.145:3004/api/espol';
+  API_URI = 'http://162.212.130.145:3000/api/espol';
   
   constructor(private http: HttpClient) { 
 

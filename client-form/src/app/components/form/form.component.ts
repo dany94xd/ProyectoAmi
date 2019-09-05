@@ -36,7 +36,7 @@ export class FormComponent implements OnInit {
     /*console.log(perso);
     this.personaService.postPersona(perso);*/
     var juguete: Persona={
-      identificacion:perso.identificacion,
+      matricula:perso.matricula,
       cedula: perso.cedula,
       nombre: perso.nombre,
       apellido: perso.apellido

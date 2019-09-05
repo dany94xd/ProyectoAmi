@@ -31,7 +31,7 @@ DB();
 
 
 // Settings
-app.set('port', process.env.PORT || 3004);
+app.set('port', process.env.PORT || 3000);
 
 // Middlewares
 app.use('/',express.static('client',{redirect:false}));
